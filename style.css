@@ -1,0 +1,1126 @@
+/* CSS files add styling rules to your content */
+
+/* body {
+  font-family: "Benton Sans", "Helvetica Neue", helvetica, arial, sans-serif;
+  margin: 2em;
+}
+
+h1 {
+  font-style: italic;
+  color: #373fff;
+}
+ */
+
+body {
+  background-color:#F2F2F2;
+  font-family: 'Inconsolata', monospace;
+}
+
+.title {
+  font-size: 2.5rem;
+  margin: 40px;
+  position: relative;
+  top: 20px;
+  text-position: center;
+}
+
+.container {
+  background-color:#F2F2F2;
+  display:flex;
+  overflow:scroll;
+  flex-direction:row;
+  flex-wrap:wrap;
+}
+
+.item {
+  border-radius: 15px;
+  width:300px;
+  height:300px;
+  background-color:white;
+  margin: 45px;
+  -webkit-box-shadow: -1px 15px 27px 1px rgba(176,176,176,0.28);
+  -moz-box-shadow: -1px 15px 27px 1px rgba(176,176,176,0.28);
+  box-shadow: -1px 15px 27px 1px rgba(176,176,176,0.28);
+  cursor:pointer;
+  position:relative;
+}
+
+.count {
+  font-family: 'Inconsolata', monospace;
+  font-size:1.5rem;
+  font-weight:500;
+  position: absolute;
+  top: 20px;
+  left: 30px;
+  margin: 0;
+  z-index: 3;
+
+}
+
+/* –––– INDIVIDUAL ITEM CSS ––––– */
+
+/* –––– 1 ––––– */
+#item1{
+  background-color:;
+}
+
+/* –––– 3 ––––– */
+#item3{
+  background-color:black;
+  color:white;
+  font-weight: 700;
+  font-size:1.2rem;
+}
+
+#quote-disappear{
+  text-align:center;
+  position:relative;
+  top:200px;
+}
+
+.moon{
+  position: absolute;
+  margin:auto;
+  left:0;
+  right:0;
+  top:30px;
+  width: 150px;
+  height: 150px;
+  background: #fcea8d;
+  border-radius: 50%
+}
+
+.moon-mask{
+  position: absolute;
+  left:120px;
+  right:0;
+  top:20px;
+  width: 120px;
+  height: 120px;
+  background: black;
+  border-radius: 50%
+}
+
+#quote-second-line{
+  opacity:0;
+  z-index:5;
+  position:absolute;
+  text-align:center;
+  left:15%;
+  top:200px;
+}
+
+/* –––– 4 ––––– */
+.br-question {
+  position:relative;
+  top:40px;
+  font-size: 1rem;
+  font-weight: 700;
+  text-align: center;
+}
+
+.answers {
+  position: relative;
+  top: 40px;
+}
+.question-responses{
+  font-size: 1rem;
+  border: 2px solid;
+  padding: 5px;
+  width: 90%;
+  margin: auto;
+  left: 0;
+  top: 0;
+  margin-bottom: 5px;
+}
+.question-responses:hover {
+  background-color:black;
+  color:#fa0c60;
+}
+
+/* –––– 8 ––––– */
+#item8 {
+  background-color: black;
+}
+
+#get-replicant {
+  color:#fa0c60;
+  border: 2px solid;
+  position: relative;
+  margin: auto;
+  left: 0;
+  top: 100px;;
+  width: 70%;
+  text-align: center;
+}
+
+#get-replicant:hover {
+  color: white;
+}
+
+#replicant-chance {
+  font-size: 1.5rem;
+  color: #fa0c60;
+}
+
+#replicant-answer {
+  position: absolute;
+  color: white;
+  margin: auto;
+  left: 0;
+  top: 50px;
+  visibility: hidden;
+  padding: 10px;
+}
+
+/* –––– 9 ––––– */
+#get-hug {
+  color:white;;
+  background-color: black;
+  border: 5px solid;
+  position: relative;
+  margin: auto;
+  left: 0;
+  top: 120px;;
+  width: 70%;
+  text-align: center;
+  z-index: 10;
+}
+
+#hug {
+  display: none;
+  object-fit: cover;
+  max-width: 100%;
+}
+
+/* –––– 9 ––––– */
+
+div {
+  animation: rotate-all 2s 0 infinite linear alternate;
+}
+
+.div1-a {
+  width: 80px;
+  height: 80px;
+  background-color: #f06e82;
+  position: relative;
+  margin: auto;
+  /* animation: square-to-circle 2.5s .5s infinite cubic-bezier(1,.015,.295,1.225) alternate-reverse; */
+}
+
+.div2-a {
+    width: 80px;
+  height: 80px;
+  background-color: #f06e82;
+  position: relative;
+  margin: auto;
+  /* animation: square-to-circle2 2.5s .42s infinite cubic-bezier(1,.015,.295,1.225) alternate-reverse; */
+}
+
+#one {
+  top: 50px;
+}
+
+#two {
+  top: 50px;
+  right: 80px;
+}
+
+#three {
+  top: 50px;
+}
+
+#four {
+  bottom: 110px;
+  left: 80px;
+}
+
+@keyframes square-to-circle-1 {
+  0%  {
+    border-radius:0 0 0 0;
+    background:;
+    transform:rotate(45deg);
+  }
+  25%  {
+    border-radius:50% 0 0 0;
+    background:black;
+    transform:rotate(135deg);
+  }
+  /* 50%  {
+    border-radius:50% 50% 0 0;
+    background:indianred;
+    transform:rotate(180deg);
+  }
+  75%  {
+    border-radius:50% 50% 50% 0;
+    background:lightcoral;
+    transform:rotate(315deg);
+  }
+  100% {
+    border-radius:50%;
+    background:darksalmon;
+    transform:rotate(404deg);
+  } */
+}
+
+@keyframes square-to-circle-2 {
+  0%  {
+    border-radius:0 0 0 0;
+    background:;
+    transform:rotate(45deg);
+  }
+  25%  {
+    border-radius:0 0 50% 0;
+    background:black;
+    transform:rotate(135deg);
+  }
+  /* 50%  {
+    border-radius:0 0 50% 50%;
+    background:indianred;
+    transform:rotate(180deg);
+  }
+  75%  {
+    border-radius:50% 0 50% 50%;
+    background:lightcoral;
+    transform:rotate(315deg);
+  }
+  100% {
+    border-radius:50%;
+    background:darksalmon;
+    transform:rotate(404deg);
+  } */
+}
+
+@keyframes circle-to-square-1 {
+  0%  {
+    border-radius:50% 0 0 0;
+    background:;
+    transform:rotate(45deg);
+  }
+  25%  {
+    border-radius:0% 0 0 0;
+    background:black;
+    transform:rotate(135deg);
+  }
+  /* 50%  {
+    border-radius:50% 50% 0 0;
+    background:indianred;
+    transform:rotate(180deg);
+  }
+  75%  {
+    border-radius:50% 50% 50% 0;
+    background:lightcoral;
+    transform:rotate(315deg);
+  }
+  100% {
+    border-radius:50%;
+    background:darksalmon;
+    transform:rotate(404deg);
+  } */
+}
+
+/* –––– 11 ––––– */
+
+div {
+  animation: rotate-all 2s 0 infinite linear alternate;
+}
+
+#four-1 {
+  bottom: 70px;
+  left: 80px;
+}
+
+.div1-b {
+  width: 60px;
+  height: 60px;
+  background-color: #f06e82;
+  position: relative;
+  margin: auto;
+  border-radius: 50%;
+  /* animation: square-to-circle 2.5s .5s infinite cubic-bezier(1,.015,.295,1.225) alternate-reverse; */
+}
+
+.div2-b {
+  width: 60px;
+  height: 60px;
+  background-color: #f06e82;
+  position: relative;
+  border-radius: 50%;
+  margin: auto;
+}
+
+@keyframes circle-to-square-2 {
+  0%  {
+    border-radius:0 0 50% 0;
+    background: #8b42eb;
+    transform:rotate(45deg);
+  }
+  25%  {
+    border-radius:0 0 0% 0;
+    background:black;
+    transform:rotate(135deg);
+  }
+}
+
+/* –––– 11 ––––– */
+.div1-c {
+  width: 40px;
+  height: 40px;
+  background-color: #eb9142;
+  position: relative;
+  margin: auto;
+  border-radius: 50%;
+  /* animation: square-to-circle 2.5s .5s infinite cubic-bezier(1,.015,.295,1.225) alternate-reverse; */
+}
+
+.div2-c {
+  width: 60px;
+  height: 60px;
+  background-color: #eb9142;
+  position: relative;
+  border-radius: 50%;
+  margin: auto;
+}
+
+@keyframes circle-to-square-3 {
+  0%  {
+    border-radius:50% 50% 0 0;
+    background:black;
+    transform:rotate(180deg);
+  }
+  25%  {
+    border-radius:50% 50% 50% 0;
+    background:black;
+    transform:rotate(315deg);
+  }
+  /* 50%  {
+    border-radius:50% 50% 0 0;
+    background:indianred;
+    transform:rotate(180deg);
+  }
+  75%  {
+    border-radius:50% 50% 50% 0;
+    background:lightcoral;
+    transform:rotate(315deg);
+  }
+  100% {
+    border-radius:50%;
+    background:darksalmon;
+    transform:rotate(404deg);
+  } */
+}
+
+/* –––– 13 ––––– */
+  #grow {
+    width: 100%;
+    font-size: 3rem;
+    margin-top: 40%;
+    text-align: center;
+  }
+
+/* –––– 13 ––––– */
+  #item14 h1 {
+    text-align: center;
+    font-size: 1rem;
+    margin-top: 50%;
+  }
+
+  #loud {
+    font-size: 1rem;
+    color: black;
+  }
+
+/* –––– 15 ––––– */
+#item15 h1 {
+  text-align: center;
+  font-size: 1rem;
+  margin-top: 50%;
+}
+
+#louder {
+  font-size: 1rem;
+  color: black;
+}
+
+
+/* –––– 16 ––––– */
+#item16 {
+  background-color: #f01641;
+}
+#item16 h1 {
+  text-align: center;
+  font-size: 1.5rem;
+  margin-top: 50%;
+  color:white;
+}
+
+/* –––– 16 ––––– */
+#item17 h6 {
+  text-align: center;
+  font-size: 1.5rem;
+  margin-top: 50%;
+  color:white;
+}
+
+/* –––– 17 ––––– */
+#lightbox {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #000;
+    opacity: 0.8;
+    text-align: center;
+    display: none;
+}
+#lb-content {
+    color: #222;
+    height: 150px;
+    width: 260px;
+    border: 16px solid #222;
+    background-color: #fff;
+    position: relative;
+    text-align: center;
+    border-radius: 4px;
+    display: none;
+}
+
+#lb-content p{
+    margin-top: 20%;
+    font-size: 1.5rem;
+}
+#lb-close {
+    display: block;
+    height: 22px;
+    width: 25px;
+    background-color: red;
+    color: #fff;
+    position: absolute;
+    top: -25px;
+    right: -25px;
+    cursor: pointer;
+    text-align: center;
+    border-radius: 10px;
+}
+
+/* –––– 18 ––––– */
+#item18 a {
+  width: 100%;
+  display: inline-block;
+  text-align: center;
+  font-size: 1.5rem;
+  margin-top: 50%;
+}
+
+
+/* –––– 19 ––––– */
+
+#sleep {
+  text-align: center;
+  font-size: 1.5rem;
+  margin-top: 50%;
+}
+
+#page-cover {
+    display:none;
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    background-color: black;
+    z-index: 50;
+    top: 0;
+    left: 0;
+}
+
+/* –––– 20 ––––– */
+#item20 {
+  background-color: black;
+  position: relative;
+  z-index: 100;
+}
+
+#light {
+  width: 100px;
+  height: 100px;
+  position: relative;
+  margin: auto;
+  left: 0;
+  top: 0;
+  top: 30%;
+  border-radius: 50%;
+  background-color: black;
+}
+
+/* –––– 21 ––––– */
+
+.bulb-frame {
+  opacity: 0;
+	position: absolute;
+  z-index: 150;
+	top: 33%;
+	left: 33.5%;
+	width: 300px;
+	height: 300px;
+	margin-top: -100px;
+	margin-left: -100px;
+	border-radius: 2px;
+	box-shadow: 4px 8px 16px 0 rgba(0, 0, 0, 0.1);
+	overflow: hidden;
+	background: black;
+	color: #333;
+	font-family: "Open Sans", Helvetica, sans-serif;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+}
+
+#glow {
+	box-shadow: 0px 0px 30px 5px gold;
+	border-radius: 50px;
+	width: 76px;
+	height: 76px;
+	background: gold;
+	position: absolute;
+	top: 85px;
+	transition: all 0.5s ease-in-out;
+}
+
+#bulb {
+	fill: gold;
+	transition: all 0.5s ease-in-out;
+	cursor: pointer;
+	position: relative;
+	z-index: 2;
+}
+
+#bulb:hover {
+	fill: #999;
+}
+
+#bulb:hover ~ #glow {
+	opacity: 0;
+}
+
+#base {
+	fill: #eee;
+	margin-top: 5px;
+}
+
+/* –––– 22 ––––– */
+#circle-shadow {
+  width: 150px;
+  height: 150px;
+  border: 2px solid;
+  border-radius: 50%;
+  position: relative;
+  margin: auto;
+  top: 0;
+  left: 0;
+  top: 30%;
+  background-color: white;
+}
+
+/* –––– 23 ––––– */
+#item23 {
+  background-color: #3f3fa1;
+}
+
+#circle-yes {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  position: relative;
+  margin: auto;
+  top: 0;
+  left: 0;
+  top: 30%;
+  background-color: white;
+  box-shadow: 0px 7px 26px 2px rgba(166,166,166,1);
+}
+
+#circle-yes h1 {
+  position: absolute;
+  text-align: center;
+  font-size: 2rem;
+  top:30px;
+  left: 50px;
+  color: #262626;
+}
+
+/* –––– 24 ––––– */
+#item24 {
+  background-color: #d12874;
+}
+
+#circle-invert {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  position: relative;
+  margin: auto;
+  top: 0;
+  left: 0;
+  top: 30%;
+  background-color: #0d2191;
+  /* box-shadow: 0px 7px 26px 2px rgba(166,166,166,1); */
+}
+
+#circle-invert h1 {
+  position: absolute;
+  text-align: center;
+  left:0px;
+  font-size: 1.5rem;
+  top:30px;
+  color: white ;
+}
+
+/* –––– 25 ––––– */
+#item25 {
+  text-align: center;
+}
+
+#invert-top {
+  display: inline-block;
+  width: 100%;
+  height: 50%;
+  background-color: #1df0b1;
+}
+
+#invert-top h1 {
+  background-color: white;
+}
+
+#invert-bottom {
+  display: inline-block;
+  width: 100%;
+  height: 50%;
+  background-color: #f01d94;
+}
+
+#invert-bottom h1 {
+  background-color: white;
+}
+
+/* –––– 26 ––––– */
+
+#kittens {
+  text-align: center;
+  font-size: 1rem;
+  margin-top: 45%;
+  background-color: yellow;
+}
+
+#kittens-gif {
+  object-fit: cover;
+  width: 100vw;
+  height: 100vh;
+  position: absolute;
+  right: -10vw;
+}
+
+/* –––– 27 ––––– */
+#item27 {
+  background-color: black;
+  color: #ff2ec0;
+}
+
+#glow-2 {
+  position: absolute;
+  text-align: center;
+  width: 100%;
+  font-size: 1.25rem;
+  top:100px;
+}
+
+/* –––– 28 ––––– */
+#item28 {
+  background-color: #001d7a;
+}
+
+#glow-text {
+  position: absolute;
+  text-align: center;
+  font-weight: 700;
+  width: 100%;
+  font-size: 1.5rem;
+  top:100px;
+  color: white;
+  /* -webkit-animation: glow 1s ease-in-out infinite alternate;
+  -moz-animation: glow 1s ease-in-out infinite alternate;
+  animation: glow 1s ease-in-out infinite alternate; */
+}
+
+@-webkit-keyframes glow {
+  from {
+    text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #e60073, 0 0 40px #e60073, 0 0 50px #e60073, 0 0 60px #e60073, 0 0 70px #e60073;
+
+  }
+  to {
+    text-shadow: 0 0 20px #fff, 0 0 30px #ff4da6, 0 0 40px #ff4da6, 0 0 50px #ff4da6, 0 0 60px #ff4da6, 0 0 70px #ff4da6, 0 0 80px #ff4da6;
+
+  }
+}
+
+@-webkit-keyframes glow2 {
+  from {
+    text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #e60073, 0 0 40px #e60073, 0 0 50px #e60073, 0 0 60px #e60073, 0 0 70px #e60073;
+    transform: translateY(-50px);
+  }
+  to {
+    text-shadow: 0 0 20px #fff, 0 0 30px #ff4da6, 0 0 40px #ff4da6, 0 0 50px #ff4da6, 0 0 60px #ff4da6, 0 0 70px #ff4da6, 0 0 80px #ff4da6;
+    transform: translateY(150px);
+  }
+}
+
+/* –––– 29 ––––– */
+#glow-text-all {
+  position: absolute;
+  text-align: center;
+  font-weight: 700;
+  width: 100%;
+  font-size: 1.5rem;
+  top:70px;
+  color: black;
+}
+
+/* –––– 29 ––––– */
+#blur-text {
+  position: absolute;
+  text-align: center;
+  font-weight: 800;
+  width: 100%;
+  font-size: 2rem;
+  top:70px;
+  color: black;
+  filter: blur(6px);
+}
+
+/* –––– 29 ––––– */
+#item31 {
+  background-color: blue;
+}
+
+#blur-text-all {
+  position: absolute;
+  text-align: center;
+  font-weight: 800;
+  width: 100%;
+  font-size: 2rem;
+  top:100px;
+  color: white;
+  /* filter: blur(6px); */
+}
+
+/* –––– 32 ––––– */
+.glasses {
+  width: 75px;
+  height: 75px;
+  top: 80px;
+  display: inline-block;
+  position: absolute;
+  border-radius: 50%;
+  background-color: black;
+}
+
+#glasses {
+  width: 70%;
+  position: relative;
+  left: 15%;
+  top: 25%;
+}
+
+#item32 h1 {
+  position: absolute;
+  text-align: center;
+  font-weight: 800;
+  width: 100%;
+  font-size: 2rem;
+  top:200px;
+  color: black;
+}
+
+/* –––– 32 ––––– */
+#item33 {
+  background-color: #366ce0;
+  font-size: 1.5rem;
+}
+
+#blurry-text-2 {
+  margin-top: 70px;
+}
+
+
+span {
+	color: transparent;
+	animation: blur3 10s ease-out 1;
+	-webkit-animation: blur3 10s ease-out 1;
+}
+
+span:nth-child(1) {
+	animation-delay: 0.1s;
+	-webkit-animation-delay: 0.1s;
+}
+span:nth-child(2) {
+	animation-delay: 0.2s;
+	-webkit-animation-delay: 0.2s;
+}
+span:nth-child(3) {
+	animation-delay: 0.3s;
+	-webkit-animation-delay: 0.3s;
+}
+span:nth-child(4) {
+	animation-delay: 0.4s;
+	-webkit-animation-delay: 0.4s;
+}
+span:nth-child(5) {
+	animation-delay: 0.8s;
+	-webkit-animation-delay: 0.5s;
+}
+span:nth-child(6) {
+	animation-delay: 1s;
+	-webkit-animation-delay: 0.6s;
+}
+span:nth-child(7) {
+	animation-delay: 0.7s;
+	-webkit-animation-delay: 0.7s;
+}
+
+@keyframes blur3 {
+	0%		{text-shadow:  0 0 100px #fff; opacity:0;}
+	5%		{text-shadow:  0 0 90px #fff;}
+	15%		{opacity: 1;}
+	20%		{text-shadow:  0 0 0px #fff;}
+	80%		{text-shadow:  0 0 0px #fff;}
+	85%		{opacity: 1;}
+	95%		{text-shadow:  0 0 90px #fff;}
+	100%	{text-shadow:  0 0 100px #fff; opacity:0;}
+}
+
+@-webkit-keyframes blur3 {
+	0%		{text-shadow:  0 0 100px #fff; opacity:0;}
+	5%		{text-shadow:  0 0 90px #fff;}
+	15%		{opacity: 1;}
+	20%		{text-shadow:  0 0 0px #fff;}
+	80%		{text-shadow:  0 0 0px #fff;}
+	85%		{opacity: 1;}
+	95%		{text-shadow:  0 0 90px #fff;}
+	100%	{text-shadow:  0 0 100px #fff; opacity:0;}
+}
+
+/* –––– 34 ––––– */
+#translate{
+  position: relative;
+  left: 25%;
+  top: 20%;
+}
+
+#google_translate_element {
+  position: relative;
+  left: 25%;
+  top: 25%;
+}
+
+/* –––– 35 ––––– */
+#item35 {
+  text-align: center;
+  position: relative;
+}
+
+.emoji {
+  position: relative;
+  top: 20px;
+}
+
+#jim-text {
+  position: relative;
+  top: 30px;
+}
+
+/* –––– 36 ––––– */
+#yeet {
+  position: relative;
+  text-align: center;
+  top: 40%;
+}
+
+/* –––– 37 ––––– */
+#motivation {
+  text-align: center;
+  position: relative;
+  top: 50px;
+}
+
+#random-motivate {
+  position: relative;
+  text-align: center;
+  font-size: 3rem;
+  top: 20px;
+  color: black;
+}
+
+/* –––– 38 ––––– */
+#item38 {
+  position: relative;
+  z-index: 1000;
+}
+
+#circles {
+  position: relative;
+  text-align: center;
+  top: 100px;
+}
+
+.randomWord {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  font-size: 50rem;
+}
+
+/* –––– 39 ––––– */
+#item39:hover {
+  background-color: black;
+  color: white;
+  animation: background-color 3s linear;
+}
+
+/* –––– 40 ––––– */
+#item40 {
+  background-color: black;
+  color: white;
+  animation: background-color 3s linear;
+}
+
+
+/* –––– 41 ––––– */
+#self-destruct {
+  object-fit: fill;
+  position: relative;
+  margin: auto;
+  left: 25%;
+  top: 25%;
+  width: 50%;
+}
+
+.flash {
+  width: 100%;
+  height: 100%;
+}
+
+/* –––– 42 ––––– */
+#item42 {
+  background-color: black;
+  color: white;
+}
+
+#item42-text {
+  text-align: center;
+  position: relative;
+  top: 40%;
+}
+
+#messenger {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 20px;
+  /* white-space: nowrap; */
+  /* max-width: 250px; */
+}
+
+/* –––– 42 ––––– */
+#item43 {
+  background-color: #f01641;
+}
+
+#item43 #virus-span {
+  color: white;
+  content: 'Break my computer';
+}
+
+#item43:hover a p #virus-span:after {
+  content: "Are you sure?!";
+}
+
+#virus-message {
+    width: 50%;
+    margin: auto;
+    position: relative;
+    left: 15%;
+    top: 125px;
+    font-size: 1.5rem;
+}
+
+/* –––– 44 ––––– */
+#item44 {
+  background-color: #7ff233;
+  color: white;
+}
+
+#strobe {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+
+.black {
+    background-color: black;
+}
+
+.centered {
+  position: relative;
+  text-align: center;
+  top: 40%;
+}
+
+/* –––– 45 ––––– */
+#item45 {
+  background-color: #7ff233;
+  color: white;
+}
+
+#disco {
+  display: none;
+}
+
+/* –––– 46 ––––– */
+
+#item46 {
+  background-color: #7ff233;
+  color: white;
+}
+
+#jazz {
+  display: none;
+}
+
+
+/* –––– 49 ––––– */
+#item49:hover {
+  background-color: black;
+  color: white;
+}
+
+.animation-target {
+  -webkit-animation: animation 865ms linear both;
+  animation: animation 865ms linear both;
+}
+
+.bold {
+  font-weight: bold;
+}
+
+/* –––– 50 ––––– */
+#yee-haw {
+  position: relative;
+  left: 30%;
+  top: 220px;
+}
+
+#cowboy-img {
+  position: relative;
+  left: 22%;
+}

@@ -1,0 +1,85 @@
+@font-face {
+    font-family: 'pf_easta_sevenregular';
+    src: url('../fonts/pf_easta_seven-webfont.eot');
+    src: url('../fonts/pf_easta_seven-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/pf_easta_seven-webfont.woff') format('woff'),
+         url('../fonts/pf_easta_seven-webfont.ttf') format('truetype'),
+         url('../fonts/pf_easta_seven-webfont.svg#pf_easta_sevenregular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'redensekregular';
+    src: url('../fonts/redensek-webfont.eot');
+    src: url('../fonts/redensek-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/redensek-webfont.woff') format('woff'),
+         url('../fonts/redensek-webfont.ttf') format('truetype'),
+         url('../fonts/redensek-webfont.svg#redensekregular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+html, body { font-family: Helvetica, Arial,sans-serif; padding: 0; margin: 0; color: #754C24; background: #ececec; }
+body { margin: 0; font-size: 100%; }
+a img { border: 0 none; }
+sup { font-size: 10px; }
+
+header[role='banner'] { width: 100%; height: 32px; background: #fff; margin: 0; }
+header[role='banner'] h2 { margin: 0; padding: 0 0 0 40px; line-height: 32px; color: #696969; font-size: 15px; font-weight: 100; }
+header[role='banner'] h2 strong, header[role='banner'] h2 a { color: #000; font-size: 15px; font-weight: normal; text-decoration: none; }
+header[role='banner'] h2 strong span { font-weight: bold; }
+
+footer[role='contentinfo'] { width: 100%; margin: 0; }
+footer[role='contentinfo'] p { margin: 0; padding: 20px 0 30px 0; color: #696969; font-size: 11px; font-weight: 100; opacity: 0.6; text-align: center; }
+
+#happy { width: 660px; margin: 0 auto; }
+#happy #monitor { width: 433px; height: 358px; background: url(../images/sprites.png) 0 -294px; display: block; position: relative; margin: 26px 0 0 110px; cursor: pointer; }
+#happy #monitor #mac_and_mug { position: absolute; width: 138px; height: 107px; background: url(../images/sprites.png) 0 0; display: block; left: 152px; top: 40px; }
+#happy #monitor #mac_and_mug #fill_level { position: absolute; width: 29px; height: 5px; background: #c69a2d; display: block; left: 107px; bottom: 5px; }
+#happy #monitor #mac_and_mug #fill { position: absolute; width: 42px; height: 47px; background: url(../images/sprites.png) -11px -192px; display: block; left: 104px; top: 62px; }
+
+#happy #steps { list-style: none; width: 100%; margin: 30px 0; padding: 0; display: inline-block; }
+#happy #steps li { list-style: none; width: 178px; margin: 0 60px 0 0; float: left; border-bottom: #bdbdbd solid 1px; }
+#happy #steps li#step_3 { margin-right: 0; }
+#happy #steps li h3 { margin: 0 0 10px 0; color: #000; font-size: 19px; font-weight: normal; }
+#happy #steps li p { color: #000; font-size: 14px; line-height: 18px; font-weight: 100; }
+#happy #steps .tw { text-indent: -9999px; font-size: 0; width: 29px; height: 21px; background: url(../images/sprites.png) -530px -1px; display: block; float: right; margin: -3px 5px 0 0; }
+#happy #steps .fb { text-indent: -9999px; font-size: 0; width: 12px; height: 23px; background: url(../images/sprites.png) -564px 0; display: block; float: right; margin: -3px 5px 0 0; }
+
+#selections { width: 100%; height: 292px; background: url(../images/screen.png) repeat-x 0 0; display: inline-block; }
+#selections h3 { text-indent: -9999px; font-size: 0; width: 252px; height: 36px; background: url(../images/sprites.png) -219px 0; margin: 20px auto; }
+#selections #selection_outer { margin: 0 auto; width: 660px; position: relative; }
+#selections ul { list-style: none; margin: 0 auto; width: 630px; }
+#selections ul li { list-style: none; margin: 0 124px 0 0; width: 113px; height: 169px; background: url(../images/sprites.png) 0 -897px; float: left; cursor: pointer; }
+#selections ul li.selection_kernal {}
+#selections ul li.selection_kernal.selected/*,
+#selections ul li.selection_kernal:hover*/ { background-position: -113px -897px; }
+#selections ul li.selection_broken { background: url(../images/sprites.png) 0 -1099px; margin-right: 112px; width: 112px; }
+#selections ul li.selection_broken.selected/*,
+#selections ul li.selection_broken:hover*/ { background-position: -112px -1099px; }
+#selections ul li.selection_blue { width: 152px; background: url(../images/sprites.png) 0 -1286px; margin-right: 0; }
+#selections ul li.selection_blue.selected/*,
+#selections ul li.selection_blue:hover*/ { background-position: -151px -1286px; }
+#selections #hand { width: 71px; height: 51px; background: url(../images/sprites.png) 0 -824px; position: absolute; }
+#selections_countdown { width: 600px; margin: 135px auto 0; font-family: 'redensekregular'; font-size: 49px; color: #000; }
+
+#info { width: 100%; background: #fff; display: inline-block; }
+#info #undo { color: #000; font-size: 18px; font-weight: 100; text-align: center; display: block; margin: 20px auto 30px; line-height: 26px; padding: 0 0 20px 0; border-bottom: #ccc solid 1px; width: 315px; }
+#info #undo strong { color: #c00606; font-size: 22px; font-weight: normal; }
+#info #undo span { text-indent: -9999px; font-size: 0; width: 32px; height: 18px; background: url(../images/sprites.png) 0 -264px; display: inline-block; }
+#info #about { margin: 0 auto 25px auto; width: 960px; color: #424242; font-weight: 100; font-size: 14px; line-height: 22px; letter-spacing: -0.015em; }
+
+#blue { background: #0001dd; color: #fff; font-size: 16px; line-height: 24px; font-family: 'pf_easta_sevenregular'; display: none; }
+#blue p { margin: 35px 0 0 50px; width: 800px; }
+
+#kernal { background: url(../images/screen_mac.png) repeat; display: none; }
+#kernal .image { background: url(../images/kernal.jpg) no-repeat 0 0; width: 880px; display: inline-block; position: absolute; left: 50%; top: 50%; margin: -278px 0 0 -440px; }
+
+#broken { background: url(../images/broken.gif) repeat; display: none; }
+
+#fancybox-content { background:#fff url("../images/loading4.gif") no-repeat 50% 50% !important; }
+.fancybox-skin { background: transparent; box-shadow: none !important; }
+.fancybox-close { display: none; /*background-image: none; right: 10px; top: 0; width: 30px; height: 30px; background: url('../images/sprites.png') no-repeat 0 -245px; cursor: pointer;*/ }
+.fancybox-lock { overflow:visible !important; margin-right:0px !important; }
+

@@ -1,0 +1,422 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Hello!</title>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- import the webpage's stylesheet -->
+  <link rel="stylesheet" href="style.css">
+
+  <!-- import the webpage's javascript file -->
+  <script type="text/javascript" src="https://code.jquery.com/jquery-latest.js"></script>
+  <script src="script.js" defer></script>
+
+  <link href="https://fonts.googleapis.com/css?family=Inconsolata|Open+Sans&display=swap" rel="stylesheet">
+
+</head>
+<body>
+
+  <!--     <h1 class="title"> Click Me! </h1> -->
+  <div class="flash"></div>
+  <div id="strobe" class="white"></div>
+  <div class="container">
+    <div class="item" id="item1">
+      <p class="count">0</p>
+    </div>
+
+    <div class="item" id="item2">
+      <p class="count">0</p>
+    </div>
+
+    <div class="item" id="item3">
+      <div class="moon"></div>
+      <div class="moon-mask"></div>
+      <p id="quote-disappear">
+        The moon has disappeared<br>Into the deep dark night<br>
+      </p>
+      <p id="quote-second-line">
+        And here I am talking<br>To myself, again.
+      </p>
+      <p class="count">0</p>
+    </div>
+
+    <div class="item" id="item4">
+      <h2 class="br-question">
+        You are a Blade Runner who is tasked with hunting Replicants. After retiring one, how do you feel?
+      </h2>
+      <div class="answers">
+        <div class="question-responses" id="br-q1-a">
+          They're just machines
+        </div>
+        <div class="question-responses" id="br-q1-b">
+          I would still feel bad, even though they're not human
+        </div>
+        <div class="question-responses" id="br-q1-c">
+          I'd be traumatized by all of the stress
+        </div>
+      </div>
+
+      <p class="count">0</p>
+    </div>
+
+    <div class="item" id="item5">
+
+      <h2 class="br-question">
+        Describe in single words, only the good things that come into your mind about your mother.
+      </h2>
+      <div class="answers">
+        <div class="question-responses" id="br-q2-a">
+          I'll tell you about my mother...
+        </div>
+        <div class="question-responses" id="br-q2-b">
+          Warm cookies. Laughter. Toast.
+        </div>
+        <div class="question-responses" id="br-q2-c">
+          Love. Caring. Education.
+        </div>
+      </div>
+
+      <p class="count">0</p>
+    </div>
+
+    <div class="item" id="item6">
+
+      <h2 class="br-question">
+        It’s your birthday. Someone gives you a calfskin wallet.
+      </h2>
+      <div class="answers">
+        <div class="question-responses" id="br-q3-a">
+          I wouldn't accept it.
+        </div>
+        <div class="question-responses" id="br-q3-b">
+          Thank you for the wallet.
+        </div>
+        <div class="question-responses" id="br-q3-c">
+          I would appreciate the gesture.
+        </div>
+      </div>
+      <p class="count">0</p>
+    </div>
+
+    <div class="item" id="item7">
+
+      <h2 class="br-question">
+        One more question: You're watching a stage play - a banquet is in progress. The guests are enjoying an appetizer of raw oysters. The entree consists of boiled dog.
+      </h2>
+      <div class="answers">
+        <div class="question-responses" id="br-q4-a">
+          I feel bad for the oysters.
+        </div>
+        <div class="question-responses" id="br-q4-b">
+          I don't like seafood.
+        </div>
+        <div class="question-responses" id="br-q4-c">
+          Disgusting!
+        </div>
+      </div>
+      <p class="count">0</p>
+    </div>
+
+
+    <div class="item" id="item8">
+      <div id="get-replicant">
+        <h2>Are you a replicant?</h2>
+      </div>
+
+      <div id="replicant-answer">
+        <p>You are <span id="replicant-chance">0</span>% likely to be a replicant.</p>
+      </div>
+      <p class="count">0</p>
+    </div>
+
+    <div class="item" id="item9">
+      <img id="hug" src="assets/virtual-hug.gif">
+      <div id="get-hug">
+        <h2>Get free hugs</h2>
+      </div>
+      <p class="count">0</p>
+    </div>
+
+    <div class="item" id="item10">
+      <div class="div1-a" id="one"></div>
+      <div class="div1-a" id="two"></div>
+      <div class="div2-a" id="three"></div>
+      <div class="div2-a" id="four"></div>
+
+      <p class="count">0</p>
+    </div>
+
+    <div class="item" id="item11">
+      <div class="div1-b" id="one"></div>
+      <div class="div1-b" id="two"></div>
+      <div class="div2-b" id="three"></div>
+      <div class="div2-b" id="four-1"></div>
+      <p class="count">0</p>
+    </div>
+
+    <div class="item" id="item12">
+      <div class="div1-b" id="one"></div>
+      <div class="div1-b" id="two"></div>
+      <div class="div1-c" id="one"></div>
+      <div class="div1-c" id="two"></div>
+      <div class="div2-b" id="four-1"></div>
+      <div class="div2-b" id="four-1"></div>
+      <p class="count">0</p>
+    </div>
+
+    <div class="item" id="item13">
+      <h1 id="grow">Grow</h1>
+      <p class="count">0</p>
+    </div>
+
+    <div class="item" id="item14">
+      <h1>Get<span id="loud">loud</h1></h1>
+        <p class="count">0</p>
+      </div>
+
+      <div class="item" id="item15">
+        <h1>Get<span id="louder">louder</h1></h1>
+          <p class="count">0</p>
+        </div>
+
+        <div class="item" id="item16">
+          <h1 id="blow-up">blow up text</h1>
+          <p class="count">0</p>
+        </div>
+
+        <div class="item" id="item17">
+          <h6 id="tidy"> Tidy up text </h6>
+          <p class="count">0</p>
+        </div>
+
+        <div class="item" id="item18">
+          <!-- <h3 id="input-name">Hello, stranger. What's your name?</h6> -->
+          <a href="#"; id="test">Pop</a>
+          <div id="lightbox"></div>
+          <div id="lb-content">
+            <span id="lb-close">x</span>
+            <p>Up</p>
+          </div>
+          <p class="count">0</p>
+        </div>
+
+        <div class="item" id="item19">
+          <h3 id="sleep">Turn off the lights</h3>
+          <div id="page-cover"></div>
+          <p class="count">0</p>
+        </div>
+
+        <div class="item" id="item20">
+          <h1 id="light">Turn on the lights</h1>
+          <p class="count">0</p>
+        </div>
+
+        <div class="item" id="item21">
+          <div class="bulb-frame">
+            <svg width="76px" height="94px" viewBox="0 0 76 94" id="bulb" onclick="void(0);">
+              <path
+              d="M76,37.037 C76,59.939 55.6428571,75.427 55.6428571,93.5 L20.3571429,93.5 C20.3571429,75.427 0,59.9335 0,37.037 C0,13.1505 18.9891429,0 37.9782857,0 C56.9891429,0 76,13.167 76,37.037 L76,37.037 Z"
+              ></path>
+            </svg>
+
+            <div id="glow"></div>
+
+            <svg width="32px" height="33px" viewBox="0 0 32 33" id="base">
+              <path
+              d="M29.3333333,0 L2.66666667,0 C1.19466667,0 0,1.232 0,2.75 C0,4.268 1.19466667,5.5 2.66666667,5.5 L29.3333333,5.5 C30.8053333,5.5 32,4.268 32,2.75 C32,1.232 30.8053333,0 29.3333333,0 L29.3333333,0 Z M29.3333333,11 L2.66666667,11 C1.19466667,11 0,12.232 0,13.75 C0,15.268 1.19466667,16.5 2.66666667,16.5 L29.3333333,16.5 C30.8053333,16.5 32,15.268 32,13.75 C32,12.232 30.8053333,11 29.3333333,11 L29.3333333,11 Z M30.6666667,22 L1.33333333,22 L9.072,31.1245 C10.0853333,32.3125 11.552,33 13.088,33 L18.9173333,33 C20.4533333,33 21.9146667,32.3125 22.928,31.1245 L30.6666667,22 L30.6666667,22 Z"
+              ></path>
+            </svg>
+          </div>
+          <p class="count">0</p>
+        </div>
+
+        <div class="item" id="item22">
+          <div id="circle-shadow"></div>
+          <p class="count">0</p>
+        </div>
+
+        <div class="item" id="item23">
+          <div id="circle-yes"><h1>yes</h1>
+          <h1 style="display: none">no</div>
+
+          <p class="count">0</p>
+        </div>
+
+        <div class="item" id="item24">
+          <div id="circle-invert"><h1>invert colors</h1>
+          <h1 style="display: none">revert</div>
+          <p class="count">0</p>
+        </div>
+
+        <div class="item" id="item25">
+          <div id="invert-top"><h1>INVERT</h1></div>
+          <div id="invert-bottom"><h1>EVERYTHING</h1></div>
+          <p class="count">0</p>
+        </div>
+
+        <div class="item" id="item26">
+          <div id="kittens"><h1>KITTENS</h1></div>
+          <img style="display: none" id="kittens-gif" src="assets/kittens.gif">
+          <p class="count">0</p>
+        </div>
+
+        <div class="item" id="item27">
+          <div id="glow-2"><h1>Neon Sunrise</h1></div>
+          <p class="count">0</p>
+        </div>
+
+        <div class="item" id="item28">
+          <div id="glow-text"><h1>#glowing</h1></div>
+          <p class="count">0</p>
+        </div>
+
+        <div class="item" id="item29">
+          <div id="glow-text-all"><h1>Glow text all</h1></div>
+          <p class="count">0</p>
+        </div>
+
+        <div class="item" id="item30">
+          <h1 id="blur-text">Need Glasses?<br>Need Glasses?<br>Need Glasses?<br>Need Glasses?</h1>
+          <p class="count">0</p>
+        </div>
+
+        <div class="item" id="item31">
+          <h1 id="blur-text-all">Take off glasses</h1>
+          <p class="count">0</p>
+        </div>
+
+        <div class="item" id="item32">
+          <img id="glasses" src="assets/glasses.png">
+          <h1>Put on glasses</h1>
+          <p class="count">0</p>
+        </div>
+
+        <div class="item" id="item33">
+          <p id="blurry-text-2">
+          <span>When</span>
+          <span>life</span>
+          <span>get</span>
+          <span>blurry</span>
+          <span>adjust</span>
+          <span>your</span>
+          <span>focus</span>
+         </p>
+          <p class="count">0</p>
+        </div>
+
+        <div class="item" id="item34">
+          <h1 id="translate">перевести страницу?</h1>
+          <div id="google_translate_element"></div>
+          <p class="count">0</p>
+        </div>
+
+        <div class="item" id="item35">
+          <h2 id="jim-text">This is Jim. Don't poke him!</h2>
+          <img class="emoji" id="jim" src="assets/cowboy.png">
+          <p class="count">0</p>
+        </div>
+
+        <div class="item" id="item36">
+          <h1 id="yeet">yeet?</h1>
+          <p class="count">0</p>
+        </div>
+
+        <div class="item" id="item37">
+          <h1 id="motivation">You are <br><span id="random-motivate"></span></h1>
+          <p class="count">0</p>
+        </div>
+
+        <div class="item" id="item38">
+          <h1 id="circles">Circles only</h1>
+          <p class="count">0</p>
+        </div>
+
+        <div class="item" id="item39">
+          <h1 id="yeet">Drag Me!</h1>
+          <p class="count">0</p>
+        </div>
+
+        <div class="item" id="item40">
+          <h1 id="yeet">Drag Everything</h1>
+          <p class="count">0</p>
+        </div>
+
+        <div class="item" id="item41">
+          <img id="self-destruct" src="assets/destruct.jpg" />
+          <p class="count">0</p>
+        </div>
+
+        <div class="item" id="item42">
+          <h1 id="item42-text">&#*+%???</h1>
+          <div id="messenger"></div>
+          <p class="count">0</p>
+        </div>
+
+        <div class="item" id="item43">
+          <!-- <input type="button" value="click to go fullscreen" onclick="requestFullScreen()"> -->
+          <a id="virus-message" href="http://fakebsod.com/generic">
+            <p><span id="virus-span">Break My Computer.<br></span></p>
+          </a>
+          <p class="count">0</p>
+        </div>
+
+        <div class="item" id="item44">
+          <h1 class="centered" id="dance">Dance Party</h1>
+
+          <p class="count">0</p>
+        </div>
+
+        <div class="item" id="item45" onclick="playAudio()">
+          <h1 class="centered" id="disco">Disco Dance</h1>
+          <audio id="myAudio">
+          <source src="assets/disco.mp3" type="audio/mpeg">
+          </audio>
+          <p class="count">0</p>
+        </div>
+
+        <div class="item" id="item46" onclick="playJazzAudio()">
+          <h1 class="centered" id="jazz">Smooth Jazz</h1>
+          <audio id="jazzAudio">
+          <source src="assets/jazz.mp3" type="audio/mpeg">
+          </audio>
+          <p class="count">0</p>
+        </div>
+
+        <div class="item" id="item47">
+          <h1 class="centered" >Get Colorful Tiles</h1>
+          <p class="count">0</p>
+        </div>
+
+        <div class="item" id="item48">
+          <h1 class="centered" >Tiles Mosaic</h1>
+          <p class="count">0</p>
+        </div>
+
+        <div class="item animation-target" id="item49">
+          <h1 class="centered bold">bounce</h1>
+          <p class="count">0</p>
+        </div>
+
+        <div class="item" id="item50">
+          <h1 id="yee-haw">YEE-HAW</h1>
+          <img id="cowboy-img" src="assets/cowboy.png">
+          <p class="count">0</p>
+        </div>
+
+
+
+        <script src="jquery.color.js"></script>
+        <script src="jquery-ui.js"></script>
+        <script src="bounce.js"></script>
+        <script type="text/javascript">
+        function googleTranslateElementInit() {
+          new google.translate.TranslateElement({pageLanguage: 'en'}, 'google_translate_element');
+        }
+        </script>
+
+        <script type="text/javascript" src= "https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+        <script src="https://button.glitch.me/button.js"></script>
+      </body>
+      </html>
