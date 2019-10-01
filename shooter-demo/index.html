@@ -4,7 +4,12 @@
   <!-- include ar.js for A-Frame -->
   <script src="https://jeromeetienne.github.io/AR.js/aframe/build/aframe-ar.js"></script>
   <script src="https://rawgit.com/donmccurdy/aframe-extras/master/dist/aframe-extras.loaders.min.js"></script>
+  <script src="https://unpkg.com/aframe-physics-system@2.1.0/dist/aframe-physics-system.js"></script>
+  <script src="assets/index.js"></script>
   <script src="assets/aframe-super-shooter-kit.min.js"></script>
+  <script src="assets/game-manager.js"></script>
+  <script src="assets/collision-helper.js"></script>
+  <script src="assets/enemy.js"></script>
   <script>
   /**
   * Click mouse to shoot.
@@ -16,46 +21,83 @@
   });
 
   /**
-  * Change color when hit.
+  * Ghost disappear reappear
   */
-  AFRAME.registerComponent('hit-handler', {
-    dependencies: ['material'],
-
+  AFRAME.registerComponent('hide-appear', {
     init: function () {
-      var color;
-      var el = this.el;
+      var el = document.querySelector(".target");
+      // Make ghost disappear after 3000 ms
+      window.setInterval(function(){
+        el.setAttribute("visible",true);
+        console.log("ghost appeared!");
+        window.setTimeout(function(){
 
-      color = new THREE.Color();
-      color.set('#666');
-      el.components.material.material.color.copy(color);
-      el.addEventListener('hit', () => {
-        color.addScalar(0.05);
+          function randomNum(min, max) {
+              return Math.floor(Math.random() * max + min);
+          };
+
+          function chooseRandomPos() {
+            var xPos = randomNum(-10, 10);
+            var yPos = randomNum(0, 10);
+            var zPos = randomNum(-10, 10);
+            return { 'x': xPos, 'y': yPos, 'z': zPos};
+          };
+
+          var position = chooseRandomPos();
+          //set random position
+          // el.object3D.position.set(setPosition);
+          el.object3D.position.set(position.x, position.y, position.z);
+          console.log(el.object3D.position.set(position.x, position.y, position.z));
+
+          //set visibility
+          el.setAttribute("visible",false);
+          console.log("ghost is gone!");}, 9000);
+        },7000);
+      }
+    });
+
+    /**
+    * Change color when hit.
+    */
+    AFRAME.registerComponent('hit-handler', {
+      dependencies: ['material'],
+
+      init: function () {
+        var color;
+        var el = this.el;
+
+        color = new THREE.Color();
+        color.set('#666');
         el.components.material.material.color.copy(color);
-      });
+        el.addEventListener('hit', () => {
+          console.log("target hit!!!");
+          el.parentNode.removeChild(el);
+        });
 
-      el.addEventListener('die', () => {
-        color.setRGB(1, 0, 0);
-        el.components.material.material.color.copy(color);
-      });
-    }
-  });
-  </script>
-</head>
+        // el.addEventListener('die', () => {
+        //   color.setRGB(1, 0, 0);
+        //   el.components.material.material.color.copy(color);
+        // });
+      }
+    });
+    </script>
+  </head>
 
-<body>
-  <a-scene embedded arjs >
-    <a-assets>
-      <a-asset-item id="ghost" src="assets/inky_animated/scene.gltf"></a-asset-item>
-    </a-assets>
+  <body>
+    <a-scene embedded arjs>
+      <a-assets>
+        <a-asset-item id="ghost" src="assets/inky_animated/scene.gltf"></a-asset-item>
+      </a-assets>
 
-    <a-entity gltf-model="#ghost" animation-mixer position="5.5 2.0 0"></a-entity>
-    <!-- background="color: #DADADA" -->
-    <a-entity id="bulletTemplate" bullet geometry="primitive: sphere; radius: 0.1" material="color: orange"></a-entity>
+      <a-text id="textField" position="0 2.5 -5" value="Ghostbusters!"></a-text>
 
-    <a-entity class="target" target="healthPoints: 10" geometry="primitive: box" material="color: teal" position="0 0 -4" hit-handler></a-entity>
+      <a-entity class="target" target="healthPoints: 1, active: true" gltf-model="#ghost" position="0 0 -2" animation-mixer hit-handler hide-appear></a-entity>
+      <!-- background="color: #DADADA" -->
+      <a-entity id="bulletTemplate" bullet geometry="primitive: sphere; radius: 0.1" material="color: orange"></a-entity>
 
-    <a-entity id="gun" shooter geometry="primitive: box; width: 0.1; height: 0.1; depth: 0.3" material="color: red" click-to-shoot position="0 0 -1"></a-entity>
+      <!-- <a-entity id="gun" shooter geometry="primitive: box; width: 0.1; height: 0.1; depth: 0.3" material="color: red" click-to-shoot position="0 0 -1"></a-entity> -->
 
-    <a-camera id="camera" position="-1 0 0" shooter click-to-shoot></a-camera>
-  </a-scene>
-</body>
+      <!-- <a-entity gltf-model="#ghost" id="ghost" static-body enemy cursor-listener position="0 1.8 -10"></a-entity> -->
+      <a-camera id="camera" position="-1 0 0" shooter click-to-shoot></a-camera>
+    </a-scene>
+  </body>
