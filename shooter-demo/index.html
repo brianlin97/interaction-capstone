@@ -28,8 +28,8 @@
       var el = document.querySelector(".target");
       // Make ghost disappear after 3000 ms
       window.setInterval(function(){
-        el.setAttribute("visible",true);
-        console.log("ghost appeared!");
+        el.setAttribute("visible",false);
+        console.log("ghost is gone!");
         window.setTimeout(function(){
 
           function randomNum(min, max) {
@@ -50,9 +50,9 @@
           console.log(el.object3D.position.set(position.x, position.y, position.z));
 
           //set visibility
-          el.setAttribute("visible",false);
-          console.log("ghost is gone!");}, 9000);
-        },7000);
+          el.setAttribute("visible",true);
+          console.log("ghost here!");}, 500);
+        },9000);
       }
     });
 
@@ -89,11 +89,11 @@
         <a-asset-item id="ghost" src="assets/inky_animated/scene.gltf"></a-asset-item>
       </a-assets>
 
-      <a-text id="textField" position="0 2.5 -5" value="Ghostbusters!"></a-text>
+      <a-text id="textField" position="0 2.5 -5" value="Ghostbusters! \n Look for the sneaky ghost."></a-text>
 
-      <a-entity class="target" target="healthPoints: 1, active: true" gltf-model="#ghost" position="0 0 -2" animation-mixer hit-handler hide-appear></a-entity>
+      <a-entity class="target" target="healthPoints: 1, active: true" gltf-model="#ghost" position="0 0 -10" animation-mixer hit-handler hide-appear></a-entity>
       <!-- background="color: #DADADA" -->
-      <a-entity id="bulletTemplate" bullet geometry="primitive: sphere; radius: 0.1" material="color: orange"></a-entity>
+      <a-entity id="bulletTemplate" bullet geometry="primitive: sphere; radius: 0.3" material="color: orange"></a-entity>
 
       <!-- <a-entity id="gun" shooter geometry="primitive: box; width: 0.1; height: 0.1; depth: 0.3" material="color: red" click-to-shoot position="0 0 -1"></a-entity> -->
 
