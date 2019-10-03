@@ -210,7 +210,7 @@
 
           <!-- Enemies -->
           <a-entity sound="src: #impact; poolSize: 5"></a-entity>
-          <a-entity class="target" target="healthPoints: 1, active: true" gltf-model="#ghost" position="0 0 -10" target="static: false"  hit-handler >
+          <a-entity class="target" target="healthPoints: 1, active: true" gltf-model="#ghost" position="0 0 -10" target="static: false" animation-mixer hit-handler hide-appear>
             <a-entity sound="src: #soundEnemy1; poolSize: 5"></a-entity>
           </a-entity>
           <a-entity class="target2" target="healthPoints: 1, active: true" gltf-model="#ghost" position="0 0 -20" target="static: false" animation-mixer hit-handler hide-appear2>
