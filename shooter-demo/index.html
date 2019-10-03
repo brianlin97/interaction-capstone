@@ -163,12 +163,22 @@
             el.components.material.material.color.copy(color);
             el.addEventListener('hit', () => {
               console.log("target hit!!!");
-              this.explosion = $("#cloudExplosion")[0].object3D;
-              console.log(this.explosion);
-              this.explosion.position.set(5,5,5);
-              this.explosion.visible = true;
+              // hitText.setAttribute('position', );
+              $("#screen-flash").css({"opacity": "1"}).delay(500)
+              .queue( function(next){
+                $(this).css({"opacity": "0"});
+                next();
+              });;
               el.parentNode.removeChild(el);
             });
+
+
+            // var hitText = document.createElement('a-text');
+            // hitText.setAttribute('id', 'hit-text');
+            // hitText.setAttribute('value', 'Ghost captured!');
+            // hitText.setAttribute('visible', 'true!');
+            // console.log(el.components.target.lastBulletHit);
+            // hitText.setAttribute('position', el.components.target.lastBulletHit);
 
             // el.addEventListener('die', () => {
             //   color.setRGB(1, 0, 0);
@@ -180,6 +190,7 @@
       </head>
 
       <body>
+        <div id="screen-flash" style="position: absolute; background-color:blue; width:100vw; height:100vh; z-index: 100; opacity:0"></div>
         <a-scene embedded arjs>
           <a-assets>
             <a-asset-item id="ghost" src="assets/inky_animated/scene.gltf"></a-asset-item>
@@ -199,7 +210,7 @@
 
           <!-- Enemies -->
           <a-entity sound="src: #impact; poolSize: 5"></a-entity>
-          <a-entity class="target" target="healthPoints: 1, active: true" gltf-model="#ghost" position="0 0 -10" target="static: false" animation-mixer hit-handler hide-appear>
+          <a-entity class="target" target="healthPoints: 1, active: true" gltf-model="#ghost" position="0 0 -10" target="static: false"  hit-handler >
             <a-entity sound="src: #soundEnemy1; poolSize: 5"></a-entity>
           </a-entity>
           <a-entity class="target2" target="healthPoints: 1, active: true" gltf-model="#ghost" position="0 0 -20" target="static: false" animation-mixer hit-handler hide-appear2>
