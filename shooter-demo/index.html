@@ -5,6 +5,7 @@
   <script src="https://jeromeetienne.github.io/AR.js/aframe/build/aframe-ar.js"></script>
   <script src="https://rawgit.com/donmccurdy/aframe-extras/master/dist/aframe-extras.loaders.min.js"></script>
   <script src="https://unpkg.com/aframe-physics-system@2.1.0/dist/aframe-physics-system.js"></script>
+  <script type="text/javascript" src="https://code.jquery.com/jquery-latest.js"></script>
   <script src="assets/index.js"></script>
   <script src="assets/aframe-super-shooter-kit.min.js"></script>
   <script src="assets/game-manager.js"></script>
@@ -16,88 +17,210 @@
   */
   AFRAME.registerComponent('click-to-shoot', {
     init: function () {
-      document.body.addEventListener('mousedown', () => { this.el.emit('shoot'); });
+      document.body.addEventListener('mousedown', () => {
+        this.el.emit('shoot');
+        this.el.querySelector('[sound]').components.sound.playSound();
+      });
     }
   });
+
 
   /**
   * Ghost disappear reappear
   */
   AFRAME.registerComponent('hide-appear', {
     init: function () {
-      var el = document.querySelector(".target");
-      // Make ghost disappear after 3000 ms
-      window.setInterval(function(){
-        el.setAttribute("visible",false);
-        console.log("ghost is gone!");
-        window.setTimeout(function(){
+      var count = 1;
+      $(".target").each(function (index) {
+        var el = document.querySelector(".target");
+        console.log(el);
+        // Make ghost disappear after 3000 ms
+        window.setInterval(function(){
+          el.setAttribute("visible",false);
+          console.log("ghost is gone!");
+          window.setTimeout(function(){
 
-          function randomNum(min, max) {
+            function randomNum(min, max) {
               return Math.floor(Math.random() * max + min);
-          };
+            };
 
-          function chooseRandomPos() {
-            var xPos = randomNum(-20, 20);
-            var yPos = randomNum(0, 10);
-            var zPos = randomNum(-10, 40);
-            return { 'x': xPos, 'y': yPos, 'z': zPos};
-          };
+            function chooseRandomPos() {
+              var xPos = randomNum(-20, 20);
+              var yPos = randomNum(0, 10);
+              var zPos = randomNum(-10, 40);
+              return { 'x': xPos, 'y': yPos, 'z': zPos};
+            };
 
-          var position = chooseRandomPos();
-          //set random position
-          // el.object3D.position.set(setPosition);
-          el.object3D.position.set(position.x, position.y, position.z);
-          console.log(el.object3D.position.set(position.x, position.y, position.z));
+            var position = chooseRandomPos();
+            //set random position
+            // el.object3D.position.set(setPosition);
+            el.object3D.position.set(position.x, position.y, position.z);
+            console.log(el.object3D.position.set(position.x, position.y, position.z));
 
-          //set visibility
-          el.setAttribute("visible",true);
-          console.log("ghost here!");}, 500);
-        },9000);
+            //set visibility
+            el.setAttribute("visible",true);
+
+            el.querySelector('[sound]').components.sound.playSound();
+            // el.get('[sound]').components.sound.playSound();
+            console.log("ghost here!");}, 500);
+          },9000);
+        });
       }
     });
 
-    /**
-    * Change color when hit.
-    */
-    AFRAME.registerComponent('hit-handler', {
-      dependencies: ['material'],
-
+    AFRAME.registerComponent('hide-appear2', {
       init: function () {
-        var color;
-        var el = this.el;
+        var count = 1;
+        $(".target").each(function (index) {
+          var el = document.querySelector(".target2");
+          console.log(el);
+          // Make ghost disappear after 3000 ms
+          window.setInterval(function(){
+            el.setAttribute("visible",false);
+            console.log("ghost is gone!");
+            window.setTimeout(function(){
 
-        color = new THREE.Color();
-        color.set('#666');
-        el.components.material.material.color.copy(color);
-        el.addEventListener('hit', () => {
-          console.log("target hit!!!");
-          el.parentNode.removeChild(el);
+              function randomNum(min, max) {
+                return Math.floor(Math.random() * max + min);
+              };
+
+              function chooseRandomPos() {
+                var xPos = randomNum(-20, 20);
+                var yPos = randomNum(0, 10);
+                var zPos = randomNum(-10, 40);
+                return { 'x': xPos, 'y': yPos, 'z': zPos};
+              };
+
+              var position = chooseRandomPos();
+              //set random position
+              // el.object3D.position.set(setPosition);
+              el.object3D.position.set(position.x, position.y, position.z);
+              console.log(el.object3D.position.set(position.x, position.y, position.z));
+
+              //play ghost whoosh sounds
+              el.querySelector('[sound]').components.sound.playSound();
+
+              //set visibility
+              el.setAttribute("visible",true);
+              console.log("ghost here!");}, 600);
+            },7500);
+          });
+        }
+      });
+
+      AFRAME.registerComponent('hide-appear3', {
+        init: function () {
+          var count = 1;
+          $(".target").each(function (index) {
+            var el = document.querySelector(".target3");
+            console.log(el);
+            // Make ghost disappear after 3000 ms
+            window.setInterval(function(){
+              el.setAttribute("visible",false);
+              console.log("ghost is gone!");
+              window.setTimeout(function(){
+
+                function randomNum(min, max) {
+                  return Math.floor(Math.random() * max + min);
+                };
+
+                function chooseRandomPos() {
+                  var xPos = randomNum(-20, 20);
+                  var yPos = randomNum(0, 10);
+                  var zPos = randomNum(-10, 40);
+                  return { 'x': xPos, 'y': yPos, 'z': zPos};
+                };
+
+                var position = chooseRandomPos();
+                //set random position
+                // el.object3D.position.set(setPosition);
+                el.object3D.position.set(position.x, position.y, position.z);
+                console.log(el.object3D.position.set(position.x, position.y, position.z));
+
+                //play ghost whoosh sounds
+                el.querySelector('[sound]').components.sound.playSound();
+
+                //set visibility
+                el.setAttribute("visible",true);
+                console.log("ghost here!");}, 700);
+              },5000);
+            });
+          }
         });
 
-        // el.addEventListener('die', () => {
-        //   color.setRGB(1, 0, 0);
-        //   el.components.material.material.color.copy(color);
-        // });
-      }
-    });
-    </script>
-  </head>
+        /**
+        * Change color when hit.
+        */
+        AFRAME.registerComponent('hit-handler', {
+          dependencies: ['material'],
 
-  <body>
-    <a-scene embedded arjs>
-      <a-assets>
-        <a-asset-item id="ghost" src="assets/inky_animated/scene.gltf"></a-asset-item>
-      </a-assets>
+          init: function () {
+            var color;
+            var el = this.el;
 
-      <a-text id="textField" position="0 2.5 -5" value="Ghostbusters! \n Look for the sneaky ghost."></a-text>
+            color = new THREE.Color();
+            color.set('#666');
+            el.components.material.material.color.copy(color);
+            el.addEventListener('hit', () => {
+              console.log("target hit!!!");
+              this.explosion = $("#cloudExplosion")[0].object3D;
+              console.log(this.explosion);
+              this.explosion.position.set(5,5,5);
+              this.explosion.visible = true;
+              el.parentNode.removeChild(el);
+            });
 
-      <a-entity class="target" target="healthPoints: 1, active: true" gltf-model="#ghost" position="0 0 -10" animation-mixer hit-handler hide-appear></a-entity>
-      <!-- background="color: #DADADA" -->
-      <a-entity id="bulletTemplate" bullet geometry="primitive: sphere; radius: 0.3" material="color: orange"></a-entity>
+            // el.addEventListener('die', () => {
+            //   color.setRGB(1, 0, 0);
+            //   el.components.material.material.color.copy(color);
+            // });
+          }
+        });
+        </script>
+      </head>
 
-      <!-- <a-entity id="gun" shooter geometry="primitive: box; width: 0.1; height: 0.1; depth: 0.3" material="color: red" click-to-shoot position="0 0 -1"></a-entity> -->
+      <body>
+        <a-scene embedded arjs>
+          <a-assets>
+            <a-asset-item id="ghost" src="assets/inky_animated/scene.gltf"></a-asset-item>
+            <a-asset-item id="cloud" src="assets/cloud.obj"></a-asset-item>
+            <a-asset-item id="soundEnemy1" src="assets/sounds/swoosh1.mp3" preload="auto" response-type="arraybuffer"></a-asset-item>
+            <a-asset-item id="soundEnemy2" src="assets/sounds/swoosh2.mp3" response-type="arraybuffer"></a-asset-item>
+            <a-asset-item id="soundEnemy3" src="assets/sounds/swoosh3.mp3" response-type="arraybuffer"></a-asset-item>
+            <a-asset-item id="lazer1" src="assets/sounds/lazer.mp3" response-type="arraybuffer"></a-asset-item>
+            <a-asset-item id="impact" src="assets/sounds/impact.mp3" response-type="arraybuffer"></a-asset-item>
+          </a-assets>
 
-      <!-- <a-entity gltf-model="#ghost" id="ghost" static-body enemy cursor-listener position="0 1.8 -10"></a-entity> -->
-      <a-camera id="camera" position="-1 0 0" shooter click-to-shoot></a-camera>
-    </a-scene>
-  </body>
+          <!-- Text -->
+          <a-text id="textField" position="0 2.5 -5" value="Ghostbusters! \n Look for the sneaky ghost."></a-text>
+
+          <!-- Explosion -->
+          <a-obj-model id="cloudExplosion" src="#cloud" position="0 2.5 -5" visible="true"></a-obj-model>
+
+          <!-- Enemies -->
+          <a-entity sound="src: #impact; poolSize: 5"></a-entity>
+          <a-entity class="target" target="healthPoints: 1, active: true" gltf-model="#ghost" position="0 0 -10" target="static: false" animation-mixer hit-handler hide-appear>
+            <a-entity sound="src: #soundEnemy1; poolSize: 5"></a-entity>
+          </a-entity>
+          <a-entity class="target2" target="healthPoints: 1, active: true" gltf-model="#ghost" position="0 0 -20" target="static: false" animation-mixer hit-handler hide-appear2>
+            <a-entity sound="src: #soundEnemy2; poolSize: 5"></a-entity>
+          </a-entity>
+          <a-entity class="target3" target="healthPoints: 1, active: true" gltf-model="#ghost" position="0 0 -30" target="static: false" animation-mixer hit-handler hide-appear3>
+            <a-entity sound="src: #soundEnemy3; poolSize: 5"></a-entity>
+          </a-entity>
+          <!-- background="color: #DADADA" -->
+          <!-- <a-entity id="bulletTemplate" bullet geometry="primitive: sphere; radius: 1" speed= "5" material="color: orange"></a-entity> -->
+
+          <a-entity bullet="name: normal; speed: 40.0; poolSize: 20"
+          geometry="primitive: icosahedron; radius: 2.5;"
+          material="color: #FF7; emissiveIntensity: 0.5; emissive: #FF7">
+        </a-entity>
+
+        <!-- <a-entity id="gun" shooter geometry="primitive: box; width: 0.1; height: 0.1; depth: 0.3" material="color: red" click-to-shoot position="0 0 -1"></a-entity> -->
+
+        <!-- <a-entity gltf-model="#ghost" id="ghost" static-body enemy cursor-listener position="0 1.8 -10"></a-entity> -->
+        <a-camera id="camera" position="-1 0 0" shooter click-to-shoot>
+          <a-entity sound="src: #lazer1; poolSize: 5"></a-entity>
+        </a-camera>
+      </a-scene>
+    </body>
