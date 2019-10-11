@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Hello!</title>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- import the webpage's stylesheet -->
+  <link rel="stylesheet" href="style.css">
+  <!-- <link rel="stylesheet" href="fixed-positioning.css"> -->
+  <!-- import the webpage's javascript file -->
+  <script type="text/javascript" src="https://code.jquery.com/jquery-latest.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <script src="skrollr.min.js"></script>
+  <script src="../all.min.js"></script>
+  <link rel="stylesheet" href="https://use.typekit.net/qjr8zcc.css">
+
+  <link href="https://fonts.googleapis.com/css?family=Inconsolata|Open+Sans:400,700,800&display=swap" rel="stylesheet">
+
+</head>
+<body>
+  <!-- <div id="mySidenav" class="sidenav">
+  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+</div>
+<span onclick="openNav()" <i class="fas fa-bars"></i> </span> -->
+
+<div class="scroll-container">
+  <div id="scroll0">
+    <h1 id="scroll0-h1"
+    data-start="top:50%;"
+    data-500="top:-60%"
+    >Scroll!</h1>
+  </div>
+
+  <!-- Scroll 1 -->
+  <div class="scroll" id="scroll1"
+  data-500="opacity: 0"
+  data-800="opacity: 1; background-color:rgb(255,255,255)"
+  data-1500=""
+  data-2000="opacity:0">
+  <div class="count">1</div>
+  <h1 id="scroll1-title"
+  data-500="color:rgb(255,255,255); top:20%"
+  data-1500="color:rgb(0,0,0)">Things aren't always</h1>
+  <h1 id="scroll1-black"
+  data-500="color:rgb(255,255,255); top:30%"
+  data-800="opacity: 1;"
+  data-1000="opacity: 0;">#000000</h1>
+  <h1 id="scroll1-white"
+  data-1000="color:rgb(0,0,0);opacity: 0;top:30%"
+  data-1200="opacity: 1;">#FFFFFF</h1>
+</div>
+
+<!-- Scroll 2 -->
+
+<div class="scroll" id="scroll2"
+data-2200="opacity: 0"
+data-2300="opacity: 1">
+  <div class="count">2</div>
+  <h1 id="scroll2-push-text"
+  data-3000="top:30%"
+  data-3500="top:-50%">PUSH</h1>
+  <div id="scroll2-push"
+  data-2800="opacity:1; bottom:0%"
+  data-3500="bottom:30%"a>
+  <h1 id="scroll2-nice"
+  data-3000="opacity:0"
+  data-3300="opacity:1">Nice!</h1>
+  </div>
+</div>
+
+<!-- Scroll 3 -->
+<div id="scroll3-push"
+data-4000="opacity:0; bottom:0%"
+data-4300="opacity:1"
+data-4800="bottom:50%;">
+<div class="count">3</div>
+<h1 id="scroll3-boink"
+data-4300="opacity:0"
+data-4400="opacity:1">boop</h1>
+</div>
+
+<!-- Scroll 4 -->
+<div id="scroll3-push"
+data-4000="opacity:0; bottom:0%"
+data-4300="opacity:1"
+data-4800="bottom:50%;">
+<div class="count">4</div>
+<h1 id="scroll3-boink"
+data-4300="opacity:0"
+data-4400="opacity:1"
+data-4700="opacity:0">boop</h1>
+</div>
+
+<!-- Scroll 5 -->
+<div id="scroll3-push"
+data-5000="opacity:0; top:0%; background-color:rgb(0, 0, 0);"
+data-5300="opacity:1"
+data-5800="top:50%; background-color: rgb(184, 176, 141);"
+data-6000="background-color: rgb(255, 221, 71);"
+data-6200="background-color: rgb(184, 176, 141);"
+data-7500="opacity:1"
+data-8000="opacity:0;">
+<div class="count">5</div>
+<!-- <h1 id="scroll3-boink"
+data-5000="opacity:0"
+data-5500="opacity:1">boop</h1> -->
+</div>
+
+<!-- Scroll 6,7,8 -->
+<div id="scroll6-push"
+data-6500="opacity:0; bottom:0%; background-color:rgb(0, 0, 0);"
+data-7000="opacity:1"
+data-7050="bottom:0%; background-color: rgb(184, 176, 141);"
+data-8000="height:100vh;">
+<div class="count"
+data-8800="opacity:1"
+data-8900="opacity:0">6</div>
+<div class="count"
+data-9000="opacity:0"
+data-9100="opacity:1"
+data-12400=""
+data-12500="opacity:0">7</div>
+<div class="count"
+data-12500="opacity:0"
+data-12600="opacity:1"
+data-13400=""
+data-13500="opacity:0">8</div>
+<div class="count"
+data-14000="opacity:0"
+data-14100="opacity:1"
+data-17400="opacity:1"
+data-17500="opacity:0">9</div>
+<div class="count"
+data-17400="opacity:0"
+data-17500="opacity:1">10</div>
+<h1 id="scroll6-scroll-1"
+data-8000="opacity:0"
+data-8100="opacity:1; bottom:25%"
+data-10400="transform:rotate(0deg)"
+data-10800="transform:rotate(180deg)"
+data-11500=""
+data-12000="transform:rotate(0deg)"
+data-13000="bottom:25%"
+data-13500="bottom:80%">SCR</h1>
+<h1 id="scroll6-scroll-2"
+data-8000="opacity:0"
+data-8100="opacity:1;  bottom:25%"
+data-10400="transform:rotate(0deg)"
+data-10800="transform:rotate(180deg)"
+data-11500=""
+data-12000="transform:rotate(0deg); bottom:25%"
+data-18000="bottom:10%"
+data-18500="transform:rotate(90deg); color:rgb(40, 56, 69)"
+data-19500="color:rgb(17, 29, 59)">O</h1>
+<h1 id="scroll6-scroll-3"
+data-8000="opacity:0"
+data-8100="opacity:1;"
+data-10400="transform:rotate(0deg)"
+data-10800="transform:rotate(180deg)"
+data-11500=""
+data-12000="transform:rotate(0deg)"
+data-13000="bottom:25%"
+data-13500="bottom:80%">LL</h1>
+
+<div class="oval"
+data-14000="opacity:0"
+data-14100="opacity:1; transform: scale(.1)"
+data-18000="transform: scale(.75)"
+data-18500=""
+data-22000="transform: scale(4)"></div>
+</div>
+
+
+<!-- Scroll 7 -->
+<!-- <div id="scroll7-push"
+data-8000="opacity:0"
+data-8100="background-color: rgb(184, 176, 141); opacity:1">
+<div class="count">7</div>
+<h1 id="scroll6-scroll-1"
+data-9000="transform:rotate(0deg);"
+data-9500="transform:rotate(180deg);">SCR</h1>
+<h1 id="scroll6-scroll-2"
+data-8000="opacity:0"
+data-8100="opacity:1">O</h1>
+<h1 id="scroll6-scroll-3"
+data-8000="opacity:0"
+data-8100="opacity:1">LL</h1>
+</div> -->
+
+
+</div>
+
+<script type="text/javascript">
+var s = skrollr.init();
+
+function openNav() {
+  document.getElementById("mySidenav").style.width = "250px";
+}
+
+/* Set the width of the side navigation to 0 */
+function closeNav() {
+  document.getElementById("mySidenav").style.width = "0";
+}
+
+for (var i = 1; i < 51; i++) {
+  $("#mySidenav").append("<a href=../main" + i + "/main" + i + ".html>Scroll " + i + "</a>");
+}
+</script>
+
+<script src="script.js"></script>
+</body>
+</html>
