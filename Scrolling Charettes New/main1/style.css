@@ -3,6 +3,7 @@ body {
   overflow-x: hidden;
   padding: 0;
   margin: 0;
+  overflow-y: scroll;
   background-color: black;
 }
 
@@ -72,6 +73,7 @@ div {
   position: absolute;
   font-size: 1.5rem;
   color: #456ae6;
+  /* z-index: 1000000; */
   left: 95vw;
   top: 5vh;
 }
@@ -243,4 +245,249 @@ div {
   border-radius: 50%;
   left: 47vw;
   top: 65vh;
+}
+
+/* Scroll 11 */
+#scroll11-ocean {
+  position: absolute;
+  z-index: 100;
+  background-color: #111d3b;
+  width: 100vw;
+  height: 100vh;
+  overflow-x: hidden;
+  background-position: center; /* Center the image */
+  background-repeat: no-repeat; /* Do not repeat the image */
+  background-size: cover;
+  background-image: url("images/ocean.jpg");
+}
+
+
+#scroll11-ocean h1 {
+  position: absolute;
+  margin: auto;
+  left: 10%;
+  top: 35vh;
+  font-size: 5rem;
+  color: #02141f;
+}
+
+#scroll11-ocean h2 {
+  position: absolute;
+  margin: auto;
+  left: 10%;
+  top: 55vh;
+  font-weight: 400;
+  font-size: 3rem;
+  color: #02141f;
+}
+
+#scroll11-ocean h3 {
+  position: absolute;
+  margin: auto;
+  left: 70%;
+  top: 55vh;
+  font-weight: 400;
+  font-size: 3rem;
+  color: #02141f;
+}
+
+#nemo {
+  position: absolute;
+  left: 10%;
+  top: 50%;
+  opacity: 0;
+  width: 15%;
+}
+
+#diver {
+  position: absolute;
+  left: 50%;
+  top: 45%;
+  opacity: 0;
+  width: 25%;
+}
+
+#shark {
+  position: absolute;
+  left: -20%;
+  top: 30%;
+  opacity: 0;
+  width: 45%;
+}
+
+#blood {
+  position: absolute;
+  left: 120%;
+  top: 30%;
+  opacity: 0;
+  width: 50%;
+}
+
+/* Scroll 22 */
+#dark-ocean {
+  position: absolute;
+  z-index: 150;
+  background-color: #111d3b;
+  width: 100vw;
+  height: 100vh;
+  overflow-x: hidden;
+}
+
+/* Scroll 25 */
+#dark-in-here {
+  color: white;
+  font-weight: 300;
+  position: absolute;
+  left: 80%;
+  top: 80%;
+}
+
+#ocean-middle {
+  color: white;
+  font-weight: 300;
+  font-size: 3rem;
+  position: absolute;
+  left: 20%;
+  top: 30%;
+}
+
+.glowing-orb {
+  background-color:transparent;
+  position: absolute;
+  z-index: 100;
+  width:150px;
+  height:150px;
+  border-radius:50%;
+  box-shadow: 0 0 8px #ea4c89, inset 0 0 8px #ea4c89;
+  -webkit-animation: pulse 2s linear 1s infinite;
+  background-color: #8a2c4f;
+}
+
+.glowing-orb-small {
+  background-color:transparent;
+  position: absolute;
+  width:75px;
+  height:75px;
+  border-radius:50%;
+  box-shadow: 0 0 8px #a1335c, inset 0 0 8px #a1335c;
+  -webkit-animation: pulse 2s linear 1s infinite;
+  background-color: #63233b;
+}
+
+#orb-1 {
+  margin: auto;
+  left: 45%;
+  top: 30vh;
+}
+
+#orb-2 {
+  margin: auto;
+  left: 35%;
+  top: 20vh;
+}
+
+#orb-3 {
+  margin: auto;
+  left: 75%;
+  top: 40vh;
+}
+
+#orb-4 {
+  margin: auto;
+  left: 25%;
+  top: 70vh;
+}
+
+#orb-5 {
+  margin: auto;
+  left: 65%;
+  top: 80vh;
+}
+
+#orb-6 {
+  margin: auto;
+  left: 15%;
+  top: 30vh;
+}
+
+#orb-7 {
+  z-index: -10;
+  margin: auto;
+  left: 25%;
+  top: 40vh;
+}
+
+#orb-8 {
+  z-index: -10
+  margin: auto;
+  left: 15%;
+  top: 80vh;
+}
+
+#orb-9 {
+  z-index: -10
+  margin: auto;
+  left: 60%;
+  top: 60vh;
+}
+
+#orb-10 {
+  z-index: -10
+  margin: auto;
+  left: 80%;
+  top: 80vh;
+}
+
+#orb-11 {
+  z-index: -10
+  margin: auto;
+  left: 63%;
+  top: 30vh;
+}
+
+#orb-12 {
+  z-index: -10
+  margin: auto;
+  left: 89%;
+  top: 38vh;
+}
+
+#glowing-orb-bg {
+  position: absolute;
+  z-index: -100;
+  top: 10vh;
+  max-height: 70%;
+}
+
+#glowing-orb-bg-2 {
+  position: absolute;
+  left: 50vw;
+  top: 13vh;
+  z-index: -100;
+  max-height: 70%;
+}
+
+#deep-sea {
+  position: absolute;
+  font-size: 5rem;
+  color: #ffdeea;
+  left: 20%;
+  top: 30%;
+  z-index: 10;
+}
+
+#depth {
+  font-weight: 300;
+  font-size: 1.5rem;
+  color: #ffdeea;
+  position: absolute;
+  left: 5%;
+  top: 90%;
+}
+
+
+@-webkit-keyframes pulse {
+  0% { box-shadow:0 0 8px #ea4c89, inset 0 0 8px #ea4c89; }
+  50% { box-shadow:0 0 16px #ea4c89, inset 0 0 14px #ea4c89; }
+  100% { box-shadow:0 0 8px #ea4c89, inset 0 0 8px #ea4c89; }
 }
