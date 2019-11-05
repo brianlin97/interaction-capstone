@@ -1,0 +1,12 @@
+{
+"companyName": "DefaultCompany",
+"productName": "VR Scan Sculpting Reality",
+"dataUrl": "campfire_final.data.unityweb",
+"wasmCodeUrl": "campfire_final.wasm.code.unityweb",
+"wasmFrameworkUrl": "campfire_final.wasm.framework.unityweb",
+"TOTAL_MEMORY": 268435456,
+"graphicsAPI": ["WebGL 2.0", "WebGL 1.0"],
+"webglContextAttributes": {"preserveDrawingBuffer": false},
+"splashScreenStyle": "Dark",
+"backgroundColor": "#231F20"
+}
