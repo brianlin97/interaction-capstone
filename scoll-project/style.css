@@ -1,0 +1,52 @@
+body {
+  font-family: "laca", sans-serif;
+  overflow-x: scroll;
+  padding: 0;
+  margin: 0;
+  overflow-y: hidden;
+  overscroll-behavior: none;
+}
+
+canvas {
+  /* height: 1000000px; */
+  position: absolute;
+  z-index: -100;
+  bottom: 0vh;
+  background: #090630;
+}
+
+#title {
+  font-family: "Inconsolata";
+  font-size: 2.5rem;
+  font-weight: 800;
+  position: absolute;
+  color: white;
+  left: 2.5%;
+}
+
+.instruction {
+  position: absolute;
+  color: white;
+  font-weight: 500;
+  font-size: 1.5rem;
+  text-align: center;
+  width: 100%;
+}
+
+#intro {
+  font-size: 2rem;
+  position: absolute;
+  color: white;
+  text-align: center;
+  width: 100%;
+  top: 50vh;
+}
+
+#link {
+  position: absolute;
+  color: white;
+  font-size: 1.25rem;
+  left: 2.5%;
+  font-weight: 600;
+  top: 15%;
+}
