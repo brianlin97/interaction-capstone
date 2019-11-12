@@ -19,6 +19,16 @@ var mouseX = SCREEN_WIDTH * 0.5;
 var mouseY = SCREEN_HEIGHT * 0.5;
 var mouseIsDown = false;
 
+//random number generator
+function getRandomInt(min, max) {
+  min = Math.ceil(min);
+  max = Math.floor(max);
+  return Math.floor(Math.random() * (max - min + 1)) + min;
+}
+
+var colors = ["#2E5266", "#6E8898", "#9FB1BC", "#D3D0CB", "#E2C044"];
+var colorSet;
+
 $( document ).ready(function() {
 
   var lastScrollTop = 0;
@@ -32,7 +42,7 @@ $( document ).ready(function() {
 
       // Register event listeners
       // document.addEventListener("scroll", createParticles);
-      window.setInterval(createParticles, 3000);
+      window.setInterval(createParticles, 5000);
       document.addEventListener('mousemove', documentMouseMoveHandler, true);
       window.addEventListener('mousedown', documentMouseDownHandler, false);
       window.addEventListener('mouseup', documentMouseUpHandler, false);
@@ -44,7 +54,7 @@ $( document ).ready(function() {
 
       windowResizeHandler();
 
-      setInterval( loop, .1 / 1 );
+      setInterval( loop, 1 / 1 );
     }
   }
 
@@ -52,16 +62,14 @@ $( document ).ready(function() {
 
   particles = [];
   function createParticles() {
-
-
     var particle = {
       size: 10,
       position: { x: mouseX  , y: mouseY },
-      offset: { x: 0, y: 0 },
+      offset: { x: 20, y: 20 },
       shift: { x: mouseX, y: mouseY },
       speed: 0.01+Math.random()*0.04,
       targetSize: 10,
-      fillColor: '#' + (Math.random() * 0x404040 + 0xaaaaaa | 0).toString(16),
+      fillColor: colors[getRandomInt(1, 5)],
       // fillColor: "#ff6666",
       orbit: RADIUS*.5 + (RADIUS * .5 * Math.random())
     };
@@ -118,7 +126,7 @@ $( document ).ready(function() {
     return function() {
       // reference the context and args for the setTimeout function
       var context = this,
-        args = arguments;
+      args = arguments;
 
       // Should the function be called now? If immediate is true
       //   and not already in a timeout then the answer is: Yes
@@ -157,30 +165,39 @@ $( document ).ready(function() {
   // Call the debounced function on every mouse move
   window.addEventListener("mousemove",loop);
 
-
-
-  function loop() {
-    RADIUS_SCALE = Math.min( RADIUS_SCALE, RADIUS_SCALE_MAX );
-    var color = 0;
-    context.fillStyle = 'rgba(color, color, color)';
-    context.fillRect(0, 0, context.canvas.width, context.canvas.height);
-    $(window).bind('mousewheel', function(event) {
-      if (event.originalEvent.wheelDelta >= 0) {
-        if (particle.size > 500) {
-          particle.size = 500;
+  $(window).on('wheel', function(event) {
+    for (i = 0, len = particles.length; i < len; i++) {
+      var particle = particles[i];
+      if (event.originalEvent.deltaY <= 0) {
+        if (particles[i].size < 10) {
+          particles[i].size = 10;
         }
-        particle.size -= .05;
+        particles[i].size -= 3;
         console.log('mouse X is ' + mouseX);
         console.log('Scroll up');
       }
       else {
-        if (particle.size < 10) {
-          particle.size = 10
-        }
-        particle.size += .05;
+      //   if (particles[i].size > 10) {
+      //   particle.position.x = particle.shift.x + (particle.orbit*RADIUS_SCALE) * 100;
+      //     particle.position.x = particle.shift.x + (particle.orbit*RADIUS_SCALE) * 100;
+      // }
+      if (particles[i].size > 900 && particles[i].length > 5) {
+        colors = ["#003f5c", "#FF6F5E", "#f5f0e3", "#D3D0CB", "#40BFC1"];
       }
-    console.log("wheelDelta is " + event.originalEvent.wheelDelta);
-    });
+        if (particles[i].size > 1000) {
+          particles[i].size = 1000;
+        }
+        particles[i].size += 3;
+      }
+      console.log("wheelDelta is " + event.originalEvent.deltaY);
+    }
+  });
+
+  function loop() {
+    RADIUS_SCALE = Math.min( RADIUS_SCALE, RADIUS_SCALE_MAX );
+    var color = 0;
+    context.fillStyle = '#2E5266';
+    context.fillRect(0, 0, context.canvas.width, context.canvas.height);
 
     color++;
     console.log("color num is " + color);
@@ -194,13 +211,13 @@ $( document ).ready(function() {
       particle.offset.y += particle.speed * .1;
 
       // Follow mouse with sag
-      particle.shift.x += ( mouseX - particle.shift.x) * (particle.speed) *.5;
+      particle.shift.x += ( mouseX - particle.shift.x) * (particle.speed) * 2;
       particle.shift.y += ( mouseY - particle.shift.y) * (particle.speed);
 
       // Apply position
-      particle.position.x = particle.shift.x + Math.cos(i + particle.offset.x) * (particle.orbit*RADIUS_SCALE)
+      particle.position.x = particle.shift.x + Math.cos(i + particle.offset.x) * (particle.orbit*RADIUS_SCALE) * 1.5;
       // particle.position.x = mouseX -= .05;
-      particle.position.y = particle.shift.y + Math.sin(i + particle.offset.y) * (particle.orbit*RADIUS_SCALE);
+      particle.position.y = particle.shift.y + Math.sin(i + particle.offset.y) * (particle.orbit*RADIUS_SCALE) * 1.5;
 
       // // Limit to screen bounds
       // if (particle.position.x <10 || particle.position.x > SCREEN_WIDTH) {
@@ -214,24 +231,6 @@ $( document ).ready(function() {
       //   mouseY = 500;
       // }
 
-      // $(window).bind('mousewheel', function(event) {
-      //   if (event.originalEvent.wheelDelta >= 0) {
-      //     if (particle.size > 50) {
-      //       particle.size = 50;
-      //     }
-      //     // particle.size += .01;
-      //     mouseX += .005;
-      //     console.log('Scroll up');
-      //   }
-      //   else {
-      //     if (particle.size < 5) {
-      //       particle.size = 5
-      //     }
-      //     // particle.size -= .01;
-      //     mouseY += .005;
-      //   }
-      // });
-
       var random = Math.floor((Math.random() * 2))
       context.beginPath();
       context.fillStyle = particle.fillColor;
@@ -239,7 +238,9 @@ $( document ).ready(function() {
       context.lineWidth = particle.size;
       context.moveTo(lp.x, lp.y);
       context.lineTo(particle.position.x, particle.position.y);
-      context.stroke();
+      // context.stroke();
+      context.shadowBlur = 50;
+      context.shadowColor = "white";
       context.arc(particle.position.x, particle.position.y, particle.size/2, 0, Math.PI*2, true);
       context.fill();
     }
