@@ -68,7 +68,7 @@ function initialize()
 	markerRoot1 = new THREE.Group();
 	scene.add(markerRoot1);
 	let markerControls1 = new THREEx.ArMarkerControls(arToolkitContext, markerRoot1, {
-		type: 'pattern', patternUrl: "assets/pattern-bounce.patt",
+		type: 'pattern', patternUrl: "assets/pattern-bounce-white.patt",
 	})
 	////////////////////////////////////////////////////////////
 	// setup scene
