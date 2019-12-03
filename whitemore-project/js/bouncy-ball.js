@@ -68,7 +68,7 @@ function initialize()
 	markerRoot1 = new THREE.Group();
 	scene.add(markerRoot1);
 	let markerControls1 = new THREEx.ArMarkerControls(arToolkitContext, markerRoot1, {
-		type: 'pattern', patternUrl: "data/kanji.patt",
+		type: 'pattern', patternUrl: "assets/pattern-bounce.patt",
 	})
 	////////////////////////////////////////////////////////////
 	// setup scene
@@ -132,6 +132,7 @@ function initialize()
 	sceneGroup.add( ambientLight );
 	// let helper = new THREE.CameraHelper( light.shadow.camera );
 	// sceneGroup.add( helper );
+
 }
 function update()
 {
