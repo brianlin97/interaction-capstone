@@ -1,7 +1,33 @@
 <!doctype HTML>
 <html>
-<script src="https://aframe.io/releases/0.9.2/aframe.min.js"></script>
-<script src="https://raw.githack.com/jeromeetienne/AR.js/1.7.5/aframe/build/aframe-ar.js"></script>
+<head>
+	<meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+	<title>Hello, world!</title>
+  <script src="https://aframe.io/releases/0.9.2/aframe.min.js"></script>
+  <script src="https://raw.githack.com/jeromeetienne/AR.js/1.7.5/aframe/build/aframe-ar.js"></script>
+  `<script>
+
+//To avoid playing from start if the marker flickers, not sure if needed, but it might be a failsafe when you have mutiple markers and want to make sure the first finishes before launching the second
+var playing = false;
+
+//HTML5 audio, will need user touch input to start on mobile
+var intro = new Audio("assets/song-creepy.mp3");
+
+//Detect end of audio
+intro.addEventListener("ended", function() {
+	intro.currentTime = 0;
+	playing = false;
+});
+
+var intro2 = new Audio("assets/dinner.mp3");
+
+//Detect end of audio
+intro2.addEventListener("ended", function() {
+	intro2.currentTime = 0;
+	playing = false;
+});
+</script> `
+</head>
 <body style='margin : 0px; overflow: hidden;'>
   <a-scene embedded arjs>
     <a-assets>
@@ -10,6 +36,7 @@
       <img id="ida" src="assets/ida.jpg">
       <img id="leigh" src="assets/leigh.jpg">
       <img id="ghost-girl-1" src="assets/ghost-girl-1.png">
+      <a-asset-item id="phonograph" src="assets/phonograph.obj"></a-asset-item>
     </a-assets>
     <!-- <a-marker-camera type="pattern" patternUrl="assets/pattern-enter.patt"></a-marker-camera> -->
     <a-marker preset='custom' type='pattern' url="assets/pattern-enter.patt">
@@ -32,6 +59,7 @@
       wrap-count="30"></a-text>
     </a-marker>
 
+
     <!-- Henry -->
     <a-image
     position="-1 .5 0"
@@ -46,6 +74,7 @@
     value="HENRY HAARSTICK \n The Paternal Ghost. \n (1836-1919)"
     wrap-count="30"></a-text>
 
+    <a-marker preset='custom' type='pattern' url="assets/pattern-ida.patt">
     <!-- Ida -->
     <a-image
     position="-1 .5 0"
@@ -59,7 +88,9 @@
     zOffset = ".5"
     value="IDA HAARSTICK \n The Deceased Daughter. \n (1863-1924)"
     wrap-count="30"></a-text>
+  </a-marker>
 
+    <a-marker preset='custom' type='pattern' url="assets/pattern-leigh.patt">
     <!-- Leigh -->
     <a-image
     position="-1 .5 0"
@@ -73,6 +104,7 @@
     zOffset = ".5"
     value="LEIGH WHITTEMORE \n The Choked Infant. \n (1936-1937)"
     wrap-count="30"></a-text>
+  </a-marker>
 
     <a-marker preset='custom' type='pattern' url="assets/pattern-henry.patt">
       <a-image
@@ -97,30 +129,97 @@
       src="#ghost-girl-1"></a-image>
     </a-marker>
 
+    <a-marker markerhandler cursor="rayOrigin: mouse" emitevents="true" preset='custom' type='pattern' id="music-marker" url="assets/pattern-music.patt">
+      <a-text
+      position="-.5 -.5 -.5"
+      rotation="0 0 0"
+      scale=".25 .25 .25"
+      color="#e31c0e"
+      value="A child's music box is often heard,\n but no box is ever found."
+      wrap-count="30"></a-text>
+      <a-obj-model
+      scale=".1 .1 .1"
+      position="0 -1 -1"
+      src="#phonograph"></a-obj-model>
+                <!-- <a-sound src="assets/song-creepy.mp3" autoplay="false" position="0 2 5"></a-sound> -->
+    </a-marker>
+
+    <a-marker markerhandler2 cursor="rayOrigin: mouse" emitevents="true" preset='custom' type='pattern' id="dinner" url="assets/pattern-dinner.patt">
+      <a-text
+      position="-.5 -.5 -.5"
+      rotation="-90 0 0"
+      scale=".25 .25 .25"
+      value="'I was here by myself, staying in the attic. There were ghostly noises from people talking and arguing downstairs. Other times, I heard party sounds-glasses clinking and piano playing.'"
+      wrap-count="30"></a-text>
+      <!-- <a-obj-model
+      scale=".1 .1 .1"
+      position="0 -1 -1"
+      src="#phonograph"></a-obj-model> -->
+                <!-- <a-sound src="assets/song-creepy.mp3" autoplay="false" position="0 2 5"></a-sound> -->
+    </a-marker>
+
+
     <!-- Bouncy Balls -->
     <a-marker preset='custom' type='pattern' url="assets/pattern-bounce-white.patt">
       <a-text
-      position="0 .5 0"
+      position="0 0 0"
       rotation="0 0 0"
       scale=".5 .5 .5"
       value="Former managers often heard"
       wrap-count="30"></a-text>
       <a-text
-      position="0 .5 1"
+      position="0 0 1"
       rotation="0 0 0"
       scale="1 1 1"
       value="Children Laughing"
       wrap-count="30"></a-text>
       <a-text
-      position="0 .75 .5"
+      position="0 0 .5"
       rotation="0 0 0"
       scale="1 1 1"
       value="Balls Bouncing"
       wrap-count="30"></a-text>
     </a-marker>
 
-    <script src="js/bouncy-ball.js"></script>
+    <!-- <script src="js/bouncy-ball.js"></script> -->
         <a-entity camera></a-entity>
       </a-scene>
+      <script>
+      AFRAME.registerComponent('markerhandler', {
+      	init: function() {
+      		// Set up the tick throttling. Will check if marker is active every 500ms
+      		this.tick = AFRAME.utils.throttleTick(this.tick, 500, this);
+      	},
+      	tick: function(t, dt) {
+
+      		if (document.querySelector("#music-marker").object3D.visible == true && playing == false) {
+      			// MARKER IS PRESENT
+      			intro.play();
+      			playing = true;
+      		} else {
+      			// MARKER IS HIDDEN, do nothing (up to you)
+      		}
+
+      	}
+      });
+
+      AFRAME.registerComponent('markerhandler2', {
+        init: function() {
+          // Set up the tick throttling. Will check if marker is active every 500ms
+          this.tick = AFRAME.utils.throttleTick(this.tick, 500, this);
+        },
+        tick: function(t, dt) {
+
+          if (document.querySelector("#dinner").object3D.visible == true && playing == false) {
+            // MARKER IS PRESENT
+            intro2.play();
+            playing = true;
+          } else {
+            // MARKER IS HIDDEN, do nothing (up to you)
+          }
+
+        }
+      });
+      </script>
     </body>
     </html>
