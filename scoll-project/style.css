@@ -7,21 +7,34 @@ body {
   overscroll-behavior: none;
 }
 
+a {
+  text-decoration: none;
+}
+
+
 canvas {
   /* height: 1000000px; */
   position: absolute;
   z-index: -100;
   bottom: 0vh;
-  background: #090630;
+  background: #0b2442;
 }
 
 #title {
-  font-family: "Inconsolata";
-  font-size: 2.5rem;
-  font-weight: 800;
-  position: absolute;
+  font-family: interstate, sans-serif;
+  width: 30%;
+  font-weight: 300;
+  font-style: normal;
+  font-size: 2rem;
+  text-align: center;
+  position: relative;
   color: white;
-  left: 2.5%;
+  top: 90vh;
+  left: 0%;
+  margin: 0 auto;
+  letter-spacing: 6px;
+  /* writing-mode: vertical-rl;
+text-orientation: upright; */
 }
 
 .instruction {
@@ -34,19 +47,87 @@ canvas {
 }
 
 #intro {
-  font-size: 2rem;
+  font-size: 1.25rem;
   position: absolute;
   color: white;
+  font-weight: 200;
   text-align: center;
   width: 100%;
-  top: 50vh;
+  top: 45vh;
+  letter-spacing: 3px;
 }
+
+#reminder {
+  font-size: 1.25rem;
+  position: absolute;
+  color: white;
+  font-weight: 200;
+  text-align: center;
+  width: 100%;
+  top: 45vh;
+  letter-spacing: 3px;
+  /* opacity: 0; */
+}
+
+
+/* #link a {
+  text-decoration: none;
+} */
 
 #link {
   position: absolute;
   color: white;
-  font-size: 1.25rem;
+  font-size: 2rem;
   left: 2.5%;
-  font-weight: 600;
-  top: 15%;
+  font-weight: 400;
+  top: 90%;
+  left: 95%;
+}
+/* General Styling */
+
+/* Mouse Styling */
+.mouse {
+  display: block;
+  width: 28px;
+  height: 48px;
+  border-radius: 11px 11px 15px 15px;
+  border: 1px solid #fff;
+  position: absolute;
+  left: 50%;
+  top: 55%;
+  margin-left: -13px;
+  z-index: 9999;
+}
+
+.mouse span {
+  display: block;
+  margin: 6px auto;
+  width: 2px;
+  height: 5px;
+  border-radius: 4px;
+  background: #fff;
+  border: 1px solid transparent;
+  -webkit-animation-duration: 1s;
+  animation-duration: 1s;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+  -webkit-animation-iteration-count: infinite;
+  animation-iteration-count: infinite;
+  -webkit-animation-name: scroll;
+  animation-name: scroll;
+}
+
+@keyframes scroll {
+  0% {
+    opacity: 1;
+    -webkit-transform: translateY(0);
+    -ms-transform: translateY(0);
+    transform: translateY(0);
+	}
+  100% {
+    opacity: 0;
+    -webkit-transform: translateY(20px);
+    -ms-transform: translateY(20px);
+    transform: translateY(20px);
+	}
 }

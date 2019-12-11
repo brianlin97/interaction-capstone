@@ -196,7 +196,7 @@ $( document ).ready(function() {
   function loop() {
     RADIUS_SCALE = Math.min( RADIUS_SCALE, RADIUS_SCALE_MAX );
     var color = 0;
-    context.fillStyle = '#2E5266';
+    context.fillStyle = '#1d303b';
     context.fillRect(0, 0, context.canvas.width, context.canvas.height);
 
     color++;
@@ -250,4 +250,6 @@ $( document ).ready(function() {
   console.log( "ready!" );
   $("#instruction1").fadeOut(10000);
   $("#intro").fadeOut(5000);
+  $(".mouse").fadeOut(5000);
+  $("#reminder").hide().delay(10000).fadeIn(2000).fadeOut(5000);
 });
