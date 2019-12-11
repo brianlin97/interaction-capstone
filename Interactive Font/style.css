@@ -9,7 +9,7 @@ width: 150px;
 body {
   height: 300vh;
   font-family: agency-fb-wide, monospace;
-  overflow-x: hidden;
+  /* overflow-x: hidden; */
   font-size: .8rem;
   background-color: #faf8f2;
 }
@@ -126,6 +126,7 @@ body {
   grid-auto-flow: dense;
   position: relative;
   margin: auto;
+  width: 150%;
   top: 10vh;
   left: 10%;
   background-color: #faf8f2;

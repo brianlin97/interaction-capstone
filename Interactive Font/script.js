@@ -1,6 +1,11 @@
 $(document).ready(function() {
 
 
+  // $("body").click(function() {
+  //   var randomSize = Math.floor(Math.random() * 4) + 1;
+  //   $('.grid').css({"grid-template-columns": "repeat(auto-fill, minmax(" + randomSize + "rem, 1fr)"});
+  // });
+
   $(".fade").mouseenter(function() {
     $("#intro").animate("opacity", 1);
   });
