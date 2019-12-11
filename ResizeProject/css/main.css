@@ -1,0 +1,292 @@
+body {
+  background-color: #CBBBA1;
+  color: #292929;
+  overflow-x: hidden;
+  overflow-y: hidden;
+  font-family: "Muli";
+}
+
+#body {
+  animation: shake-small 2s ease-in infinite;
+}
+
+#day {
+  position: absolute;
+  text-align: center;
+  left: 75vw;
+  top: 270px;
+  font-size: .7rem;
+  display: inline-block;
+}
+
+/* #day-count {
+  font-weight: 800;
+  font-size: 2rem;
+} */
+
+#claim {
+  animation: shake-small 2s ease-in infinite;
+  text-align: right;
+  position: absolute;
+  font-size: 1rem;
+  left: 75vw;
+  top: 285px;
+}
+
+#trump-body {
+  position: fixed;
+  display: block;
+  position: absolute;
+  background-size: 200px;
+}
+
+#nose {
+  position: absolute;
+  max-height: 100vh;
+  transform-origin: 0% 0%;
+}
+
+.trump-icon {
+  position: absolute;
+  top: 10px;
+  left: 20px;
+  width: 35px;
+}
+
+.lip {
+  animation: shake-small 2s ease-in infinite;
+  position: absolute;
+  left:190px;
+  top:340px;
+  width: 25px;
+}
+
+.right-line {
+  animation: shake-up-down 2s ease-in infinite;
+}
+
+.left-line {
+  animation: shake-up-down 2s ease-in infinite;
+}
+
+.left-arm {
+  animation: shake-up-down-2 2s ease-in infinite;
+}
+
+.right-arm {
+  animation: shake-up-down 2s ease-in infinite;
+}
+
+.nose-base {
+  animation: shake-small 2s ease-in infinite;
+  display: inline-block;
+  width: 20%;
+  height: 13px;
+  border-radius: 10px;
+  background-color: #FFBE83;
+  position: absolute;
+  z-index: 100;
+  left: 200px;
+  top: 320px;
+}
+
+.text-display {
+  position: absolute;
+  font-family: "Contrail One";
+  z-index: 100;
+}
+
+.text-caption {
+  position: absolute;
+}
+
+#repeat {
+  position: absolute;
+  font-size: .8rem;
+  left: 320px;
+  top: 350px;
+  font-weight: 700;
+
+}
+
+#text-display-1 {
+  position: absolute;
+  font-size: 1.5rem;
+  /* width: 200px;
+  left: 300px; */
+  width: 150px;
+  left: 320px;
+  top: 380px;
+}
+
+
+#text-caption-1 {
+  font-size: .8rem;
+  /* width: 200px; */
+  width: 30%;
+  left: 350px;
+  top: 450px;
+}
+
+
+#fact-checker {
+  position: absolute;
+  font-weight: 800;
+  font-size: .7rem;
+  left: 350px;
+  top: 420px;
+}
+
+
+@media only screen
+and (min-width: 0px)
+and (max-width: 450px) {
+#text-display-1 {
+visibility: hidden;
+}
+#day {
+  visibility: hidden;
+}
+#repeat {
+  visibility: hidden;
+}
+}
+
+
+@media only screen
+and (min-width: 400px)
+and (max-width: 600px) {
+  .nose-base {
+    width: 50vw;
+  }
+  #text-display-1 {
+    position: absolute;
+    font-size: 1.1rem;
+  }
+}
+
+@media only screen
+and (min-width: 600px)
+and (max-width: 800px) {
+  .nose-base {
+    width: 60vw;
+  }
+  #text-display-1 {
+    position: absolute;
+    width: 300px;
+    font-size: 1.5rem;
+  }
+  #claim {
+    transition: 1s;
+    left: 80vw;
+    top: 260px;
+    font-size: 1.5rem;
+  }
+  #day {
+    transition: 1s;
+    left: 80vw;
+    top: 250px;
+    font-size: .8rem;
+  }
+}
+
+@media only screen
+and (min-width: 800px)
+and (max-width: 1000px) {
+  .nose-base {
+    transition: 1s;
+    width: 70vw;
+  }
+  #text-caption-1 {
+    font-size: 1rem;
+    width: 50%;
+  }
+  #text-display-1 {
+    position: absolute;
+    width: 300px;
+    font-size: 1.5rem;
+  }
+  #claim {
+    animation: shake 6s ease-in infinite;
+    left: 75vw;
+    transition: 1s;
+    top: 220px;
+    font-size: 3rem;
+  }
+  #day {
+    transition: 1s;
+    left: 75vw;
+    top: 230px;
+    font-size: 1rem;
+  }
+}
+
+@media only screen
+and (min-width: 1000px)
+and (max-width: 3000px) {
+  .nose-base {
+    animation: shake-small 2s ease-in infinite;
+    transition: 1s;
+    height: 15px;
+    width: 80vw;
+    background-color: #e04122;
+    transform: rotate(2deg);
+    transform-origin: 0% 0%;
+  }
+  #text-display-1 {
+    position: absolute;
+    width: 300px;
+    font-size: 1.5rem;
+  }
+  #text-caption-1 {
+    font-size: 1rem;
+    width: 60%;
+  }
+  #claim {
+    animation: shake-small 1s ease-in infinite;
+    transition: 1s;
+    color: #e04122;
+    top: 170px;
+    left: 60vw;
+    font-size: 5rem;
+  }
+  #day {
+    transition: 1s;
+    left: 60vw;
+    top: 210px;
+    font-size: 1rem;
+    color: #e04122;
+  }
+}
+
+@keyframes shake {
+  0% { transform: translate(1px, 1px) rotate(0deg); }
+  10% { transform: translate(-1px, -2px) rotate(-1deg); }
+  20% { transform: translate(-3px, 0px) rotate(1deg); }
+  30% { transform: translate(3px, 2px) rotate(0deg); }
+  40% { transform: translate(1px, -1px) rotate(1deg); }
+  50% { transform: translate(-1px, 2px) rotate(-1deg); }
+  60% { transform: translate(-3px, 1px) rotate(0deg); }
+  70% { transform: translate(3px, 1px) rotate(-1deg); }
+  80% { transform: translate(-1px, -1px) rotate(1deg); }
+  90% { transform: translate(1px, 2px) rotate(0deg); }
+  100% { transform: translate(1px, -1px) rotate(0deg); }
+}
+
+@keyframes shake-small {
+  0% { transform: translate(0px, 1px) rotate(0deg); }
+  50% { transform: translate(2px, 2px) rotate(-1deg); }
+  100% { transform: translate(0px, 1px) rotate(0deg); }
+}
+
+@keyframes shake-up-down {
+  0% { transform: translate(0px, 1px) rotate(0deg); }
+  50% { transform: translate(0px, 10px) rotate(-1deg); }
+  100% { transform: translate(0px, 1px) rotate(0deg); }
+}
+
+@keyframes shake-up-down-2 {
+  0% { transform: translate(5px, 1px) rotate(0deg); }
+  50% { transform: translate(5px, 10px) rotate(0deg); }
+  100% { transform: translate(5px, 1px) rotate(0deg); }
+}

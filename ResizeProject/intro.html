@@ -1,0 +1,64 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+
+	<link rel="stylesheet" href="css/intro.css" />
+	<link href="https://fonts.googleapis.com/css?family=Muli:500,600,700,800,300&display=swap" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Contrail+One&display=swap" rel="stylesheet">
+	<script type="text/javascript" src="https://code.jquery.com/jquery-latest.js"></script>
+	<script src="js/script.js"></script>
+
+	<script>
+	var titleBox;
+	function openPopup() {
+		var popup,
+		x = window.screenLeft + 50,//(window.outerWidth/2) - (400/2),
+		y = window.screenTop + (window.outerHeight/2) - (250/2) - 50;
+		popup = window.open('main.html', 'trombone'+(Date.now()), 'width=300,height=1000');
+		popup.addEventListener('load', function () {
+			popup.setup();
+			titleBox.style.display = 'none';
+		});
+	}
+	window.addEventListener('load', function () {
+		titleBox = document.getElementById('title-box');
+		titleBox.addEventListener('click', openPopup);
+		// window.addEventListener('focus', function () {titleBox.style.display = 'inline-block';});
+	});
+	</script>
+
+</head>
+<body>
+	<video autoplay id="myVideo">
+		<source src="ref/trump-video.mp4" type="video/mp4">
+		</video>
+	<!-- <audio controls autoplay id="myAudio">
+<source src="ref/trump-video.mp3">
+	</audio> -->
+	<h4 id="quote">"A lie keeps growing and growing until it's as clear as the nose on your face."</h4>
+		<div id="title-box">
+			<h1>TRUMPNOCHIO</h1>
+			<img id="trump-icon" src="ref/SVG/trump-icon-simple.svg">
+			<div class="subtext">
+			<h4>According to the <a target="_blank" href="https://www.washingtonpost.com/graphics/politics/trump-claims-database/">Washington Post</a>, President Trump has made <span>13,435</span> false or misleading claims since assuming office.
+				<h4>Click the button below to open up a new popup, and resize the popup to check the validity of his tweets.</h4>
+			</div>
+				<div class="col">
+					<div class="container-4">
+						<div class="btn btn-four">
+							<span id="btn-text">Click to Resize</span>
+						</div>
+					</div>
+					<!-- <div id="button"><h4 id="click">Click Above to Open</h4></div> -->
+				</div>
+			</div>
+
+			<script>
+			$('#myVideo').bind('ended', function(){
+			   $(this).fadeOut()
+			})
+			$("#quote").delay(17000).fadeIn(2500).delay(1000).fadeOut(1500);
+			$("#title-box").delay(23000).fadeIn(500);
+			</script>
+</body>
+</html>
