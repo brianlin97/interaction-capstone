@@ -1,0 +1,54 @@
+body {
+  font-family: "Noto Sans", sans-serif;
+  color: #141414;
+  background-color: #F4DC88;
+}
+
+* {
+    box-sizing: border-box;
+}
+/* All the snapping stuff */
+.scroll-container {
+    height: 100vh;
+    overflow-y: scroll;
+    scroll-snap-type: y mandatory;
+}
+
+
+/* Other styles */
+section {
+  height: 100vh;
+  scroll-snap-align: center;
+  padding: 1rem;
+  align-items: center;
+  justify-content: center;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-gap: 10px;
+    /* background-color: darkorchid; */
+}
+
+.first {
+  grid-column-start: 3;
+  grid-column-end: 3;
+}
+
+#potato-icon {
+  margin: 20px;
+  position: fixed;
+}
+
+#chatbot-1-1 {
+  position: relative;
+  width: 80%;
+  top:30vh;
+  left: 10vw;
+}
+
+/* section:nth-child(2n) {
+    background-color: turquoise;
+}
+
+section:nth-child(3n) {
+    background-color: tomato;
+} */
