@@ -14,6 +14,23 @@ var chatMessages = [{
   showTime: true,
   time: "7:42"
 },
+{
+  name: "ms3",
+  msg: "In 2016, the FBI’s International Crime Complaint Center received more than 15,000 romance scam complaints in 2016.",
+  delay: 2500,
+  align: "left",
+  showTime: false,
+  time: "7:42"
+},
+{
+  name: "ms3",
+  msg: "This website is created to protect you against these types of scams.",
+  delay: 2600,
+  align: "left",
+  showTime: false,
+  time: "7:42"
+}
+
                    ];
 var chatDelay = 0;
 

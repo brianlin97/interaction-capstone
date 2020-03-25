@@ -3,6 +3,7 @@
 //   $('#main').smoothState({ debug: true });
 // });
 
+
 $(function(){
   'use strict';
   var $page = $('#main'),
