@@ -29,9 +29,7 @@ var chatMessages = [{
   align: "left",
   showTime: false,
   time: "7:42"
-}
-
-                   ];
+}];
 var chatDelay = 0;
 
 function onRowAdded() {
