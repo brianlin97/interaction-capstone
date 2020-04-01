@@ -13,17 +13,51 @@ body {
   display: block;
 }
 
-.intro-svg #send-icon:hover {
-  fill: #0774B1;
-  cursor: pointer;
-}
-
 .intro-text {
   position: relative;
   width: 20%;
   margin: auto;
   display: block;
   bottom: 38vh;
+}
+
+#button-2{
+  display: none;
+}
+
+#button-3{
+  display: none;
+}
+
+#button-4{
+  display: none;
+}
+
+.round:hover {
+  background-color: #ddd;
+  color: black;
+}
+
+
+.next {
+  background-color: #52BDF9;
+  color: white;
+  border:1.5px solid black;
+  font-size: 2rem;
+  text-align: center;
+  pointer-events: auto;
+  width: 50px;
+  height: 50px;
+  margin: 0 auto;
+  display: block;
+  position: absolute;
+  left: 48vw;
+  top: 70vh;
+}
+
+.round {
+  position: absolute;
+  border-radius: 50%;
 }
 
 
@@ -36,6 +70,18 @@ body {
 position:relative;
 left: 15vw;
 font-size: 1rem;
+}
+
+#intro-2 {
+  opacity: 0;
+}
+
+#intro-3 {
+  opacity: 0;
+}
+
+#intro-4 {
+  opacity: 0;
 }
 
 #intro-text-2 {
@@ -56,11 +102,23 @@ font-size: 1rem;
  font-size: 1rem;
  font-weight: 700;
  position: relative;
- bottom: 20px;
+ top: 10vh;
 }
 
 #intro-title {
-  position: relative;
+  /* display: none; */
+  position: absolute;
+  left: 30%;
+  margin-left: -50px;
+  top: 30%;
+  margin-top: -50px;
+  opacity: 0;
+
+}
+
+#intro-title svg {
+  top: 10vh;
+  width: 70%;
 }
 
 #intro-text-1-div {

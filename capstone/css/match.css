@@ -6,48 +6,81 @@ body {
   padding: 0;
 }
 
+/* .background-text {
+  position: relative;
+} */
+
 #background-match-1 {
- height: 25vh;
+ height: 50vh;
+ z-index: -100;
  overflow: hidden;
  position: relative;
 }
 #background-match-1 h1 {
- font-size: 15em;
+ font-size: 20em;
  color: #E5CF80;
  position: absolute;
  font-weight: 700;
- width: 100%;
+ width: 200%;
  height: 100%;
- margin: 0;
+ margin-top: 10vh;
  line-height: 50px;
  text-align: center;
  /* Starting position */
- -moz-transform:translateX(100%);
- -webkit-transform:translateX(100%);
- transform:translateX(100%);
+ -webkit-transform:translateX(0%);
+ transform:translateX(0%);
  /* Apply animation to this element */
- -webkit-animation: example1 15s linear infinite;
- animation: example1 15s linear infinite;
+ -webkit-animation: example1 20s linear infinite;
+ animation: example1 20s linear infinite;
 }
 /* Move it (define the animation) */
-@-moz-keyframes example1 {
- 0%   { -moz-transform: translateX(100%); }
- 100% { -moz-transform: translateX(-100%); }
-}
 @-webkit-keyframes example1 {
- 0%   { -webkit-transform: translateX(100%); }
- 100% { -webkit-transform: translateX(-100%); }
+ 0%   { -webkit-transform: translateX(20%); }
+ 100% { -webkit-transform: translateX(-50%); }
 }
-@keyframes example1 {
+/* @keyframes example1 {
  0%   {
- -moz-transform: translateX(100%); /* Firefox bug fix */
- -webkit-transform: translateX(100%); /* Firefox bug fix */
- transform: translateX(100%);
+ -webkit-transform: translateX(50%);
+ transform: translateX(50%);
  }
  100% {
- -moz-transform: translateX(-100%); /* Firefox bug fix */
- -webkit-transform: translateX(-100%); /* Firefox bug fix */
+ -webkit-transform: translateX(-100%);
  transform: translateX(-100%);
+ }
+} */
+
+#background-match-2 {
+ height: 50vh;
+ overflow: hidden;
+ position: relative;
+ z-index: -100;
+ bottom: 5vh;
+}
+#background-match-2 h1 {
+ font-size: 20em;
+ color: #E5CF80;
+ position: absolute;
+ font-weight: 700;
+ width: 200%;
+ height: 100%;
+ margin-top: -10vh;
+ text-align: center;
+ /* Starting position */
+ -webkit-transform:translateX(-50%);
+ transform:translateX(-50%);
+ /* Apply animation to this element */
+ -webkit-animation: example2 20s linear infinite;
+ animation: example2 20s linear infinite;
+}
+/* Move it (define the animation) */
+@keyframes example2 {
+ 0%   {
+ -webkit-transform: translateX(00%); /* Firefox bug fix */
+ transform: translateX(00%);
+ }
+ 100% {
+ -webkit-transform: translateX(-50%); /* Firefox bug fix */
+ transform: translateX(-50%);
  }
 }
 
@@ -274,13 +307,11 @@ body {
   /* left: 80%; */
 }
 
-.grid {
-  /* padding: 1rem; */
+/* .grid {
   display: grid;
   grid-template-columns: repeat( 7, minmax(100px, 1fr) );
   grid-gap: 10px;
-    /* background-color: darkorchid; */
-}
+} */
 
 .vl {
   border-left: 2px solid black;
@@ -387,8 +418,10 @@ body {
   border-radius: 30px;
   padding: 20px;
   text-align: center;
-  width: 60%;
+  width: 30%;
   margin: auto;
+  position: absolute;
+  left: 30%;
   /* background: #f5f7fa; */
 }
 
@@ -495,12 +528,13 @@ body {
 /* For MATCH */
 #scene {
   grid-column-start: 6;
-  position: relative;
+  position: fixed;
   grid-column-end: 8;
   margin-right: 50px;
   top:15vh;
-  right:5vw;
+  left:70vw;
   -webkit-animation: fadein 4s;
+  z-index: 100;
 }
 
 @-webkit-keyframes fadein {
@@ -532,7 +566,8 @@ body {
 }
 
 .match-text{
-  position: absolute;
+
+  width: 85%;
 }
 
 .header {
