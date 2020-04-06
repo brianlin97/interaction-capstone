@@ -1,0 +1,213 @@
+
+body {
+  font-family: "Noto Sans";
+  background-color: #FEB6D0;
+  margin: 0;
+  padding: 0;
+}
+
+.intro-svg {
+  position: absolute;
+  width: 30%;
+  left: 35%;
+  margin: auto;
+  display: block;
+  top: 45vh;
+}
+
+.intro-text {
+  position: relative;
+  width: 20%;
+  margin: auto;
+  display: block;
+  padding: 10px 0px;
+  opacity: 0;
+}
+
+#button-2{
+  display: none;
+}
+
+#button-3{
+  display: none;
+}
+
+#button-4{
+  display: none;
+}
+
+#button-5{
+  display: none;
+}
+
+
+
+.next {
+  background-color: #52BDF9;
+  color: white;
+  border:1.5px solid black;
+  font-size: 2rem;
+  text-align: center;
+  pointer-events: auto;
+  width: 50px;
+  height: 50px;
+  margin: 0 auto;
+  display: block;
+  position: absolute;
+  left: 48vw;
+  top: 70vh;
+  cursor: pointer;
+}
+
+.round {
+  position: absolute;
+  border-radius: 50%;
+}
+
+
+#intro-text-1 {
+}
+
+.delivered {
+position:absolute;
+left: 15vw;
+font-size: 1rem;
+}
+
+#intro-2 {
+  opacity: 0;
+}
+
+#intro-3 {
+  opacity: 0;
+}
+
+#intro-4 {
+  opacity: 0;
+}
+
+/* INTRO TEXT MESSAGE RESPONSES */
+.intro-text img {
+  width: 100%;
+}
+
+#intro-text-1-div {
+  opacity: 0;
+}
+
+.text-right {
+  left: 8vw;
+}
+
+.chat {
+  height: auto;
+  width: auto;
+  position: relative;
+  top: 20vh;
+  z-index: -10;
+}
+
+.text-left {
+  position: relative;
+  right: 8vw;
+}
+
+#delivered-2 {
+  top:170px;
+}
+
+#delivered-3 {
+  top:100px;
+}
+
+
+#intro-text-2-div {
+  opacity: 0;
+}
+#intro-text-3-div {
+  opacity: 0;
+}
+#intro-text-4-div {
+  opacity: 0;
+}
+#intro-text-5-div {
+  opacity: 0;
+}
+#intro-text-6-div {
+  opacity: 0;
+}
+#intro-text-7-div {
+  opacity: 0;
+  padding-bottom: 200px;
+}
+
+#intro-text-2 {
+  opacity: 0;
+}
+
+#intro-text-3 {
+  width: 85%;
+  float: right;
+}
+
+#intro-text-4 {
+  width: 65%;
+  float: right;
+}
+
+#intro-text-7 {
+  width: 65%;
+  float: right;
+}
+
+
+#loader {
+  position: absolute;
+  width: 25%;
+  top: 5vh;
+}
+
+#intro-subtitle {
+ text-align: center;
+ font-size: 1rem;
+ font-weight: 700;
+ position: relative;
+ top: 5vh;
+}
+
+#intro-title {
+  /* display: none; */
+  position: relative;
+  left: 0%;
+  top: 40vh;
+  opacity: 0;
+  cursor: pointer;
+}
+
+#intro-title svg {
+  top: 10vh;
+  width: 100%;
+}
+
+#up-down {
+  animation: up-down ease-in 1.5s infinite;
+}
+
+@-webkit-keyframes up-down {
+  0%, 100% {
+    transform: translateY(4px);
+  }
+  50% {
+    transform: translateY(0px);
+  }
+}
+
+.loader {
+  position: absolute;
+  opacity: 0;
+  width: 50%;
+}
+
+#loader-2 {
+  opacity: 0;
+}

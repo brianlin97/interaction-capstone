@@ -1,0 +1,398 @@
+
+/* .background-text {
+  position: relative;
+} */
+
+a {
+  text-decoration: none;
+  color: black;
+}
+
+a:hover {
+  background-image: url("data:image/svg+xml;charset=utf8,%3Csvg id='squiggle-link' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' xmlns:ev='http://www.w3.org/2001/xml-events' viewBox='0 0 20 4'%3E%3Cstyle type='text/css'%3E.squiggle{animation:shift .4s linear infinite;}@keyframes shift {from {transform:translateX(0);}to {transform:translateX(-20px);}}%3C/style%3E%3Cpath fill='none' stroke='%23ff9800' stroke-width='2' class='squiggle' d='M0,3.5 c 5,0,5,-3,10,-3 s 5,3,10,3 c 5,0,5,-3,10,-3 s 5,3,10,3'/%3E%3C/svg%3E");
+background-position: 0 100%;
+background-size: auto 6px;
+background-repeat: repeat-x;
+text-decoration: none;
+}
+
+#background-match-1 {
+ height: 50vh;
+ z-index: -100;
+ overflow: hidden;
+ position: relative;
+}
+#background-match-1 h1 {
+ font-size: 20em;
+ color: #E5CF80;
+ position: absolute;
+ font-weight: 700;
+ width: 200%;
+ height: 100%;
+ margin-top: 10vh;
+ line-height: 50px;
+ text-align: center;
+ /* Starting position */
+ -webkit-transform:translateX(0%);
+ transform:translateX(0%);
+ /* Apply animation to this element */
+ -webkit-animation: example1 20s linear infinite;
+ animation: example1 20s linear infinite;
+}
+/* Move it (define the animation) */
+@-webkit-keyframes example1 {
+ 0%   { -webkit-transform: translateX(20%); }
+ 100% { -webkit-transform: translateX(-50%); }
+}
+/* @keyframes example1 {
+ 0%   {
+ -webkit-transform: translateX(50%);
+ transform: translateX(50%);
+ }
+ 100% {
+ -webkit-transform: translateX(-100%);
+ transform: translateX(-100%);
+ }
+} */
+
+#background-match-2 {
+ height: 50vh;
+ overflow: hidden;
+ position: relative;
+ z-index: -100;
+ bottom: 5vh;
+}
+#background-match-2 h1 {
+ font-size: 20em;
+ color: #E5CF80;
+ position: absolute;
+ font-weight: 700;
+ width: 200%;
+ height: 100%;
+ margin-top: -10vh;
+ text-align: center;
+ /* Starting position */
+ -webkit-transform:translateX(-50%);
+ transform:translateX(-50%);
+ /* Apply animation to this element */
+ -webkit-animation: example2 20s linear infinite;
+ animation: example2 20s linear infinite;
+}
+/* Move it (define the animation) */
+@keyframes example2 {
+ 0%   {
+ -webkit-transform: translateX(00%); /* Firefox bug fix */
+ transform: translateX(00%);
+ }
+ 100% {
+ -webkit-transform: translateX(-50%); /* Firefox bug fix */
+ transform: translateX(-50%);
+ }
+}
+
+.potato-icon {
+  width: 45px;
+  margin: 10px;
+  left: 27px;
+  top: 20px;
+  position: fixed;
+}
+
+#potato-icon-hover {
+  left: 11px;
+  top: 14px;
+  width: 65px;
+  position: fixed;
+  display: none;
+}
+
+#menu-links {
+  display: none;
+  position: fixed;
+  left: 0px;
+  top: 75px;
+  list-style-type: none;
+  font-family: "Abel";
+  font-size: 1.5rem;
+}
+
+.current-menu a {
+  font-size: 2rem;
+}
+
+#menu-links li {
+  padding: 5px;
+}
+
+.slide-in {
+    animation: slide-in 0.5s forwards;
+    -webkit-animation: slide-in 0.5s forwards;
+}
+
+.slide-out {
+    animation: slide-out 0.5s forwards;
+    -webkit-animation: slide-out 0.5s forwards;
+}
+
+@keyframes slide-in {
+    0% { transform: translateY(-50%); opacity: 0;}
+    100% { transform: translateY(0%); opacity: 1}
+}
+
+@-webkit-keyframes slide-in {
+    0% { transform: translateY(-50%); opacity: 0}
+    100% { -webkit-transform: translateY(0%); opacity: 1}
+}
+
+@keyframes slide-out {
+    0% { transform: translateX(0%); }
+    100% { transform: translateX(-100%); }
+}
+
+@-webkit-keyframes slide-out {
+    0% { -webkit-transform: translateX(0%); }
+    100% { -webkit-transform: translateX(-100%); }
+}
+
+#heart-svg-1 {
+  display: inline-block;
+  position: absolute;
+  width: 40px;
+  left: 20vw;
+  height: 70vh;
+  animation: love 1.5s infinite ease-in-out;
+}
+
+#heart-svg-2 {
+  display: inline-block;
+  position: absolute;
+  width: 20px;
+  left: 80vw;
+  height: 50vh;
+  animation: love 1.5s infinite ease-in-out;
+}
+
+#heart-svg-3 {
+  display: inline-block;
+  position: absolute;
+  width: 10px;
+  left: 10vw;
+  height: 100vh;
+  animation: love 1.5s infinite ease-in-out;
+}
+
+.help-grid {
+  grid-column-start: 7;
+  grid-column-end: 7;
+}
+
+#help-btn {
+  position: fixed;
+  width: 150px;
+  top: 5%;
+  z-index: 100;
+  /* left: 80%; */
+}
+
+/* .grid {
+  display: grid;
+  grid-template-columns: repeat( 7, minmax(100px, 1fr) );
+  grid-gap: 10px;
+} */
+
+.vl {
+  border-left: 2px solid black;
+  height: 20px;
+  bottom: 50px;
+  margin-left: 35%;
+  position: relative;
+  display: inline-block;
+  animation: blink 1s linear infinite alternate;
+}
+
+@keyframes blink {
+50% {
+  opacity: 0;
+}
+100% {
+  opacity: 1;
+}
+}
+
+/* grid-item {
+  display: grid;
+  align-items: center;
+  justify-items: center;
+} */
+
+
+/* TEXT MESSAGING */
+
+.phone-frame {
+  height:100vh;
+  position: relative;
+  right: 0;
+  pointer-events:none;
+}
+
+#match-2-svg {
+display: none;
+}
+
+#wrapper {
+  grid-column-start: 3;
+  grid-column-end: 6;
+  /* margin: 0px auto; */
+}
+
+.chat ul {
+  margin: 0px;
+  padding: 0px;
+  list-style: none;
+}
+
+.message-left .message-time {
+  display: block;
+  font-size: 12px;
+  text-align: left;
+  padding-left: 30px;
+  padding-top: 4px;
+  color: #ccc;
+  font-family: Courier;
+}
+
+.message-right .message-time {
+  display: block;
+  font-size: 12px;
+  text-align: right;
+  padding-right: 20px;
+  padding-top: 4px;
+  color: #ccc;
+  font-family: Courier;
+}
+
+.message-left {
+  text-align: left;
+  margin-bottom: 16px;
+  margin-left: 30px;
+}
+
+.message-left .message-text {
+  max-width: 80%;
+  display: inline-block;
+  background: #fff;
+  padding: 10px;
+  font-size: 12px;
+  color: #999;
+  border-radius: 30px;
+  font-weight: 100;
+  line-height: 1.5em;
+}
+
+.message-right {
+  text-align: right;
+  margin-bottom: 16px;
+}
+
+.message-right .message-text {
+  line-height: 1.5em;
+  display: inline-block;
+  background: #5ca6fa;
+  padding: 10px;
+  font-size: 12px;
+  color: #fff;
+  border-radius: 30px;
+  line-height: 1.5em;
+  font-weight: 100;
+  text-align: left;
+}
+
+.chat {
+  padding: 20px;
+  width: auto;
+  margin: auto;
+  position: absolute;
+  left: 30%;
+  height: auto;
+  overflow-x: hidden;
+}
+
+#scene {
+  grid-column-start: 6;
+  position: fixed;
+  grid-column-end: 8;
+  margin-right: 50px;
+  top:15vh;
+  left:60vw;
+  width: 25vw;
+  -webkit-animation: fadein 4s;
+  z-index: 100;
+}
+
+@-webkit-keyframes fadein {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}
+
+/* For MATCH */
+.match-inner {
+  height: 95vh;
+  position: absolute;
+  /* z-index: -10; */
+  bottom: 3vw;;
+  right: 2.1vw;
+}
+
+#match-inner-2 {
+  display: none;
+}
+
+.view-button-back {
+  position: absolute;
+  animation: up-down ease-in 1.5s infinite;
+  cursor: pointer;
+}
+.view-button-front {
+  cursor: pointer;
+}
+
+@-webkit-keyframes up-down {
+  0%, 100% {
+    transform: translateY(3px);
+  }
+  50% {
+    transform: translateY(-1px);
+  }
+}
+
+@-webkit-keyframes slide-left-leave {
+  0% {
+    transform: translateX(0px);
+  }
+  100% {
+    transform: translateX(-20px);
+  }
+}
+
+@-webkit-keyframes slide-left-enter {
+  0% {
+    transform: translateX(20px);
+  }
+  100% {
+    transform: translateX(0px);
+  }
+}
+
+/* .match-text{
+  width: 75%;
+} */
+
+.header {
+  font-family: "Abel";
+  font-size: 1.25rem;
+}
+.subtext {
+  line-height: 25px;
+  font-family: "Noto Sans";
+  font-size: .75rem;
+}
