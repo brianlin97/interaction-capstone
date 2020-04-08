@@ -6,6 +6,8 @@
 	<script src="https://use.fontawesome.com/2e2073edda.js"></script>
 	<script type="text/javascript" src="https://code.jquery.com/jquery-latest.js"></script>
 	<script src="scripts/jquery.smoothState.js"></script>
+	<link rel="stylesheet" href="css/hover.css" />
+	<script src="scripts/jquery.transit.min.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/parallax/3.1.0/parallax.min.js"></script>
 	<link href="https://fonts.googleapis.com/css?family=Abel|Noto+Sans&display=swap" rel="stylesheet">
 	<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/barba.js/1.0.0/barba.min.js"></script> -->
@@ -17,6 +19,7 @@
 		<div class="menu-icon">
 			<img class="potato-icon" id="potato-icon-default" src="illo/potato-icon.svg"></a>
 			<img class="potato-icon" id="potato-icon-hover" src="illo/potato-icon-hover.svg"></a>
+			<h3 class="title">MATCH</h3>
 			<ul id="menu-links">
 				<li class="current-menu"><a href="match.html">MATCH</a></li>
 				<li><a href="#">BAIT</a></li>
@@ -139,14 +142,20 @@
 		</div> -->
 	</div>
 </div>
+<div class="tooltip">
+	<div class="tool tooltip-prompt" id="match-tooltip-1" data-tip="Bots are usually always online"></div>
+		<div class="tool tooltip-prompt" id="match-tooltip-2" data-tip="Click to go to next screen"></div>
+</div>
 <section id="scene">
 	<div data-depth="0.05" class="match-text" >
 		<h2 class="header">SensuosKitten was the vanguard of the robot army.</h2>
 		<p class="subtext">Ashley Madison, a popular dating website, created tens of thousands of fembots to lure men into paying for credits on the “have an affair” site. When men signed up for a free account, they would immediately be shown profiles of what internal documents call “Angels,” or fake women whose details and photos had been batch-generated using specially designed software. To bring the fake women to life, the company’s developers also created software bots to animate these Angels, sending email and chat messages on their behalf.</p>
 	</div>
+		<div id="button-1" class="next round hvr-grow" style="position:relative">&#8250;</div>
 </section>
-<!-- <script src="scripts/match.js"></script> -->
-<div class="background-text">
+
+<script src="scripts/match.js"></script>
+<!-- <div class="background-text">
 	<div id="background-match-1">
 		<h1>MATCH</h1>
 	</div>
@@ -154,7 +163,10 @@
 	<div id="background-match-2">
 		<h1>MATCH</h1>
 	</div>
-</div>
+</div> -->
+<!-- <div class="bg-text">
+	<p id-"bg-text-1">are you logged in?</p>
+</div> -->
 </div>
 
 <script src="scripts/all-scripts.js"></script>

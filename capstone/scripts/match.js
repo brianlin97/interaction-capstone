@@ -30,6 +30,15 @@ $("#view-button-1").click(function(){
   $("#match-inner-2").delay(100).css({"animation":"slide-left-enter 500ms"}).fadeIn(200);
   $(".header").fadeIn(200).html("These comments describe a bot being born and immediately turning to its one purpose in life: finding a man.");
   $(".subtext").fadeIn(200).html("The Angels, also called 'hosts' by the company's engineers, lay dormant until a bot animates them and uses them like a skin to contact a male user. They used over 70,000 hosts to engage with Ashley Madison users, launching a synchronized attack to extract as much money and attention from the users as they could.");
+  $(".tooltip-prompt").fadeOut(200);
+});
+
+$("#button-1").click(function() {
+  $(".match-text").transition({opacity:0, x:100});
+  $(this).transition({opacity:0});
+  $("#match-inner-1").fadeIn(200).css({"animation":"shake 0.82s cubic-bezier(.36,.07,.19,.97) both"});
+  $(".phone-frame").fadeIn(200).css({"animation":"shake 0.82s cubic-bezier(.36,.07,.19,.97) both"});
+  $(".tooltip-prompt").fadeIn(200);
 });
 
 // Potato Menu
@@ -57,6 +66,30 @@ $("#potato-icon-hover").mouseout(function() {
 	$("#potato-icon-default").css({"display": "block"});
 });
 
+animateDiv('.bg-text');
+
 // MENU
 var scene = document.getElementById('scene');
 var parallaxInstance = new Parallax(scene);
+});
+
+
+//BACKGROUND MENU
+function makeNewPosition(){
+
+    // Get viewport dimensions (remove the dimension of the div)
+    var h = $(window).height() - 50;
+    var w = $(window).width() - 50;
+
+    var nh = Math.floor(Math.random() * h);
+    var nw = Math.floor(Math.random() * w);
+
+    return [nh,nw];
+}
+
+function animateDiv(myclass){
+    var newq = makeNewPosition();
+    $(myclass).transition({ top: newq[0], left: newq[1] }, 5000,   function(){
+      animateDiv(myclass);
+    });
+  }
