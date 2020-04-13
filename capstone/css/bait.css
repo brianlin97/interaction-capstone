@@ -3,6 +3,11 @@
   position: relative;
 } */
 
+body {
+  background-color: #FB7676;
+  font-family: "Noto Sans";
+}
+
 a {
   text-decoration: none;
   color: black;
@@ -241,7 +246,7 @@ text-decoration: none;
 /* TEXT MESSAGING */
 
 .phone-frame {
-  height:100vh;
+  height:700px;
   position: relative;
   right: 0;
   pointer-events:none;
@@ -325,8 +330,9 @@ display: none;
   margin: auto;
   position: absolute;
   left: 30%;
-  height: auto;
+  height: 100%;
   overflow-x: hidden;
+  padding-bottom: 50px;
 }
 
 #scene {
@@ -334,7 +340,7 @@ display: none;
   position: fixed;
   grid-column-end: 8;
   margin-right: 50px;
-  top:25vh;
+  top:15vh;
   left:60vw;
   width: 25vw;
   -webkit-animation: fadein 4s;
@@ -345,6 +351,32 @@ display: none;
     from { opacity: 0; }
     to   { opacity: 1; }
 }
+
+.scam-explanation {
+  position: relative;
+  width: 100%;
+  margin-top:30vh;
+  opacity: 0;
+}
+
+.scam-explanation h3 {
+  font-family: "Abel";
+  font-size: 20px;
+  margin: 0;
+}
+
+.scam-explanation h4 {
+  font-family: "Abel";
+  font-size: 16px;
+  margin: 0;
+}
+
+.scam-explanation p {
+  font-size: 12px;
+line-height: 22px;
+}
+
+
 
 /* For MATCH */
 .match-inner {
@@ -357,6 +389,8 @@ display: none;
 
 .phone-frame {
   display: none;
+  position: relative;
+  z-index: 10;
 }
 
 #match-inner-1 {
@@ -516,20 +550,6 @@ display: none;
   border: 1px solid black;
 }
 
-#match-tooltip-1 {
-  left: 28vw;
-  top:76vh
-}
-
-#match-tooltip-2 {
-  left: 28vw;
-  top: 63vh;
-}
-
-#match-tooltip-3 {
-  left: 27vw;
-  top: 72vh;
-}
 
 /*== start of code for tooltips ==*/
 .tool {

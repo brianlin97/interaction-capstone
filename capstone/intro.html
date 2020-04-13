@@ -3,6 +3,7 @@
 <head>
   <link rel="stylesheet" href="css/intro.css" />
   <link rel="stylesheet" href="css/hover.css" />
+  <link rel="stylesheet" href="css/intro-chat.css" />
   <script type="text/javascript" src="https://code.jquery.com/jquery-latest.js"></script>
   <script src="scripts/jquery.transit.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/parallax/3.1.0/parallax.min.js"></script>
@@ -16,7 +17,7 @@
     <div id="button-2" class="next round hvr-grow">&#8250;</div>
     <div id="button-3" class="next round hvr-grow">&#8250;</div>
     <div id="button-4" class="next round hvr-grow">&#8250;</div>
-    <!-- <div id="button-5" class="next round hvr-grow"><a href="match.html">&#8250;</a></div> -->
+    <div id="button-5" class="next round hvr-grow"><a href="match.html">&#8250;</a></div>
     <img class="intro-svg" id="intro-1" src="illo/intro-1.svg">
     <img class="intro-svg" id="intro-2" src="illo/intro-2.svg">
     <img class="intro-svg" id="intro-3" src="illo/intro-3.svg">
@@ -39,41 +40,26 @@
       <h2 id="intro-subtitle">Online Romance Scams and How to Spot Them</h2>
     </div>
 
+    <!--  Phone Frame -->
+    <img class="phone-frame" src="illo/phone-frame.svg">
+    <!-- Fake Chat -->
+    <div class="chat-container">
+    		<img class="chat-header" src="illo/intro-header.svg"></img>
+    	<div class="border">
+    		<div class="responsive-html5-chat">
+    		</div>
+    	</div>
+    </div>
+    <div class="tooltip">
+    	<button class="tool tooltip-prompt" id="match-tooltip-1" data-tip="If you're matched with somebody who you're not sure if they're a human or a bot, try the potato test."><div class="outer-hotspot"><div class="hotspot-icon"></div></div></button>
+    	<button class="tool tooltip-prompt" id="match-tooltip-2" data-tip="Poorly programmed bots lack higher order thinking and contextual awareness."><div class="outer-hotspot"><div class="hotspot-icon"></div></div></button>
+    	<button class="tool tooltip-prompt" id="match-tooltip-3" data-tip="Ask them to repeat a word back to you - like a CAPTCHA for humans to deploy against bots. Make sure you're talking to a potato-tested human!"><div class="outer-hotspot"><div class="hotspot-icon"></div></div></button>
+    </div>
     <div class="chat">
-    <div class="intro-text text-right" id="intro-text-1-div">
-      <img id="intro-text-1" src="illo/intro-text-1.svg">
-      <h3 class="delivered" id="delivered-1">Delivered</h3>
-    </div>
-    <div class="intro-text text-left" id="intro-text-2-div">
-      <img class="loader" id="loader-1" src="illo/loader.svg">
-      <img id="intro-text-2" src="illo/intro-text-2.svg">
-    </div>
-    <div class="intro-text text-right" id="intro-text-3-div">
-      <img id="intro-text-3" src="illo/intro-text-3.svg">
-    </div>
-    <div class="intro-text text-right" id="intro-text-4-div">
-      <img id="intro-text-4" src="illo/intro-text-4.svg">
-      <h3 class="delivered" id="delivered-2">Delivered</h3>
-    </div>
-    <div class="intro-text text-left" id="intro-text-5-div">
-      <img class="loader" id="loader-2" src="illo/loader.svg">
-      <img id="intro-text-5" src="illo/intro-text-5.svg">
-    </div>
-    <div class="intro-text text-left" id="intro-text-6-div">
-      <img class="loader" id="loader-3" src="illo/loader.svg">
-      <img id="intro-text-6" src="illo/intro-text-6.svg">
-    </div>
-    <div class="intro-text text-right" id="intro-text-7-div">
-      <img id="intro-text-7" src="illo/intro-text-7.svg">
-      <h3 class="delivered" id="delivered-3">Delivered</h3>
-    </div>
+      <script src="scripts/intro-chat.js"></script>
   </div>
 
   </main>
-
-  <!-- <img id="heart-svg-1" src="illo/heart.svg">
-  <img id="heart-svg-2" src="illo/heart.svg">
-  <img id="heart-svg-3" src="illo/heart.svg"> -->
 
   <script>
   new Audio('sounds/iphone_sent.mp3').play();
@@ -147,7 +133,6 @@
           .css({opacity: 0, y:50})
           .transition({opacity: 1, y:0}, 500);
           $(this).hide();
-          $("#button-5").show();
           });
 
         $(".intro-svg").mouseenter(function() {
@@ -161,7 +146,8 @@
 
         $("#intro-title").click(function(){
           $(this).hide();
-          $("#intro-text-1-div").transition({opacity: 1, y:-20, x:10});
+          $("#intro-text-1-div").transition({opacity: 1, y:-20, x:10}).delay(6000).transition({y:-50});
+          $("#side-text-1").transition({opacity: 1, y:-20, x:10});
           $("#delivered-1").delay(3000).queue(function(n){$(this).html("Read"); n();})
           $("#intro-text-2-div").transition({opacity: 1, y:-20, x:-10});
           $("#loader-1").delay(3000).transition({opacity:1}).delay(750).transition({opacity:0});
@@ -173,42 +159,13 @@
           $("#intro-text-5-div").delay(13500).transition({opacity: 1, y:-20, x:-10});
           $("#intro-text-6-div").delay(16000).transition({opacity: 1, y:-20, x:-10});
           $("#intro-text-7-div").delay(18000).transition({opacity: 1, y:-20, x:10});
-          $(".chat").delay(22000).fadeOut(2000);
-          setTimeout(function() {
-           window.location.href = "match.html";
-         }, 23000);
+         //  $(".chat").delay(22000).fadeOut(2000);
+         //  setTimeout(function() {
+         //   window.location.href = "match.html";
+         // }, 23000);
 
         });
       });
       </script>
-        <!-- // $("#intro-title").click(function(){
-        //   $(this).hide();
-        //   $("#intro-text-1-div")
-        //   .animate({
-        //     opacity: 1 }, 500);
-        //     $("#delivered")
-        //     .delay(3000).queue(function(n){
-        //       $(this).html("Read"); n();
-        //     })
-        //     $("#loader")
-        //     .delay(3000)
-        //     .animate({
-        //       opacity: 1}, 500)
-        //       .delay(750)
-        //       .animate({
-        //         opacity: 0}, 500);
-        //         $("#intro-text-2 ")
-        //         .delay(4000)
-        //         .animate({
-        //           opacity: 1, bottom:'-10vh'}, 500);
-        //           $(".help-text")
-        //           .delay(5000)
-        //           .animate({
-        //             opacity: 1}, 500);
-        //           });
-                // $("#intro-2").delay(1000).fadeIn(1000); -->
-
-         <!-- <script src="scripts/all-scripts.js">
-      </body>
-
-                            </html>
+    </body>
+</html>
