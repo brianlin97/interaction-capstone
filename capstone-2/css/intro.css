@@ -1,0 +1,198 @@
+
+body {
+  font-family: "Noto Sans";
+  background-color: #434343;
+  margin: 0;
+  padding: 0;
+  max-height: 120%;
+  overflow-y: hidden;
+}
+
+#scene {
+  height: 100%;
+  pointer-events:inherit!important;
+}
+
+.intro-svg {
+  position: absolute;
+  width: 35%;
+  left: 35%;
+  margin: auto;
+  display: block;
+  top: 45vh;
+}
+
+.intro-text {
+  position: relative;
+  width: 30%;
+  margin: auto;
+  display: block;
+  padding: 10px 0px;
+  opacity: 0;
+}
+
+
+#intro-subtitle {
+ text-align: center;
+ font-size: 16px;
+ font-weight: 300;
+ position: relative;
+ top: 42vh;
+ color: white;
+}
+
+
+#intro-title {
+  /* display: none; */
+  position: relative;
+  left: 0%;
+  top: 40vh;
+  cursor: pointer;
+  wi
+}
+
+#intro-title svg {
+  top: 10vh;
+  width: 150%;
+}
+
+#scroll-container {
+  width: 50%;
+  margin: 0 auto;
+  position: relative;
+  top: 45vh;
+}
+
+#scroll-container h3{
+  width: 100%;
+  margin: 0 auto;
+  text-align: center;
+  font-family: "Abel";
+  font-size: 16px;
+  color: white;
+}
+
+#scroll-container h2{
+  width: 100%;
+  margin: 0 auto;
+  text-align: center;
+    font-family: Noto Sans;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 27px;
+  text-align: center;
+  color: white;
+  padding: 5px;
+}
+
+.next-arrow {
+  margin: 0 auto;
+  position: relative;
+  padding-top: 15px;
+  left: 23.5vw;
+  width: 45px;
+  cursor: pointer;
+}
+
+
+#up-down {
+  animation: up-down ease-in 1.5s infinite;
+}
+
+@-webkit-keyframes up-down {
+  0%, 100% {
+    transform: translateY(4px);
+  }
+  50% {
+    transform: translateY(0px);
+  }
+}
+
+.loader {
+  position: absolute;
+  opacity: 0;
+  width: 50%;
+}
+
+#loader-2 {
+  opacity: 0;
+}
+
+#home-container {
+  display: none;
+}
+
+.phone-frame {
+  height:700px;
+  position: relative;
+  right: 0;
+  pointer-events:none;
+  z-index: 100;
+  left: 31vw;
+  padding-top: 25px;
+  display: none;
+}
+
+#faq-container {
+  position: absolute;
+  color: white;
+  font-family: "Abel";
+  display: inline-block;
+  right: 100px;
+  top: 250px;
+  width: 20%;
+}
+
+#faq-container h3 {
+  font-family: Abel;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 20px;
+  letter-spacing: 0.1em;
+  cursor: pointer;
+}
+
+#faq-container h3:hover {
+  text-decoration: underline;
+}
+
+#faq-container p {
+  display: none;
+  font-size: 14px;
+  line-height: 20px;
+}
+
+#phone-homescreen {
+  margin: 0 auto;
+  display: block;
+  position: relative;
+  width: 300px;
+  bottom: 18rem;
+}
+
+#link-scam {
+  cursor: pointer;
+}
+
+.app-icon {
+}
+
+@keyframes shake {
+  10%, 90% {
+    transform: translate3d(-1px, 0, 0);
+  }
+
+  20%, 80% {
+    transform: translate3d(2px, 0, 0);
+  }
+
+  30%, 50%, 70% {
+    transform: translate3d(-4px, 0, 0);
+  }
+
+  40%, 60% {
+    transform: translate3d(4px, 0, 0);
+  }
+}
