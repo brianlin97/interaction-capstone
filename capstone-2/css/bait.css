@@ -1,11 +1,13 @@
 
 /* .background-text {
-  position: relative;
+position: relative;
 } */
 
 body {
-  background-color: #FB7676;
+  background-color: #6DA1EF;
   font-family: "Noto Sans";
+  color: #082754fd;
+  overflow-x: hidden;
 }
 
 a {
@@ -15,84 +17,84 @@ a {
 
 a:hover {
   background-image: url("data:image/svg+xml;charset=utf8,%3Csvg id='squiggle-link' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' xmlns:ev='http://www.w3.org/2001/xml-events' viewBox='0 0 20 4'%3E%3Cstyle type='text/css'%3E.squiggle{animation:shift .4s linear infinite;}@keyframes shift {from {transform:translateX(0);}to {transform:translateX(-20px);}}%3C/style%3E%3Cpath fill='none' stroke='%23ff9800' stroke-width='2' class='squiggle' d='M0,3.5 c 5,0,5,-3,10,-3 s 5,3,10,3 c 5,0,5,-3,10,-3 s 5,3,10,3'/%3E%3C/svg%3E");
-background-position: 0 100%;
-background-size: auto 6px;
-background-repeat: repeat-x;
-text-decoration: none;
+  background-position: 0 100%;
+  background-size: auto 6px;
+  background-repeat: repeat-x;
+  text-decoration: none;
 }
 
 #background-match-1 {
- height: 50vh;
- z-index: -100;
- overflow: hidden;
- position: relative;
+  height: 50vh;
+  z-index: -100;
+  overflow: hidden;
+  position: relative;
 }
 #background-match-1 h1 {
- font-size: 20em;
- color: #E5CF80;
- position: absolute;
- font-weight: 700;
- width: 200%;
- height: 100%;
- margin-top: 10vh;
- line-height: 50px;
- text-align: center;
- /* Starting position */
- -webkit-transform:translateX(0%);
- transform:translateX(0%);
- /* Apply animation to this element */
- -webkit-animation: example1 20s linear infinite;
- animation: example1 20s linear infinite;
+  font-size: 20em;
+  color: #E5CF80;
+  position: absolute;
+  font-weight: 700;
+  width: 200%;
+  height: 100%;
+  margin-top: 10vh;
+  line-height: 50px;
+  text-align: center;
+  /* Starting position */
+  -webkit-transform:translateX(0%);
+  transform:translateX(0%);
+  /* Apply animation to this element */
+  -webkit-animation: example1 20s linear infinite;
+  animation: example1 20s linear infinite;
 }
 /* Move it (define the animation) */
 @-webkit-keyframes example1 {
- 0%   { -webkit-transform: translateX(20%); }
- 100% { -webkit-transform: translateX(-50%); }
+  0%   { -webkit-transform: translateX(20%); }
+  100% { -webkit-transform: translateX(-50%); }
 }
 /* @keyframes example1 {
- 0%   {
- -webkit-transform: translateX(50%);
- transform: translateX(50%);
- }
- 100% {
- -webkit-transform: translateX(-100%);
- transform: translateX(-100%);
- }
+0%   {
+-webkit-transform: translateX(50%);
+transform: translateX(50%);
+}
+100% {
+-webkit-transform: translateX(-100%);
+transform: translateX(-100%);
+}
 } */
 
 #background-match-2 {
- height: 50vh;
- overflow: hidden;
- position: relative;
- z-index: -100;
- bottom: 5vh;
+  height: 50vh;
+  overflow: hidden;
+  position: relative;
+  z-index: -100;
+  bottom: 5vh;
 }
 #background-match-2 h1 {
- font-size: 20em;
- color: #E5CF80;
- position: absolute;
- font-weight: 700;
- width: 200%;
- height: 100%;
- margin-top: -10vh;
- text-align: center;
- /* Starting position */
- -webkit-transform:translateX(-50%);
- transform:translateX(-50%);
- /* Apply animation to this element */
- -webkit-animation: example2 20s linear infinite;
- animation: example2 20s linear infinite;
+  font-size: 20em;
+  color: #E5CF80;
+  position: absolute;
+  font-weight: 700;
+  width: 200%;
+  height: 100%;
+  margin-top: -10vh;
+  text-align: center;
+  /* Starting position */
+  -webkit-transform:translateX(-50%);
+  transform:translateX(-50%);
+  /* Apply animation to this element */
+  -webkit-animation: example2 20s linear infinite;
+  animation: example2 20s linear infinite;
 }
 /* Move it (define the animation) */
 @keyframes example2 {
- 0%   {
- -webkit-transform: translateX(00%); /* Firefox bug fix */
- transform: translateX(00%);
- }
- 100% {
- -webkit-transform: translateX(-50%); /* Firefox bug fix */
- transform: translateX(-50%);
- }
+  0%   {
+    -webkit-transform: translateX(00%); /* Firefox bug fix */
+    transform: translateX(00%);
+  }
+  100% {
+    -webkit-transform: translateX(-50%); /* Firefox bug fix */
+    transform: translateX(-50%);
+  }
 }
 
 .potato-icon {
@@ -142,33 +144,33 @@ text-decoration: none;
 }
 
 .slide-in {
-    animation: slide-in 0.5s forwards;
-    -webkit-animation: slide-in 0.5s forwards;
+  animation: slide-in 0.5s forwards;
+  -webkit-animation: slide-in 0.5s forwards;
 }
 
 .slide-out {
-    animation: slide-out 0.5s forwards;
-    -webkit-animation: slide-out 0.5s forwards;
+  animation: slide-out 0.5s forwards;
+  -webkit-animation: slide-out 0.5s forwards;
 }
 
 @keyframes slide-in {
-    0% { transform: translateY(-50%); opacity: 0;}
-    100% { transform: translateY(0%); opacity: 1}
+  0% { transform: translateY(-50%); opacity: 0;}
+  100% { transform: translateY(0%); opacity: 1}
 }
 
 @-webkit-keyframes slide-in {
-    0% { transform: translateY(-50%); opacity: 0}
-    100% { -webkit-transform: translateY(0%); opacity: 1}
+  0% { transform: translateY(-50%); opacity: 0}
+  100% { -webkit-transform: translateY(0%); opacity: 1}
 }
 
 @keyframes slide-out {
-    0% { transform: translateX(0%); }
-    100% { transform: translateX(-100%); }
+  0% { transform: translateX(0%); }
+  100% { transform: translateX(-100%); }
 }
 
 @-webkit-keyframes slide-out {
-    0% { -webkit-transform: translateX(0%); }
-    100% { -webkit-transform: translateX(-100%); }
+  0% { -webkit-transform: translateX(0%); }
+  100% { -webkit-transform: translateX(-100%); }
 }
 
 #heart-svg-1 {
@@ -212,9 +214,9 @@ text-decoration: none;
 }
 
 /* .grid {
-  display: grid;
-  grid-template-columns: repeat( 7, minmax(100px, 1fr) );
-  grid-gap: 10px;
+display: grid;
+grid-template-columns: repeat( 7, minmax(100px, 1fr) );
+grid-gap: 10px;
 } */
 
 .vl {
@@ -228,18 +230,18 @@ text-decoration: none;
 }
 
 @keyframes blink {
-50% {
-  opacity: 0;
-}
-100% {
-  opacity: 1;
-}
+  50% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
 }
 
 /* grid-item {
-  display: grid;
-  align-items: center;
-  justify-items: center;
+display: grid;
+align-items: center;
+justify-items: center;
 } */
 
 
@@ -255,7 +257,7 @@ text-decoration: none;
 }
 
 #match-2-svg {
-display: none;
+  display: none;
 }
 
 #wrapper {
@@ -342,39 +344,83 @@ display: none;
   position: fixed;
   grid-column-end: 8;
   margin-right: 50px;
-  top:15vh;
-  left:70vw;
+  top:0vh;
+  left:5vw;
   width: 25vw;
   -webkit-animation: fadein 4s;
   z-index: 100;
 }
 
 @-webkit-keyframes fadein {
-    from { opacity: 0; }
-    to   { opacity: 1; }
+  from { opacity: 0; }
+  to   { opacity: 1; }
 }
 
 .scam-explanation {
   position: relative;
+  color: #082754;
   width: 100%;
   margin-top:30vh;
 }
 
 .scam-explanation h3 {
   font-family: "Abel";
-  font-size: 20px;
+  font-size: 32px;
+  line-height: 28px;
+  /* identical to box height, or 87% */
   margin: 0;
+  letter-spacing: 0.24em;
 }
 
 .scam-explanation h4 {
   font-family: "Abel";
   font-size: 16px;
-  margin: 0;
+  margin-top: 5;
+  text-transform: uppercase;
+  letter-spacing: 0.22em;
 }
 
 .scam-explanation p {
   font-size: 12px;
-line-height: 22px;
+  line-height: 22px;
+}
+
+.explanation {
+  opacity: 0;
+  position: fixed;
+  width: 30%;
+  top: 60vh;
+  left: 65vw;
+  color: #082754;
+}
+
+.explanation h4 {
+  font-family: Abel;
+font-style: normal;
+font-weight: normal;
+font-size: 14px;
+line-height: 28px;
+text-transform: uppercase;
+letter-spacing: 0.22em;
+margin: 0;
+}
+
+.explanation-text {
+  margin-top: 16px;
+  font-family: Abel;
+  /* font-style: italic; */
+  font-size: 1.5rem;
+  line-height: 30px;
+  bottom: 20px;
+  letter-spacing: 0.02em;
+}
+
+#disclaimer {
+  font-size: .75rem;
+  position: fixed;
+  top: 80vh;
+  left: 55px;
+  color: #082754
 }
 
 
@@ -488,8 +534,8 @@ line-height: 22px;
 }
 
 @keyframes fade-up {
- 0%   { transform: translateY(50px); }
- 100% { transform: translateY(0px); }
+  0%   { transform: translateY(50px); }
+  100% { transform: translateY(0px); }
 }
 
 .subtext {
@@ -551,73 +597,73 @@ line-height: 22px;
 
 /*== start of code for tooltips ==*/
 .tool {
-    cursor: help;
-    position: relative;
-    display: none;
+  cursor: help;
+  position: relative;
+  display: none;
 }
 
 
 /*== common styles for both parts of tool tip ==*/
 .tool::before,
 .tool::after {
-    left: 50%;
-    opacity: 0;
-    position: absolute;
-    z-index: -100;
+  left: 50%;
+  opacity: 0;
+  position: absolute;
+  z-index: -100;
 }
 
 .tool:hover::before,
 .tool:focus::before,
 .tool:hover::after,
 .tool:focus::after {
-    opacity: 1;
-    transform: scale(1) translateY(0);
-    z-index: 100;
+  opacity: 1;
+  transform: scale(1) translateY(0);
+  z-index: 100;
 }
 
 
 /*== pointer tip ==*/
 .tool::before {
-    border-style: solid;
-    border-width: 1em 0.75em 0 0.75em;
-    border-color: black transparent transparent transparent;
-    bottom: 30px;
-    content: "";
-    margin-left: -.5em;
-    transition: all .65s cubic-bezier(.84,-0.18,.31,1.26), opacity .65s .5s;
-    transform:  scale(.6) translateY(-80%);
+  border-style: solid;
+  border-width: 1em 0.75em 0 0.75em;
+  border-color: black transparent transparent transparent;
+  bottom: 30px;
+  content: "";
+  margin-left: -.5em;
+  transition: all .65s cubic-bezier(.84,-0.18,.31,1.26), opacity .65s .5s;
+  transform:  scale(.6) translateY(-80%);
 }
 
 .tool:hover::before,
 .tool:focus::before {
-    transition: all .65s cubic-bezier(.84,-0.18,.31,1.26) .2s;
+  transition: all .65s cubic-bezier(.84,-0.18,.31,1.26) .2s;
 }
 
 
 /*== speech bubble ==*/
 .tool::after {
-    background: white;
-    border-radius: .25em;
-    border: 1px solid black;
-    color: black;
-    content: attr(data-tip);
-    margin-left: -9.50em;
-    padding: 1em;
-    transition: all .65s cubic-bezier(.84,-0.18,.31,1.26) .2s;
-    transform:  scale(.6) translateY(50%);
-    width: 17.5em;
-    bottom: 40px;
+  background: white;
+  border-radius: .25em;
+  border: 1px solid black;
+  color: black;
+  content: attr(data-tip);
+  margin-left: -9.50em;
+  padding: 1em;
+  transition: all .65s cubic-bezier(.84,-0.18,.31,1.26) .2s;
+  transform:  scale(.6) translateY(50%);
+  width: 17.5em;
+  bottom: 40px;
 }
 
 .tool:hover::after,
 .tool:focus::after  {
-    transition: all .65s cubic-bezier(.84,-0.18,.31,1.26);
+  transition: all .65s cubic-bezier(.84,-0.18,.31,1.26);
 }
 
 @media (max-width: 760px) {
   .tool::after {
-        font-size: 1em;
-        margin-left: -5em;
-        width: 10em;
+    font-size: 1em;
+    margin-left: -5em;
+    width: 10em;
   }
 }
