@@ -22,7 +22,7 @@ function scrollSmoothToBottom(id) {
 
 
 function responsiveChat(element) {
-  $(element).html('<form class="chat"><span></span><div class="messages"></div><div class="message-options"><div class="message-option-container" id="message-option-a"><div class="reflection"></div><h3 class="message-option-response" id="response-1"></h3></div><h3 class="message-option-response" id="response-2"></h3></div>');
+  $(element).html('<form class="chat"><span></span><div class="messages"></div><div class="message-options"><div class="message-option-container" id="message-option-a"><div class="reflection"></div><h3 class="message-option-response" id="response-1"></h3></div><h3 class="message-option-response" id="response-2"></h3></div><div class="chat-bubble"><div class="loading"><div class="dot one"></div><div class="dot two"></div><div class="dot three"></div></div><div class="tail"></div></div>');
   $("#response-1").text("Respond");
   function showLatestMessage() {
     $(element).find('.messages').scrollTop($(element).find('.messages').height());
@@ -60,17 +60,18 @@ function responsiveChat(element) {
         currentDate +
         "</date></div></div>"
       );
-      setTimeout(function () {
-        $(element + ' > span').addClass("spinner");
-      }, 100);
-      setTimeout(function () {
-        $(element + ' > span').removeClass("spinner");
-      }, 2000);
+      // setTimeout(function () {
+      //   $(element + ' > span').addClass("spinner");
+      // }, 100);
+      // setTimeout(function () {
+      //   $(element + ' > span').removeClass("spinner");
+      // }, 2000);
     }
     $(element + ' input[type="text"]').val("");
     showLatestMessage();
   });
 }
+$(".messages").append("<div class='chat-bubble'><div class='loading'><div class='dot one'></div><div class='dot two'></div><div class='dot three'></div></div><div class='tail'></div></div>");
 
 function responsiveChatPush(element, sender, origin, date, message) {
   var originClass;
@@ -79,8 +80,24 @@ function responsiveChatPush(element, sender, origin, date, message) {
   } else {
     originClass = 'fromThem';
   }
-  $(element + ' .messages').append('<div class="message"><div class="' + originClass + '"><p>' + message + '</p><date><b>' + sender + '</b> ' + date + '</date></div></div>');
+  if (originClass == 'myMessage') {
+    $('#sent').get(0).play();
+  }
+  if (originClass == 'fromThem') {
+    // $('#received').get(0).play();
+    $(".chat-bubble").fadeIn(400);
+    }
+  setTimeout(function () {
+    $(".chat-bubble").fadeOut(100);
+    $(element + ' .messages').append('<div class="message"><div class="' + originClass + '"><p>' + message + '</p><date><b>' + sender + '</b> ' + date + '</date></div></div>');
+  }, 1000);
+
   // $('.messages').scrollTop($('.messages')[0].scrollHeight);
+  setTimeout(function () {
+  }, 100);
+  // setTimeout(function () {
+  //   $(element + ' > span').removeClass("spinner");
+  // }, 2000);
   $('.messages').animate({ scrollTop: $(document).height() }, 1000);
   return false;
 }
@@ -90,9 +107,12 @@ responsiveChat('.responsive-html5-chat');
 
 /* Let's push some dummy data */
 $(".chat-container").fadeIn(200);
+// $(".messages").append("<div class='chat-bubble'><div class='loading'><div class='dot one'></div><div class='dot two'></div><div class='dot three'></div></div><div class='tail'></div></div>");
+// $(".chat-bubble").fadeIn(200).delay(1000).fadeOut(100);
+// $(".messages").removeClass('chat-bubble'); g
 setTimeout(function(){
-  responsiveChatPush('.chat', 'ToasterStrudel', 'you', '', 'Heyyy handsome');
-}, 500);
+  responsiveChatPush('.chat', 'ToasterStrudel', 'you', '', 'Heyyy handsome &#128522');
+}, 700);
 setTimeout(function(){
   responsiveChatPush('.chat', 'ToasterStrudel', 'you', '', 'What you doing right now? :)');
 }, 1500);
@@ -123,13 +143,11 @@ $(document).on('click',"#message-option-a-1",function(){
     responsiveChatPush('.chat', 'ToasterStrudel', 'you', '', 'I&#8217;m on my way to bin 152, was meeting a friend but I think shes going to flake :()');
   }, 3000);
   $("#response-1").transition({opacity:0});
-
   $(".explanation-text").transition({opacity:0});
-  $("#response-1").transition({opacity:0});
   setTimeout(function(){
     $("#response-1").transition({opacity:1});
     $("#response-1").text("Ask another question");
-    $(".explanation-text").transition({opacity:1}).html("Again, another non-sequitur.");
+    $(".explanation-text").transition({opacity:1}).html("Again, your match is trying to change the conversation.");
   }, 4000);
   $("#message-option-a-1").attr('id','message-option-a-2');
 });
@@ -137,41 +155,39 @@ $(document).on('click',"#message-option-a-1",function(){
 $(document).on('click',"#message-option-a-2",function(){
   responsiveChatPush('.chat', 'Me', 'me', '', 'Whats bin 152? Is it like a restaurant?');
   setTimeout(function(){
-    responsiveChatPush('.chat', 'ToasterStrudel', 'you', '', 'Its a  restarant.');
+    responsiveChatPush('.chat', 'ToasterStrudel', 'you', '', 'Its a  restarant, so goood');
   }, 3000);
+  $("#response-1").transition({opacity:0});
+  $(".explanation-text").transition({opacity:0});
   setTimeout(function(){
     $("#response-1").transition({opacity:1});
-    $("#response-1").text('Respond');
-    $(".explanation-text").transition({opacity:1}).html("More advanced bots can respond to your questions since they have a database of responses they can pull from.");
+    $("#response-1").text('Test the bot');
+    $(".explanation-text").transition({opacity:1}).html("More advanced bots can respond to simple questions since they have a database of responses they can pull from. However, if you ask a nuanced question their response be another question or simply be completely unrelated.");
   }, 4000);
   $("#message-option-a-2").attr('id','message-option-a-3');
 });
 
 $(document).on('click',"#message-option-a-3",function(){
-  responsiveChatPush('.chat', 'Me', 'me', '08.03.2017 14:30:7', 'Oh nice! Im a huge foodie. And I thought you were a bot. Congrats, youre not!');
+  responsiveChatPush('.chat', 'Me', 'me', '08.03.2017 14:30:7', 'I hear music in the background. Or is that just me?');
   setTimeout(function(){
-    responsiveChatPush('.chat', 'Kate', 'you', '08.03.2017 14:30:7', 'You think I&#8217;m spam?');
+    responsiveChatPush('.chat', 'Kate', 'you', '08.03.2017 14:30:7', 'You&#8217;re so fun to talk to, i  wanna know you better!');
   }, 3000);
-  $("#response-1").delay(3500).text('Not anymore');
+  setTimeout(function(){
+    responsiveChatPush('.chat', 'Kate', 'you', '08.03.2017 14:30:7', 'I have get off my phone now can you add me http://facebok.com/connect/ToasterStrudel Talk to u soon &#128540');
+  }, 3500);
+  $("#response-1").transition({opacity:0});
+  $(".explanation-text").transition({opacity:0});
+  setTimeout(function(){
+    $("#response-1").transition({opacity:1});
+    $(".explanation-text").transition({opacity:1}).html("Link scammers often want to lure you into connecting with them on Facebook or Whatsapp, but may be a fake link with those names misspelled. Watch out.");
+  }, 4000);
+  $(".reflection").delay(3500).css({backgroundColor: "#BDBDBD"});
+  $(".message-option-container").delay(3500).css({backgroundColor: "#333333", color: "white"});
+  $("#response-1").delay(3500).text('Learn about next scam');
   $("#message-option-a-3").attr('id','message-option-a-4');
 });
 
-$(document).on('click',"#message-option-a-4",function(){
-  responsiveChatPush('.chat', 'Me', 'me', '08.03.2017 14:30:7', 'Not anymore. The first couple messages were very similar to ones I&#8217;ve gotten from bots. I was expecting you to send your next message to include a link or something haha');
-  setTimeout(function(){
-    responsiveChatPush('.chat', 'Me', 'me', '08.03.2017 14:30:7', 'Theres a lot on here, but prob not as much for women');
-  }, 3000);
-  setTimeout(function(){
-    responsiveChatPush('.chat', 'Kate', 'you', '08.03.2017 14:30:7', 'Lets take this offline :) Add me on Facebook here http://facebok.com/connect');
-  }, 8000);
-});
 
-$("#message-option-2").click(function() {
-  responsiveChatPush('.chat', 'Me', 'me', '08.03.2017 14:30:7', $("#response-2").text());
-  setTimeout(function(){
-    responsiveChatPush('.chat', 'Kate', 'you', '08.03.2017 14:30:7', 'Your the first person I matched with here :)');
-  }, 5000);
-});
 // responsiveChatPush('.chat', 'Me', 'me', '08.03.2016 14:31:22', 'It looks like the iPhone message box.');
 // responsiveChatPush('.chat', 'Kate', 'me', '08.03.2016 14:33:32', 'Yep, is this design responsive?');
 // responsiveChatPush('.chat', 'Kate', 'me', '08.03.2016 14:36:4', 'By the way when I hover on my message it shows date.');

@@ -38,17 +38,18 @@ $("#potato-icon-default").mouseenter(function() {
 });
 
 $("#potato-icon-hover").click(function() {
-	if ($("#menu-links").children().hasClass("slide-in")) {
-		$("#menu-links").children().removeClass("slide-in");
-		$("#menu-links").fadeOut(100);
-    // $("#potato-icon-hover").css({"display": "none"});
-	}
-	else {
-		$("#menu-links").children().addClass("slide-in");
-		$("#menu-links").fadeIn(100);
-    // $("#potato-icon-default").css({"display": "block"});
-    // $("#potato-icon-hover").css({"display": "none"});
-	}
+	$("#menu-links").toggleClass("show");
+	// if ($("#menu-links").children().hasClass("slide-in")) {
+	// 	$("#menu-links").children().removeClass("slide-in");
+	// 	// $("#menu-links").fadeOut(100);
+  //   // $("#potato-icon-hover").css({"display": "none"});
+	// }
+	// else {
+	// 	$("#menu-links").children().addClass("slide-in");
+	// 	// $("#menu-links").fadeIn(100);
+  //   // $("#potato-icon-default").css({"display": "block"});
+  //   // $("#potato-icon-hover").css({"display": "none"});
+	// }
 });
 
 $("#potato-icon-hover").mouseout(function() {
@@ -61,6 +62,16 @@ animateDiv('.bg-text');
 // MENU
 var scene = document.getElementById('scene');
 var parallaxInstance = new Parallax(scene);
+});
+
+$(document).on('click',".expand",function(){
+$("#show-more-text").fadeIn(300);
+$(".expand").removeClass("expand").addClass("hide").html("<p>- HIDE<p>");
+});
+
+$(document).on('click',".hide",function(){
+$("#show-more-text").fadeOut(300);
+$(".hide").removeClass("hide").addClass("expand").html("<p>+ SHOW MORE<p>");
 });
 
 

@@ -4,9 +4,9 @@ position: relative;
 } */
 
 body {
-  background-color: #6DA1EF;
+  background-color: #866AC1;
   font-family: "Noto Sans";
-  color: #082754fd;
+  /* color: #C8E2B3; */
   overflow-x: hidden;
 }
 
@@ -116,45 +116,6 @@ transform: translateX(-100%);
   top:1vw;
   letter-spacing: 5px;
   z-index: -100;
-}
-
-.badge {
-  width: 250px;
-  position: fixed;
-  top: 100px;
-}
-
-.expand {
-  width: 200px;
-  height: 25px;
-  border: 1px solid white;
-  cursor: pointer;
-}
-
-
-.expand p {
-  letter-spacing: 5px;
-  position: relative;
-  bottom: 10px;
-  left: 30px;
-}
-
-.hide {
-  width: 200px;
-  height: 25px;
-  border: 1px solid white;
-  cursor: pointer;
-}
-
-.hide p {
-  letter-spacing: 5px;
-  position: relative;
-  bottom: 10px;
-  left: 60px;
-}
-
-#show-more-text {
-  display: none;
 }
 
 #potato-icon-hover {
@@ -405,7 +366,7 @@ justify-items: center;
   position: fixed;
   grid-column-end: 8;
   margin-right: 50px;
-  top:0vh;
+  top:-10vh;
   left:5vw;
   width: 25vw;
   -webkit-animation: fadein 4s;
@@ -417,9 +378,16 @@ justify-items: center;
   to   { opacity: 1; }
 }
 
+
+.badge {
+  width: 250px;
+  position: fixed;
+  top: 100px;
+}
+
 .scam-explanation {
   position: relative;
-  color: #082754;
+  color: #C8E2B3;
   width: 100%;
   margin-top:30vh;
 }
@@ -446,13 +414,14 @@ justify-items: center;
   line-height: 22px;
 }
 
+
 .explanation {
   opacity: 0;
   position: fixed;
   width: 30%;
-  top: 45vh;
+  top: 40vh;
   left: 65vw;
-  color: #082754;
+  color: #C8E2B3;
 }
 
 .explanation h4 {
@@ -470,7 +439,7 @@ margin: 0;
   margin-top: 16px;
   font-family: Abel;
   /* font-style: italic; */
-  font-size: 1.5rem;
+  font-size: 1.25rem;
   line-height: 30px;
   bottom: 20px;
   letter-spacing: 0.02em;
