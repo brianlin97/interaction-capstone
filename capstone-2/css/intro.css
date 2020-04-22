@@ -4,13 +4,21 @@ body {
   background-color: #434343;
   margin: 0;
   padding: 0;
-  max-height: 120%;
-  overflow-y: hidden;
+  max-height: 100%;
+  overflow-x: hidden;
+  /* overflow-y: hidden; */
 }
 
 #scene {
   height: 100%;
   pointer-events:inherit!important;
+}
+
+#intro-1 {
+  position: absolute;
+  left: 50%;
+-webkit-transform: translateX(-50%);
+transform: translateX(-50%);
 }
 
 .intro-svg {
@@ -37,8 +45,8 @@ body {
  font-size: 16px;
  font-weight: 300;
  position: relative;
- top: 42vh;
  color: white;
+ top: 20vh;
 }
 
 
@@ -57,10 +65,12 @@ body {
 }
 
 #scroll-container {
-  width: 50%;
+  width: 100%;
+  display: block;
+  text-align: center;
   margin: 0 auto;
-  position: relative;
-  top: 45vh;
+  position: absolute;
+  top: 40vh;
 }
 
 #scroll-container h3{
@@ -90,7 +100,6 @@ body {
   margin: 0 auto;
   position: relative;
   padding-top: 15px;
-  left: 23.5vw;
   width: 45px;
   cursor: pointer;
 }
@@ -121,6 +130,44 @@ body {
 
 #home-container {
   display: none;
+  position: absolute;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+  transform: translateX(-50%)
+}
+
+.faq-header {
+  letter-spacing: 10px;
+}
+
+#title-container {
+  background-color: white;
+  width: 425px;
+  height: 120px;
+  position: relative;
+  margin: 0 auto;
+  display: block;
+  top: 40vh;
+  border-radius: 35px;
+  border: 3px solid black;
+}
+
+#title {
+  position: relative;
+  margin: 0 auto;
+  display: block;
+  left: 50px;
+  top: 30px;
+  font-size: 1.75rem;
+  font-weight: bold;
+}
+
+#subtitle {
+  position: absolute;
+  top: 55px;
+  left: 50px;
+  font-weight: bold;
+  display: none;
 }
 
 .phone-frame {
@@ -139,9 +186,9 @@ body {
   color: white;
   font-family: "Abel";
   display: inline-block;
-  right: 100px;
-  top: 250px;
-  width: 20%;
+  left: 30vw;
+  top: 30vh;
+  width: 100%;
 }
 
 #faq-container h3 {
@@ -169,7 +216,7 @@ body {
   display: block;
   position: relative;
   width: 300px;
-  bottom: 18rem;
+  padding-top: 6vh;
 }
 
 #link-scam {
@@ -195,4 +242,94 @@ body {
   40%, 60% {
     transform: translate3d(4px, 0, 0);
   }
+}
+
+#help-container {
+  width: 100vw;
+  height: 100vh;
+  background-color: white;
+  position: absolute;
+  transform: translate3d(0, -100vh, 0);
+  transition: transform 2s cubic-bezier(0, .82, 0, 1.01);
+}
+
+#help-container.show {
+  transform: translate3d(0, -0vh, 0);
+}
+
+#help-heading {
+  font-family: Noto Sans;
+font-style: normal;
+font-weight: 800;
+font-size: 100px;
+line-height: 136px;
+position: relative;
+width: 50%;
+left: 50px;
+top: 30vh;
+display: inline-block;
+line-height: 100px;
+}
+
+.help-text {
+  position: relative;
+  font-size: 13px;
+  width: 30%;
+  padding-right: 100px;
+  float: right;
+  line-height: 28px;
+  bottom: 10vh;
+  display: inline-block;
+}
+
+#phone-container {
+  font-size: 14px;
+  position: relative;
+  left: 50px;
+  top: 20vh;
+  font-weight: bold;
+}
+
+#phone-number {
+  width: 200px;
+  height: 60px;
+  background-color: black;
+  border-radius: 30px;
+
+}
+
+.cancel-btn {
+  cursor: pointer;
+  position: absolute;
+  left: 90%;
+  top: 10vh;
+}
+
+#phone-number p {
+  color: white;
+  font-size: 20px;
+  font-weight: bold;
+  text-align: center;
+  position: relative;
+  top: 15px;
+}
+
+#report-btn {
+  cursor: pointer;
+}
+
+#link-scam {
+  cursor: pointer;
+}
+
+#promo-scam {
+  cursor: pointer;
+}
+
+#long-con {
+  cursor: pointer;
+}
+
+#foreign-love {
+  cursor: pointer;
 }

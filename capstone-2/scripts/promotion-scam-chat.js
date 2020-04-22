@@ -111,79 +111,87 @@ $(".chat-container").fadeIn(200);
 // $(".chat-bubble").fadeIn(200).delay(1000).fadeOut(100);
 // $(".messages").removeClass('chat-bubble'); g
 setTimeout(function(){
-  responsiveChatPush('.chat', 'ToasterStrudel', 'you', '', 'Heyyy handsome &#128522');
+  responsiveChatPush('.chat', 'Haley', 'you', '', 'Hey :)');
 }, 700);
 setTimeout(function(){
-  responsiveChatPush('.chat', 'ToasterStrudel', 'you', '', 'What you doing right now? :)');
+  responsiveChatPush('.chat', 'Haley', 'you', '', 'How has your week been?');
 }, 1500);
 $(".message-option-container").delay(3000).transition({opacity: 1});
 $(".explanation").delay(3000).transition({opacity: 1});
 
 $(document).on('click',"#message-option-a",function(){
-  responsiveChatPush('.chat', 'Me', 'me', '', 'Just chillin at home, wbu?');
-  setTimeout(function(){
-    responsiveChatPush('.chat', 'ToasterStrudel', 'you', '', 'Finally a decent guy on here! I was beginning to lose <br> hope :stuck_out_tongue_closed_eyes:');
-  }, 3000);
-  setTimeout(function() {
-    $("#message-option-a").delay(3500).attr("id","message-option-a-1");
-  }, 2000);
+  responsiveChatPush('.chat', 'Me', 'me', '', 'It&#39;s been a long week of work, finally looking forward to the weekend haha');
   $(".explanation-text").transition({opacity:0});
   $("#response-1").transition({opacity:0});
   setTimeout(function(){
+    responsiveChatPush('.chat', 'Me', 'me', '', 'And you?');
+  }, 1500);
+  setTimeout(function(){
+    responsiveChatPush('.chat', 'Haley', 'you', '', 'I&#39;m still recovering from last night &#128540; Currently relaxing with a game on my phone, called castle clash lol');
+  }, 3000);
+  setTimeout(function(){
+    responsiveChatPush('.chat', 'Haley', 'you', '', 'You heard of it?');
     $("#response-1").transition({opacity:1});
-    $("#response-1").text("Ask a question");
-    $(".explanation-text").transition({opacity:1}).html("They also never seem to fully respond to your messages and respond with strange syntax. Something's off here.");
-  }, 4000);
+    $("#response-1").text("Say no");
+    $(".explanation-text").transition({opacity:1}).html("These bots are scripted to answer with the same responses no matter what you say, and they are usually run by unscrupulous marketing and app promotion companies who can create thousands of these bots.");
+  }, 6000);
+  setTimeout(function() {
+    $("#message-option-a").delay(3500).attr("id","message-option-a-1");
+  }, 6000);
   // $("#message-option-1").remove();
 });
 
 $(document).on('click',"#message-option-a-1",function(){
-  responsiveChatPush('.chat', 'Me', 'me', '', 'What&#8217;s with that emoji?');
+  responsiveChatPush('.chat', 'Me', 'me', '', 'Can&#39;t say I have');
   setTimeout(function(){
-    responsiveChatPush('.chat', 'ToasterStrudel', 'you', '', 'I&#8217;m on my way to bin 152, was meeting a friend but I think shes going to flake :(');
-  }, 3000);
+    responsiveChatPush('.chat', 'Haley', 'you', '', 'You should play it, I downloaded it the other day and now I&#39;m addicted');
+  }, 1500);
+  setTimeout(function(){
+    responsiveChatPush('.chat', 'Haley', 'you', '', 'If you beat me in Castle Clash, I&#39;ll consider giving you a date');
+  }, 3500);
   $("#response-1").transition({opacity:0});
   $(".explanation-text").transition({opacity:0});
   setTimeout(function(){
     $("#response-1").transition({opacity:1});
-    $("#response-1").text("Ask another question");
-    $(".explanation-text").transition({opacity:1}).html("Again, your match is trying to change the conversation.");
-  }, 4000);
+    $("#response-1").text("Question your match");
+    $(".explanation-text").transition({opacity:1}).html("The app&#39;s developers denied any involvement in this scam, which is doubtful. But needless to say, it doesn&#39;t really reflect well on these companies to be resorting to such tactics to boost its downloads.");
+  }, 5500);
   $("#message-option-a-1").attr('id','message-option-a-2');
 });
 
 $(document).on('click',"#message-option-a-2",function(){
-  responsiveChatPush('.chat', 'Me', 'me', '', 'Whats bin 152? Is it like a restaurant?');
+  responsiveChatPush('.chat', 'Me', 'me', '', 'Is that a challenge?');
   setTimeout(function(){
-    responsiveChatPush('.chat', 'ToasterStrudel', 'you', '', 'Its a  restarant, so goood');
-  }, 3000);
+    responsiveChatPush('.chat', 'Me', 'me', '', 'You seem to be really into this game');
+  }, 1500);
+  setTimeout(function(){
+    responsiveChatPush('.chat', 'Haley', 'you', '', 'My username is lilygram52, lmk your username when you&#39;re done and we can keep on chatting there &#128517;');
+  }, 4000);
+  setTimeout(function(){
+    responsiveChatPush('.chat', 'Haley', 'you', '', 'http://www.tinderverified.com/castleclash');
+  }, 5500);
   $("#response-1").transition({opacity:0});
   $(".explanation-text").transition({opacity:0});
   setTimeout(function(){
     $("#response-1").transition({opacity:1});
-    $("#response-1").text('Test the bot');
-    $(".explanation-text").transition({opacity:1}).html("More advanced bots can respond to simple questions since they have a database of responses they can pull from. However, if you ask a nuanced question, they may change the subject by saying something completely unrelated.");
-  }, 4000);
+    $("#response-1").text('Respond');
+    $(".explanation-text").transition({opacity:1}).html("<p>There is an entire dark ecosystem of less-than-savory <a target=”_blank” href='https://www.wickedfire.com/shooting-the-shit/181829-spamming-tinder.html'>internet marketing forums </a> with spammers trading tips for steering clear of Tinder&#39;s spam detection systems and not raising users&#39; suspicions.</p>");
+  }, 7000);
   $("#message-option-a-2").attr('id','message-option-a-3');
 });
 
 $(document).on('click',"#message-option-a-3",function(){
-  responsiveChatPush('.chat', 'Me', 'me', '08.03.2017 14:30:7', 'I hear music in the background. Or is that just me?');
-  setTimeout(function(){
-    responsiveChatPush('.chat', 'Kate', 'you', '08.03.2017 14:30:7', 'You&#8217;re so fun to talk to, i  wanna know you better!');
-  }, 3000);
-  setTimeout(function(){
-    responsiveChatPush('.chat', 'Kate', 'you', '08.03.2017 14:30:7', 'I have get off my phone now can you add me http://facebok.com/connect/ToasterStrudel Talk to u soon &#128540');
-  }, 4500);
+  responsiveChatPush('.chat', 'Me', 'me', '', 'Lol please tell me you&#39;re not advertising');
   $("#response-1").transition({opacity:0});
   $(".explanation-text").transition({opacity:0});
   setTimeout(function(){
+    $(".message-option-container").css({backgroundColor: "#333333", color: "white"});
+    $(".message-option-response").css({color: "white"});
+    $("#response-1").text('Learn about next scam');
     $("#response-1").transition({opacity:1});
-    $(".explanation-text").transition({opacity:1}).html("Link scammers often want to lure you into connecting with them on Facebook or Whatsapp, but may be a fake link with those names misspelled.");
-  }, 5000);
+    $(".explanation-text").transition({opacity:1}).html("&ldquo;Dont respond to msgs [sic] all at once or immediately; you will get busted pretty quick,&rdquo; wrote one forum user named cygon, &ldquo;Spend some time to make your bot more personal. Your conversions will skyrocket. Once a guy gets feels a little emotionally involved he will go above and beyond to get a date.&rdquo;");
+  }, 3500);
   $(".reflection").delay(5000).css({backgroundColor: "#BDBDBD"});
-  $(".message-option-container").delay(3500).css({backgroundColor: "#333333", color: "white"});
-  $("#response-1").delay(5000).text('Learn about next scam');
   $("#message-option-a-3").attr('id','message-option-a-4');
 });
 

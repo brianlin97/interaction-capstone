@@ -3,6 +3,7 @@ form.chat *{
   box-sizing:border-box;
   -webkit-box-sizing:border-box;
   -moz-box-sizing:border-box;
+  color: black;
 }
 
 form.chat {
@@ -12,7 +13,7 @@ form.chat {
   left:0;
   right:0;
   bottom:0;
-  height: 1000vh;
+  height: 500000px;
   top:60px;
   -webkit-touch-callout: none; /* iOS Safari */
   -webkit-user-select: none;   /* Chrome/Safari/Opera */
@@ -38,7 +39,7 @@ form.chat span.spinner{
 form.chat .messages{
   display:block;
   overflow-x: hidden;
-  overflow-y: auto;
+  overflow-y: scroll;
   position:relative;
   height:400px;
   width:250px;
@@ -55,9 +56,9 @@ form.chat ::-webkit-scrollbar-thumb {
 }
 
 form.chat .message{
+  position: relative;
   display:block;
   width:98%;
-  padding:0.5%;
 }
 
 form.chat .message p{
@@ -68,7 +69,7 @@ form.chat .myMessage,
 form.chat .fromThem {
   max-width: 50%;
   word-wrap: break-word;
-  margin-bottom: 20px;
+  margin-bottom: 12px;
 }
 
 form.chat .message:hover .myMessage{
@@ -91,7 +92,7 @@ form.chat .myMessage,.fromThem{
   color: white;
   border-radius: 25px;
   clear: both;
-  font: 400 15px 'Open Sans', sans-serif;
+  /* font: 400 15px 'Open Sans', sans-serif; */
 }
 
 form.chat .myMessage {
@@ -120,7 +121,7 @@ form.chat .myMessage {
 } */
 
 form.chat .myMessage:after {
-  content: "";
+  /* content: "";
   position: absolute;
   z-index: 1;
   bottom: -2px;
@@ -130,7 +131,7 @@ form.chat .myMessage:after {
   background: white;
   border-bottom-left-radius: 10px;
   -webkit-transform: translate(-30px, -2px);
-  transform: translate(-30px, -2px);
+  transform: translate(-30px, -2px); */
 }
 
 form.chat .fromThem {
@@ -170,7 +171,7 @@ form.chat .fromThem {
 } */
 
 form.chat .fromThem:after {
-  content: "";
+  /* content: "";
   position: absolute;
   z-index: 3;
   bottom: -2px;
@@ -180,7 +181,7 @@ form.chat .fromThem:after {
   background: white;
   border-bottom-right-radius: 10px;
   -webkit-transform: translate(-30px, -2px);
-  transform: translate(-30px, -2px);
+  transform: translate(-30px, -2px); */
 }
 
 form.chat date {
@@ -293,7 +294,7 @@ form.chat input[type='submit']{
   background-color: white;
   background-size:100% 100%;
   margin: 0 auto;
-  top:6vh;
+  top:50px;
   position:relative;
   overflow: hidden;
   /* z-index: -10; */
@@ -303,7 +304,7 @@ form.chat input[type='submit']{
 	position:absolute;
 	top:4%;right:7%;left:0%;bottom:12%;
 	overflow:hidden;
-  height: inherit;
+  height: 50000px;
   z-index: 10;
 }
 
@@ -384,14 +385,13 @@ a.article{
 .chat-header {
   width: 100%;
   position: absolute;
-  top: 10px;
+  top: 5px;
 }
 
 /* TYPING BUBBLE   */
 .chat-bubble {
   display: none;
   position: absolute;
-  display: inline-block;
   padding-top: 20px;
   top: 350px;
   left: 115px;
@@ -485,4 +485,44 @@ a.article{
 	 100% {
 		 background: rgba(150, 150, 150, 1);
 	}
+}
+
+
+.badge {
+  width: 250px;
+  position: fixed;
+  top: 100px;
+}
+
+.expand {
+  width: 200px;
+  height: 25px;
+  border: 1px solid white;
+  cursor: pointer;
+}
+
+
+.expand p {
+  letter-spacing: 5px;
+  position: relative;
+  bottom: 10px;
+  left: 30px;
+}
+
+.hide {
+  width: 200px;
+  height: 25px;
+  border: 1px solid white;
+  cursor: pointer;
+}
+
+.hide p {
+  letter-spacing: 5px;
+  position: relative;
+  bottom: 10px;
+  left: 60px;
+}
+
+#show-more-text {
+  display: none;
 }

@@ -4,15 +4,14 @@ position: relative;
 } */
 
 body {
-  background-color: #6DA1EF;
+  background-color: #F3CA7A;
   font-family: "Noto Sans";
-  color: #082754fd;
+  color: #614715;
   overflow-x: hidden;
 }
 
 a {
-  text-decoration: none;
-  color: black;
+  text-decoration: underline;
 }
 
 a:hover {
@@ -31,7 +30,7 @@ a:hover {
 }
 #background-match-1 h1 {
   font-size: 20em;
-  color: #E5CF80;
+  color: #614715;
   position: absolute;
   font-weight: 700;
   width: 200%;
@@ -71,7 +70,7 @@ transform: translateX(-100%);
 }
 #background-match-2 h1 {
   font-size: 20em;
-  color: #E5CF80;
+  color: #614715;
   position: absolute;
   font-weight: 700;
   width: 200%;
@@ -381,7 +380,7 @@ justify-items: center;
 
 .scam-explanation {
   position: relative;
-  color: #082754;
+  color: #614715;
   width: 100%;
   margin-top:30vh;
 }
@@ -414,7 +413,7 @@ justify-items: center;
   width: 30%;
   top: 45vh;
   left: 65vw;
-  color: #082754;
+  color: #614715;
 }
 
 .explanation h4 {

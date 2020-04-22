@@ -27,13 +27,13 @@ $(".hide").removeClass("hide").addClass("expand").html("<p>+ SHOW MORE<p>");
 //   $(".expand")
 // });
 
-function scrollSmoothToBottom(id) {
-  var div = document.getElementByClassName(id)[0];
-  $('#' + id).animate({
-    scrollTop: div.scrollHeight - div.clientHeight
-  }, 500);
-  console.log(div);
-}
+// function scrollSmoothToBottom(id) {
+//   var div = document.getElementByClassName(id)[0];
+//   $('#' + id).animate({
+//     scrollTop: div.scrollHeight - div.clientHeight
+//   }, 500);
+//   console.log(div);
+// }
 
 
 function responsiveChat(element) {
@@ -115,7 +115,6 @@ function responsiveChatPush(element, sender, origin, date, message) {
   // }, 2000);
   $('.messages').animate({ scrollTop: $('.messages')[0].scrollHeight}, 1000);
   console.log($('.messages')[0].scrollHeight);
-  console.log('yeehaw');
   return false;
 }
 
@@ -123,129 +122,141 @@ function responsiveChatPush(element, sender, origin, date, message) {
 responsiveChat('.responsive-html5-chat');
 
 /* Let's push some dummy data */
-$(".chat-container").fadeIn(200);
-// $(".messages").append("<div class='chat-bubble'><div class='loading'><div class='dot one'></div><div class='dot two'></div><div class='dot three'></div></div><div class='tail'></div></div>");
-// $(".chat-bubble").fadeIn(200).delay(1000).fadeOut(100);
-// $(".messages").removeClass('chat-bubble'); g
-setTimeout(function(){
-  responsiveChatPush('.chat', 'arthur.langley', 'you', '', 'Hello, nice meeting you, hope we can be friends Pretty damsel?');
-}, 700);
-$(".message-option-container").delay(3000).transition({opacity: 1});
-$(".explanation").delay(3000).transition({opacity: 1});
+// $(".chat-container").fadeIn(200);
+
+// setTimeout(function(){
+//   responsiveChatPush('.chat', 'arthur.langley', 'you', '', 'Hello, nice meeting you, hope we can be friends Pretty damsel?');
+// }, 700);
+// $(".chat-bubble").css({"display": "none"});
+$(".message-option-container").transition({opacity: 1});
+$(".explanation").transition({opacity: 1});
+$(".reflection").delay(5000).css({backgroundColor: "#BDBDBD"});
+$(".message-option-container").delay(5000).css({backgroundColor: "#333333", color: "white"});
+$("#response-1").delay(5000).css({color: "white"}).text('Start the con');
 
 $(document).on('click',"#message-option-a",function(){
-  responsiveChatPush('.chat', 'Me', 'me', '', 'Sure, I would like to be friends eventually.');
+  $(".reflection").css({backgroundColor: "#9DDCFF"});
+  $(".message-option-container").css({backgroundColor: "#52BDF9", color: "black"});
+  $(".message-option-response").css({color: "black"});
   setTimeout(function(){
-    responsiveChatPush('.chat', 'arthur.langley', 'you', '', 'You are beautiful, for me, you are the best woman in the world');
+    responsiveChatPush('.chat', 'Cris', 'you', '7.15', 'Yes baby, would be going to India for a business trip, but I went to do a little shopping before');
+  }, 500);
+  setTimeout(function(){
+    responsiveChatPush('.chat', 'Cris', 'you', '7.15', 'I got you a custom suit, a new iPhone, and Gucci bag. Check your messages for the photos &#x1f648;');
   }, 3000);
   setTimeout(function(){
-    responsiveChatPush('.chat', 'arthur.langley', 'you', '', 'How is your husband and kids?');
+    responsiveChatPush('.chat', 'Cris', 'you', '7.15', 'I dont want any one stealing you away form me or treating you in a better way than me &#x1f60b;');
   }, 4500);
   setTimeout(function() {
     $("#message-option-a").delay(3500).attr("id","message-option-a-1");
-  }, 4000);
+  }, 5500);
   $(".explanation-text").transition({opacity:0});
   $("#response-1").transition({opacity:0});
   setTimeout(function(){
     $("#response-1").transition({opacity:1});
     $("#response-1").text("Respond");
-    $(".explanation-text").transition({opacity:1}).html("They will soon ask you if you&#39;re married early in the conversation so they doesn&#39;t waste their time grooming someone who won&#39;t respond to their relationship overtones. Other sneaky ways they fish for this include: <br> Do you live alone? <br> Do you live with your family?");
+    $(".explanation-text").transition({opacity:1}).html("Once you have chatted with a scammer for a while and built up a connection, they may want to send you &ldquo;gifts&rdquo; to show their affection.");
   }, 5000);
   // $("#message-option-1").remove();
 });
 
 $(document).on('click',"#message-option-a-1",function(){
-  responsiveChatPush('.chat', 'Me', 'me', '', 'I&#39;m single... that&#39; why I&#39;m on here');
+  responsiveChatPush('.chat', 'Me', 'me', '7.15', 'Aww, you didn&#39;t have to! Thank you so much!!!');
   setTimeout(function(){
-    responsiveChatPush('.chat', 'arthur.langley', 'you', '', 'Ah yes, I am single as well. I am a widower. I lost my wife through Maigrain a serious headach 3 years ago. I was emotionally devastated when my wife died, but I stay firm and strong for my beautiul daughter lisa...');
+    responsiveChatPush('.chat', 'Cris', 'you', '7.15', 'Of course baby &#128536; What is your delivery address for me to send to?');
   }, 3000);
   $("#response-1").transition({opacity:0});
   $(".explanation-text").transition({opacity:0});
   setTimeout(function(){
     $("#response-1").transition({opacity:1});
-    $("#response-1").text("Respond");
-    $(".explanation-text").transition({opacity:1}).html("Once they know you are single, they will launch into their backstory. Scammers often have a tragic story that about losing their spouse or parents. 'Cancer attacks', 'ghastly car accidents', some of these stories can get pretty creative.");
+    $("#response-1").text("Give work address");
+    $(".explanation-text").transition({opacity:1}).html("Be very careful about giving someone you met online your home address or personal information. If you have to, give a work or non-personal address.");
   }, 4500);
   $("#message-option-a-1").attr('id','message-option-a-2');
 });
 
 $(document).on('click',"#message-option-a-2",function(){
-  responsiveChatPush('.chat', 'Me', 'me', '', 'Oh, I&#39;m sorry to hear that. That must be very hard for you.');
+  responsiveChatPush('.chat', 'Me', 'me', '7.15', 'Can you send it to **********');
   setTimeout(function(){
-    responsiveChatPush('.chat', 'arthur.langley', 'you', '', 'Yes, it very hard');
-  }, 3000);
-  setTimeout(function(){
-    responsiveChatPush('.chat', 'arthur.langley', 'you', '', 'I am now a soldier, currently on peace keeping mission in Yemen. I have been here at the camp for 18 months now and i should be retired or transferred from here in less than 3 months');
-  }, 4500);
+  responsiveChatPush('.chat', 'Me', 'me', '7.15', 'I can&#39;t wait!');
+  }, 1500);
+  $(".chat-container").delay(3000).fadeOut(2000).fadeIn(2000);
   $("#response-1").transition({opacity:0});
   $(".explanation-text").transition({opacity:0});
   setTimeout(function(){
+    $(".explanation-text").transition({opacity:1}).html("3 weeks later...");
+  }, 3000);
+  setTimeout(function(){
+    responsiveChatPush('.chat', 'Cris', 'you', '8.10', 'Baby, i got text from Boston that your packages has arrive. Baby.. please let me know once you have them. Its 3 boxes love. Don&#39;t open the big box till am back love &#x1f648; Going in for a meetings now');
+  }, 9000);
+  $("#response-1").transition({opacity:0});
+  setTimeout(function(){
+    $(".explanation-text").transition({opacity:1}).html("Sophisticated scammers are part of syndicates working multiple con artists. Other people posing as customs officers or government officials may contact you and ask you to pay some sort of fee with the original scammer trying to convince you to pay them, making it seem real.");
     $("#response-1").transition({opacity:1});
-    $("#response-1").text('Ask about Yemen');
-    $(".explanation-text").transition({opacity:1}).html("A scammer will often say he is on a &#39;peacekeeping mission&#39; in a far away country - basically, they can&#39;t see you immediately. The distance and time zone difference mean they aren&#39;t very available to talk. The words &#39;peacekeeping mission&#39; are a huge red flag - US military doesn&#39;t say that. <br>");
-  }, 5500);
+    $("#response-1").text('Respond');
+  }, 11000);
   $("#message-option-a-2").attr('id','message-option-a-3');
 });
 
 $(document).on('click',"#message-option-a-3",function(){
-  responsiveChatPush('.chat', 'Me', 'me', '08.03.2017 14:30:7', 'That&#39;s interesting. Tell me more about your job and experience in Yemen.');
+  responsiveChatPush('.chat', 'Me', 'me', '8.10', 'This was so thoughtful of you');
   setTimeout(function(){
-    responsiveChatPush('.chat', 'arthur.langley', 'you', '08.03', 'It was a lot of fun');
+    responsiveChatPush('.chat', 'Me', 'me', '8.10', 'The courier company just called me to confirm the address. I think she said the packages are going through customs now!');
   }, 3000);
+  $(".chat-container").delay(5000).fadeOut(2000).fadeIn(2000);
   $("#response-1").transition({opacity:0});
   $(".explanation-text").transition({opacity:0});
   setTimeout(function(){
+    $(".explanation-text").transition({opacity:1}).html("A few hours later...");
+  }, 6000);
+  setTimeout(function(){
+    responsiveChatPush('.chat', 'Me', 'me', '8.10', 'The same courier lady called me again, saying one of the boxes had an envelope of foreign currency that needed to be declared. She said I needed to pay &euro;1500 to declare it and to continue shipment?');
+  }, 11500);
+  setTimeout(function(){
+    responsiveChatPush('.chat', 'Me', 'me', '8.10', 'And to pay another &euro;100 to convert it into USD?');
+  }, 13000);
+  setTimeout(function(){
+    responsiveChatPush('.chat', 'Cris', 'you', '8.10', 'Im so sorry baby I wanted to surprise you for your birthday');
+  }, 14500);
+  setTimeout(function(){
+    responsiveChatPush('.chat', 'Cris', 'you', '8.10', 'I have many more surprise gifts in there :) Can you send customs the fee and then I will send it back');
+  }, 16000);
+  setTimeout(function(){
     $("#response-1").transition({opacity:1});
-    $("#response-1").text('Keep on probing');
-    $(".explanation-text").transition({opacity:1}).html("If you are suspicious you're talking to a romance scammer, probe them with questions. These scammers are often international and have poor English skills, and will often deflect questions or stick to a script.");
-  }, 5000);
+    $("#response-1").text('Pay customs fee');
+  }, 16000);
+  $("#response-1").transition({opacity:0});
+  $(".explanation-text").transition({opacity:0});
   $("#message-option-a-3").attr('id','message-option-a-4');
 });
 
 $(document).on('click',"#message-option-a-4",function(){
-  responsiveChatPush('.chat', 'Me', 'me', '', 'That is all you have to say about your job?');
+  $("#response-1").transition({opacity:0});
+  responsiveChatPush('.chat', 'Me', 'me', '', 'Ok, I just paid the US customs, she said the packages are cleared and will arrive tomorrow morning');
   setTimeout(function(){
-    responsiveChatPush('.chat', 'Me', 'me', '', 'I don&#39;t know if you are who you say you are');
+    responsiveChatPush('.chat', 'Cris', 'you', '8.10', 'Ok baby. I will send you $200 more so I can relase your stress');
   }, 1500);
   setTimeout(function(){
-    responsiveChatPush('.chat', 'arthur.langley', 'you', '08.03', 'You don&#39;t believe me? I am in Yemen now.');
-  }, 3500);
-  $(".chat-container").delay(6000).fadeOut(2000).fadeIn(2000);
-  $("#response-1").transition({opacity:0});
-  $(".explanation-text").transition({opacity:0});
-  setTimeout(function(){
-    $(".explanation-text").transition({opacity:1}).html("1 month later...");
-  }, 5000);
-  setTimeout(function(){
-    responsiveChatPush('.chat', 'arthur.langley', 'you', '09.15', 'honey am so sorry job has been taking so much off my time, I dropped a tear in the ocean, the day that I find it is the day I&#39;ll stop loving you');
-  }, 11000);
-  setTimeout(function(){
-    responsiveChatPush('.chat', 'arthur.langley', 'you', '09.15', 'My army deployment is finished I want to be with you, but I need money for flights and visa to visit.');
-  }, 13000);
-  setTimeout(function(){
+    responsiveChatPush('.chat', 'Cris', 'you', '8.10', 'Finished my meetings, already on my way to town to western union');
     $("#response-1").transition({opacity:1});
-    $("#response-1").text('Challenge the scammer');
-    responsiveChatPush('.chat', 'arthur.langley', 'you', '09.15', 'Can you send me $1000? Thank you very much for your support. I miss you and you are always on my mind');
-  }, 15000);
-  $("#message-option-a-4").attr('id','message-option-a-5');
+    $("#response-1").text('Ask for update');
+    $("#message-option-a-4").attr('id','message-option-a-5');
+  }, 3000);
 });
 
 $(document).on('click',"#message-option-a-5",function(){
-  responsiveChatPush('.chat', 'Me', 'me', '09.15', 'I thought you said you were deployed for 3 months? It&#39;s only been a month and your deployment&#39;s finished?');
+  responsiveChatPush('.chat', 'Me', 'me', '8.11', 'Hello? Any updates? I tried calling the customs number but nobody picked up');
   setTimeout(function(){
-    responsiveChatPush('.chat', 'arthur.langley', 'you', '08.03', 'We just came back to the camp from under covered mission');
-  }, 3000);
-  setTimeout(function(){
-    responsiveChatPush('.chat', 'arthur.langley', 'you', '08.03', 'I will be leaving here soon to see my daughter lisa and you. Do you have western union?');
-  }, 4500);
+    responsiveChatPush('.chat', 'Me', 'me', '8.11', 'Why aren&#39;t you responding?');
+  }, 6000);
   $("#response-1").transition({opacity:0});
   $(".explanation-text").transition({opacity:0});
   setTimeout(function(){
-    // $(".explanation-text").transition({opacity:1}).html("It often starts with something relatively inexpensive as a means of testing the waters, but can quickly escalate to large sums of money. Scammers will claim that they need a loan to pay for travel to get back home, to pay for a phone or computer so they can keep in touch, cover a major medical bill or anything else that may play upon the empathy of their victim. These scammers are masterful storytellers, building trusting relationships over a long period of time with you. To learn more about this type of scam, here is an actual playbook from a <a href="assets.documentcloud.org/documents/6544402/Nigerian-Scammers-Playbook.pdf">Nigerian scammer</a>");
+    $(".explanation-text").transition({opacity:1}).html("Once you sent the scammers money, its often too late. They use fake IDs to create bank accounts so once a 24-hour time period has passed the money is withdrawn from the account and the account is closed, rendering the money and the scammer untraceable.");
   }, 5000);
   $(".reflection").delay(5000).css({backgroundColor: "#BDBDBD"});
   $(".message-option-container").delay(5000).css({backgroundColor: "#333333", color: "white"});
-  $("#response-1").delay(5000).text('Learn about next scam');
+  $("#response-1").delay(5000).css({color: "white"}).text('Back to home page');
   $("#message-option-a-5").attr('id','message-option-a-6');
 });
 
@@ -261,6 +272,6 @@ if (parent == top) {
   $("a.article").show();
 }
 
-// $('.messages').scrollTop($('.messages')[0].scrollHeight);
-$('.messages').scrollTop(5000);
+$('.messages').scrollTop($('.messages')[0].scrollHeight);
+// $('.messages').scrollTop(5000);
 console.log($('.messages')[0].scrollHeight);
