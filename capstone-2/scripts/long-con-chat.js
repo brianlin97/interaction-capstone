@@ -252,12 +252,18 @@ $(document).on('click',"#message-option-a-5",function(){
   $("#response-1").transition({opacity:0});
   $(".explanation-text").transition({opacity:0});
   setTimeout(function(){
+    $("#response-1").transition({opacity:1});
     $(".explanation-text").transition({opacity:1}).html("Once you sent the scammers money, its often too late. They use fake IDs to create bank accounts so once a 24-hour time period has passed the money is withdrawn from the account and the account is closed, rendering the money and the scammer untraceable.");
   }, 5000);
   $(".reflection").delay(5000).css({backgroundColor: "#BDBDBD"});
   $(".message-option-container").delay(5000).css({backgroundColor: "#333333", color: "white"});
+  $(".message-option-response").css({color: "white"});
   $("#response-1").delay(5000).css({color: "white"}).text('Back to home page');
   $("#message-option-a-5").attr('id','message-option-a-6');
+});
+
+$(document).on('click',"#message-option-a-6",function(){
+  window.location = "intro.html";
 });
 
 

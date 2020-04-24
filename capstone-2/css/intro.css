@@ -1,12 +1,49 @@
 
 body {
   font-family: "Noto Sans";
-  background-color: #434343;
+  background-color: #E7C2C9;
   margin: 0;
   padding: 0;
   max-height: 100%;
   overflow-x: hidden;
+  color: #1A1617;
   /* overflow-y: hidden; */
+}
+
+#question-container {
+  position: absolute;
+  display: none;
+  width: 175%;
+  left: -20vw;
+  /* display: inline-block; */
+  color:  #172335;
+}
+
+#question-title {
+  font-family: Abel;
+font-style: normal;
+font-weight: normal;
+font-size: 32px;
+line-height: 28px;
+/* identical to box height, or 87% */
+margin-top: 100px;
+letter-spacing: 0.24em;
+}
+
+.question-text {
+  font-family: Noto Sans;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 16px;
+  line-height: 28px;
+  display: inline-block;
+}
+
+#question {
+  position: absolute;
+  cursor: pointer;
+  top: 5vh;
+  left: -35vw;
 }
 
 #scene {
@@ -20,6 +57,7 @@ body {
 -webkit-transform: translateX(-50%);
 transform: translateX(-50%);
 }
+
 
 .intro-svg {
   position: absolute;
@@ -43,10 +81,12 @@ transform: translateX(-50%);
 #intro-subtitle {
  text-align: center;
  font-size: 16px;
- font-weight: 300;
+ /* font-weight: 300; */
  position: relative;
- color: white;
- top: 20vh;
+ color: #172335;
+ top: 13vh;
+ width: 450px;
+ right: 10px;
 }
 
 
@@ -56,7 +96,6 @@ transform: translateX(-50%);
   left: 0%;
   top: 40vh;
   cursor: pointer;
-  wi
 }
 
 #intro-title svg {
@@ -86,14 +125,15 @@ transform: translateX(-50%);
   width: 100%;
   margin: 0 auto;
   text-align: center;
-    font-family: Noto Sans;
+  font-family: Abel;
   font-style: normal;
-  font-weight: 600;
+  font-weight: 300;
   font-size: 20px;
   line-height: 27px;
   text-align: center;
-  color: white;
+  color: #172335;
   padding: 5px;
+  letter-spacing: 3px;
 }
 
 .next-arrow {
@@ -140,6 +180,10 @@ transform: translateX(-50%);
   letter-spacing: 10px;
 }
 
+.faq-header-group p {
+  font-family: "Noto Sans";
+}
+
 #title-container {
   background-color: white;
   width: 425px;
@@ -147,7 +191,7 @@ transform: translateX(-50%);
   position: relative;
   margin: 0 auto;
   display: block;
-  top: 40vh;
+  top: 35vh;
   border-radius: 35px;
   border: 3px solid black;
 }
@@ -156,7 +200,7 @@ transform: translateX(-50%);
   position: relative;
   margin: 0 auto;
   display: block;
-  left: 50px;
+  left: 40px;
   top: 30px;
   font-size: 1.75rem;
   font-weight: bold;
@@ -165,7 +209,7 @@ transform: translateX(-50%);
 #subtitle {
   position: absolute;
   top: 55px;
-  left: 50px;
+  left: 40px;
   font-weight: bold;
   display: none;
 }
@@ -183,7 +227,7 @@ transform: translateX(-50%);
 
 #faq-container {
   position: absolute;
-  color: white;
+  color: #172335;
   font-family: "Abel";
   display: inline-block;
   left: 30vw;
@@ -199,6 +243,7 @@ transform: translateX(-50%);
   line-height: 20px;
   letter-spacing: 0.1em;
   cursor: pointer;
+  padding-top: 10px;
 }
 
 #faq-container h3:hover {
@@ -207,23 +252,68 @@ transform: translateX(-50%);
 
 #faq-container p {
   display: none;
-  font-size: 14px;
+  font-size: 12px;
   line-height: 20px;
+  margin: 6px;
 }
 
 #phone-homescreen {
   margin: 0 auto;
   display: block;
+  /* visibility: hidden; */
   position: relative;
   width: 300px;
   padding-top: 6vh;
+}
+
+.line-break {
+  position: absolute;
+  background-color: white;
+  transform: rotate(90deg);
+  width: 283px;
+  height: 1px;
+  left: 35vw;
+  bottom: 255px;
+}
+
+.question-subtext-container {
+  position: absolute;
+  display: inline-block;
+  width: 50%;
+  left: 50vw;
+  bottom: 190px;
+}
+
+.question-subtext {
+  font-family: Noto Sans;
+  font-style: normal;
+  /* font-weight: 600; */
+  font-size: 12px;
+  line-height: 20px;
+}
+
+.question-subtext a {
+  color: #0078BB;
 }
 
 #link-scam {
   cursor: pointer;
 }
 
-.app-icon {
+#long-con:hover {
+  animation: shake 0.82s cubic-bezier(.36,.07,.19,.47) both;
+}
+
+#link-scam:hover {
+  animation: shake 0.82s cubic-bezier(.36,.07,.19,.47) both;
+}
+
+#promo-scam:hover {
+  animation: shake 0.82s cubic-bezier(.36,.07,.19,.47) both;
+}
+
+#foreign-love:hover {
+  animation: shake 0.82s cubic-bezier(.36,.07,.19,.47) both;
 }
 
 @keyframes shake {
@@ -317,6 +407,10 @@ line-height: 100px;
 #report-btn {
   cursor: pointer;
 }
+
+/* #report-btn rect:hover {
+  fill: #2894D0;
+} */
 
 #link-scam {
   cursor: pointer;

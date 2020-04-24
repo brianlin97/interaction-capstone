@@ -183,10 +183,14 @@ $(document).on('click',"#message-option-a-3",function(){
   }, 5000);
   $(".reflection").delay(5000).css({backgroundColor: "#BDBDBD"});
   $(".message-option-container").delay(3500).css({backgroundColor: "#333333", color: "white"});
+  $(".message-option-response").delay(3500).css({color: "white"});
   $("#response-1").delay(5000).text('Learn about next scam');
   $("#message-option-a-3").attr('id','message-option-a-4');
 });
 
+$(document).on('click',"#message-option-a-4",function(){
+  window.location = "promotion-scam.html";
+});
 
 // responsiveChatPush('.chat', 'Me', 'me', '08.03.2016 14:31:22', 'It looks like the iPhone message box.');
 // responsiveChatPush('.chat', 'Kate', 'me', '08.03.2016 14:33:32', 'Yep, is this design responsive?');

@@ -195,6 +195,10 @@ $(document).on('click',"#message-option-a-3",function(){
   $("#message-option-a-3").attr('id','message-option-a-4');
 });
 
+$(document).on('click',"#message-option-a-4",function(){
+  window.location = "foreign-love.html";
+});
+
 
 // responsiveChatPush('.chat', 'Me', 'me', '08.03.2016 14:31:22', 'It looks like the iPhone message box.');
 // responsiveChatPush('.chat', 'Kate', 'me', '08.03.2016 14:33:32', 'Yep, is this design responsive?');

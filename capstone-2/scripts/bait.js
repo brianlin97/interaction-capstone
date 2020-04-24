@@ -39,6 +39,7 @@ $("#potato-icon-default").mouseenter(function() {
 
 $("#potato-icon-hover").click(function() {
 	$("#menu-links").toggleClass("show");
+	$("#menu-links li").delay(500).toggleClass("show");
 	// if ($("#menu-links").children().hasClass("slide-in")) {
 	// 	$("#menu-links").children().removeClass("slide-in");
 	// 	// $("#menu-links").fadeOut(100);

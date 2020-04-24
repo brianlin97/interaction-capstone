@@ -241,13 +241,21 @@ $(document).on('click',"#message-option-a-5",function(){
   $("#response-1").transition({opacity:0});
   $(".explanation-text").transition({opacity:0});
   setTimeout(function(){
+    $("#response-1").transition({opacity:1});
+
     // $(".explanation-text").transition({opacity:1}).html("It often starts with something relatively inexpensive as a means of testing the waters, but can quickly escalate to large sums of money. Scammers will claim that they need a loan to pay for travel to get back home, to pay for a phone or computer so they can keep in touch, cover a major medical bill or anything else that may play upon the empathy of their victim. These scammers are masterful storytellers, building trusting relationships over a long period of time with you. To learn more about this type of scam, here is an actual playbook from a <a href="assets.documentcloud.org/documents/6544402/Nigerian-Scammers-Playbook.pdf">Nigerian scammer</a>");
   }, 5000);
   $(".reflection").delay(5000).css({backgroundColor: "#BDBDBD"});
   $(".message-option-container").delay(5000).css({backgroundColor: "#333333", color: "white"});
+  $(".message-option-response").css({color: "white"});
   $("#response-1").delay(5000).text('Learn about next scam');
   $("#message-option-a-5").attr('id','message-option-a-6');
 });
+
+$(document).on('click',"#message-option-a-6",function(){
+  window.location = "long-con.html";
+});
+
 
 
 // responsiveChatPush('.chat', 'Me', 'me', '08.03.2016 14:31:22', 'It looks like the iPhone message box.');

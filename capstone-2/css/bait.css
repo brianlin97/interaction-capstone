@@ -16,7 +16,7 @@ a {
 }
 
 a:hover {
-  background-image: url("data:image/svg+xml;charset=utf8,%3Csvg id='squiggle-link' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' xmlns:ev='http://www.w3.org/2001/xml-events' viewBox='0 0 20 4'%3E%3Cstyle type='text/css'%3E.squiggle{animation:shift .4s linear infinite;}@keyframes shift {from {transform:translateX(0);}to {transform:translateX(-20px);}}%3C/style%3E%3Cpath fill='none' stroke='%23ff9800' stroke-width='2' class='squiggle' d='M0,3.5 c 5,0,5,-3,10,-3 s 5,3,10,3 c 5,0,5,-3,10,-3 s 5,3,10,3'/%3E%3C/svg%3E");
+  background-image: url("data:image/svg+xml;charset=utf8,%3Csvg id='squiggle-link' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' xmlns:ev='http://www.w3.org/2001/xml-events' viewBox='0 0 20 4'%3E%3Cstyle type='text/css'%3E.squiggle{animation:shift .6s linear infinite;}@keyframes shift {from {transform:translateX(0);}to {transform:translateX(-20px);}}%3C/style%3E%3Cpath fill='none' stroke='rgb(109,161,239)' stroke-width='2' class='squiggle' d='M0,3.5 c 5,0,5,-3,10,-3 s 5,3,10,3 c 5,0,5,-3,10,-3 s 5,3,10,3'/%3E%3C/svg%3E");
   background-position: 0 100%;
   background-size: auto 6px;
   background-repeat: repeat-x;
@@ -104,6 +104,7 @@ transform: translateX(-100%);
   top: 20px;
   position: fixed;
   z-index: 10000;
+  cursor: pointer;
 }
 
 .title {
@@ -132,16 +133,17 @@ transform: translateX(-100%);
   position: fixed;
   list-style-type: none;
   font-family: "Abel";
+  letter-spacing: 1px;
+  weight: bold;
   margin: 0;
   z-index: 100;
   padding: 25px;
-  font-size: 1.5rem;
+  font-size: 1.50rem;
   width: 15vw;
    height: 100vh;
    background-color: #333333;
    top: 0;
    left: 0;
-
    transform: translate3d(-30vw, 0, 0);
    transition: transform .5s cubic-bezier(0, .82, 0, 1.01);
 }
@@ -150,8 +152,17 @@ transform: translateX(-100%);
     transform: translate3d(0vw, 0, 0);
 }
 
+#menu-links li {
+  transform: translate3d(-10vw, 0, 0);
+  transition: transform .5s cubic-bezier(0, .82, 0, 1.51);
+}
+
+#menu-links li.show {
+  transform: translate3d(0vw, 0, 0);
+}
+
 .current-menu a {
-  font-size: 2rem;
+  color: #6DA1EF!important;
 }
 
 #menu-links li {
@@ -159,7 +170,7 @@ transform: translateX(-100%);
 }
 
 #menu-links a {
-    color: white;
+    color: #F2F2F2;
 }
 
 #menu-links li:first-child {
