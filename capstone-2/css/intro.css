@@ -1,7 +1,7 @@
 
 body {
   font-family: "Noto Sans";
-  background-color: #E7C2C9;
+  background-color: #F2C7D1;
   margin: 0;
   padding: 0;
   max-height: 100%;
@@ -294,6 +294,7 @@ transform: translateX(-50%);
 
 .question-subtext a {
   color: #0078BB;
+  text-decoration: none;
 }
 
 #link-scam {
@@ -368,8 +369,17 @@ line-height: 100px;
   padding-right: 100px;
   float: right;
   line-height: 28px;
-  bottom: 10vh;
+  bottom: 25vh;
   display: inline-block;
+}
+
+#help-resources-title {
+  font-weight: bold;
+}
+
+#help-resources a {
+  color: #0078BB;
+  text-decoration: none;
 }
 
 #phone-container {

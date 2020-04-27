@@ -465,7 +465,11 @@ width: 30%;
   position: fixed;
   left: 55px;
   color: white;
-  z-index: -10;
+  z-index: 10;
+}
+
+#disclaimer a{
+  text-decoration: none;
 }
 
 
